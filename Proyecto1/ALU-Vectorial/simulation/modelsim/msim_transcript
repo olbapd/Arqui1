@@ -1,0 +1,202 @@
+# Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
+# do ALU_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:40:24 on Aug 24,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial.sv 
+# -- Compiling module aluVectorial
+# 
+# Top level modules:
+# 	aluVectorial
+# End time: 18:40:25 on Aug 24,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:40:25 on Aug 24,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv 
+# -- Compiling module aluVectorial_tb
+# 
+# Top level modules:
+# 	aluVectorial_tb
+# End time: 18:40:25 on Aug 24,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.aluVectorial_tb
+# vsim work.aluVectorial_tb 
+# Start time: 18:40:49 on Aug 24,2019
+# Loading sv_std.std
+# Loading work.aluVectorial_tb
+# Loading work.aluVectorial
+add wave -position end  sim:/aluVectorial_tb/dut/N
+add wave -position end  sim:/aluVectorial_tb/dut/V
+add wave -position end  sim:/aluVectorial_tb/dut/A
+add wave -position end  sim:/aluVectorial_tb/dut/A[2]
+add wave -position end  sim:/aluVectorial_tb/dut/A[1]
+add wave -position end  sim:/aluVectorial_tb/dut/A[0]
+add wave -position end  sim:/aluVectorial_tb/dut/B
+add wave -position end  sim:/aluVectorial_tb/dut/B[2]
+add wave -position end  sim:/aluVectorial_tb/dut/B[1]
+add wave -position end  sim:/aluVectorial_tb/dut/B[0]
+add wave -position end  sim:/aluVectorial_tb/dut/C
+add wave -position end  sim:/aluVectorial_tb/dut/C[2]
+add wave -position end  sim:/aluVectorial_tb/dut/C[1]
+add wave -position end  sim:/aluVectorial_tb/dut/C[0]
+add wave -position end  sim:/aluVectorial_tb/dut/R
+add wave -position end  sim:/aluVectorial_tb/dut/R[2]
+add wave -position end  sim:/aluVectorial_tb/dut/R[1]
+add wave -position end  sim:/aluVectorial_tb/dut/R[0]
+add wave -position end  sim:/aluVectorial_tb/dut/F
+add wave -position end  sim:/aluVectorial_tb/dut/F[3]
+add wave -position end  sim:/aluVectorial_tb/dut/F[2]
+add wave -position end  sim:/aluVectorial_tb/dut/F[1]
+add wave -position end  sim:/aluVectorial_tb/dut/F[0]
+add wave -position end  sim:/aluVectorial_tb/dut/result
+run
+# Simulation succeeded
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(31)
+#    Time: 0 ps  Iteration: 3  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 31
+run
+# Simulation succeeded
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(31)
+#    Time: 10 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 31
+run
+# Simulation succeeded
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(31)
+#    Time: 20 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 31
+run
+# Simulation succeeded
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(31)
+#    Time: 30 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 31
+run
+# Simulation succeeded
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(31)
+#    Time: 40 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 31
+run
+# Simulation succeeded
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(31)
+#    Time: 50 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 31
+run
+# Simulation succeeded
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(31)
+#    Time: 60 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 31
+force -freeze {sim:/aluVectorial_tb/dut/B[2]} 000000000000000001 0
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 70 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 80 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 90 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 100 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 110 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 120 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 130 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 140 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 150 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 160 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 170 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 180 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 190 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 200 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 210 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 220 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 230 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 240 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 250 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+run
+# Simulation failed
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv(35)
+#    Time: 260 ps  Iteration: 1  Instance: /aluVectorial_tb
+# Break in Module aluVectorial_tb at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv line 35
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/simulation/modelsim/ALUVECTORIAL
+# End time: 18:53:06 on Aug 24,2019, Elapsed time: 0:12:17
+# Errors: 0, Warnings: 0
