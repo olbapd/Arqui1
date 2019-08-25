@@ -8,6 +8,6 @@ initial
 
 $readmemh("C://",RAM);
 
-assign Instr = RAM[PC[31:2]]; // word aligned
+assign Instr = RAM[PC[31:2]];               // word aligned
 
 endmodule
