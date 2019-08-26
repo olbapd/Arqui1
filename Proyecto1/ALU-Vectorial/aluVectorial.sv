@@ -57,6 +57,7 @@ module aluVectorial #(parameter N=18, parameter V=3)
 		F[3]=result[V-1][N-1]; //Negative unicamente para el mas significativo 
 		
 		F[1]=result[V-1][N]; //Carry unicamente para el mas significativo 
+		F[0]=0; //To fix later
 		
 		/*always_comb begin
 			case (F[2:1])
