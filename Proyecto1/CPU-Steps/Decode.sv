@@ -5,7 +5,7 @@ module Decode (
     input logic [3:0] wa3w,
     input logic [2:0] RegSrc,
     output logic [2:0][17:0] rd1, rd2,
-    output logic [17:0] ExtImm                  //Preguntar si es de 18bits
+    output logic [31:0] ExtImm                  //Preguntar si es de 32bits
     );
 
 logic [3:0] ra1, ra2;
