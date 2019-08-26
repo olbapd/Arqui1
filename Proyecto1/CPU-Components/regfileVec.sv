@@ -1,8 +1,8 @@
 
 module regfileVec (
-    input logic clk, rst
+    input logic clk, 
     input logic we3,
-	input logic [3:0] ra1, ra2, wa3,
+	input logic [3:0] ra1, ra2, ra3,
 	input logic [2:0][17:0] wd3, r15,
 	output logic [2:0][17:0] rd1, rd2
     );
@@ -18,7 +18,7 @@ assign rd2 = full_register_table[ra2];
 
 always_ff @(posedge clk) begin
 
-	if(we3) register_table[wa3] <= wd3;
+	if(we3) register_table[ra3] <= wd3;
 end
 
 endmodule
