@@ -1,97 +1,83 @@
-import utils::*;
-module hazard_unit(input decode_execute_t dec_exe_r, 
-            input execute_memory_t exe_mem_r, 
-            input memory_writeback_t mem_wb_r,
-            output hazard_signals_t hs);
- 
+module hazard_unit(
+    //Forwarding input/output
+    input logic [3:0] RA1E,
+    input logic [3:0] RA2E,
+    input logic [3:0] RA2VE,
+    input logic [3:0] WA3M,
+    input logic [3:0] WA3W,
+    input logic RegWriteM,
+    input logic RegWriteW,
+    input logic RegWriteVVE,
+    input logic RegWriteVVW,
+    output logic [1:0] ForwardAE,
+    output logic [1:0] ForwardBE,
+    output logic ForwardBVE,
+    //Stall input/output LDR
+    input logic [3:0] RA1D,
+    input logic [3:0] RA2D,
+    input logic [3:0] RA1VD,
+    input logic [3:0] RA2VD,
+    input logic [3:0] WA3E,
+    input logic MemtoRegE,
+    output logic StallF,
+    output logic StallD,
+    output logic FlushE,
+    //Stall input/output B
+    input logic PCSrcD,
+    input logic PCSrcE,
+    input logic PCSrcM,
+    input logic BranchTakenE,
+    input logic PCSrcW,
+    output logic FlushD
+    
+    
+);
 
-  always_comb begin
-    hs.StallMemory_DH = RUN;
-    //Staling signals
-    if((dec_exe_r.R1_addr == exe_mem_r.Rd_addr 
-      || dec_exe_r.R2_addr == exe_mem_r.Rd_addr) && exe_mem_r.MemToReg && exe_mem_r.RegWrite) //Register from ID/EXE needs forward stuff said to be in EXE/MEM, but it is needed from memory too, so needs to wait
-      begin 
-        //Stalling signals
-        hs.StallFetch_DH = STALL;
-        hs.StallDecode_DH = STALL;
-        hs.StallExecute_DH = STALL;
-        hs.FlushExecute = FLUSH;
-      end
-    else
-      begin
-        //Non Stalling signals
-        hs.StallFetch_DH = RUN;
-        hs.StallDecode_DH = RUN;
-        hs.StallExecute_DH = RUN;
-        hs.FlushExecute = KEEP;
-      end
-      
-  //Forward signals
-    //// Asumming stall is working.
-    
-    //For first ALU operand
-    if(dec_exe_r.R1_addr == exe_mem_r.Rd_addr && exe_mem_r.RegWrite)
-      begin
-        // Forward from MEM/WB reg.
-        hs.Forward_ID_EX_A = EX_MEM_a; // EX_MEM —> 2´b2
-      end
-    else if(dec_exe_r.R1_addr == mem_wb_r.Rd_addr && mem_wb_r.RegWrite)
-      begin
-        // Forward from EXE/MEM reg.
-        hs.Forward_ID_EX_A = MEM_WB_a; // MEM_WB —> 2´b1
-      end
-    else 
-      begin
-        //No forwarding required
-        hs.Forward_ID_EX_A = ID_EX_a; // ID_EX —> 2´b0
-      end  
-    
-    //For second ALU operand
-    if(dec_exe_r.R2_addr == exe_mem_r.Rd_addr && exe_mem_r.RegWrite)  
-      begin
-        // Forward from MEM/WB reg.
-        hs.Forward_ID_EX_B = EX_MEM_a; // EX_MEM —> 2´b2
-      end
-    else if(dec_exe_r.R2_addr == mem_wb_r.Rd_addr && mem_wb_r.RegWrite)
-      begin
-        // Forward from EXE/MEM reg.
-        hs.Forward_ID_EX_B = MEM_WB_a; // MEM_WB —> 2´b1
-      end
-    else 
-      begin
-        //No forwarding required
-        hs.Forward_ID_EX_B = ID_EX_a; // ID_EX —> 2´b0
-      end
-      
+logic LDRStall = 0;
+logic LDRStallV = 0;
+logic PCWrPendingF = 0;
 
-    //For Mem Forwarding
-    if(exe_mem_r.Rd_addr == mem_wb_r.Rd_addr && mem_wb_r.MemToReg && exe_mem_r.MemWrite)
-      begin
-        // Forward from MEM/WB reg.
-        hs.Forward_EX_MEM = MEM_WB_m; // MEM_WB —> 2´b1
-      end
-    else 
-      begin
-        //No forwarding required
-        hs.Forward_EX_MEM = EX_MEM_m; // EX_MEM —> 2´b0
-      end
-  
-  //When branching occurs.
-    if(dec_exe_r.PCSrc)begin
-      hs.StallFetch_DH = STALL;
-      hs.FlushDecode = FLUSH; 
-    end
-	 
-    else if(exe_mem_r.PCSrc)begin
-      hs.StallFetch_DH = STALL;
-      hs.StallDecode_DH = STALL;
-      hs.FlushDecode = FLUSH;
-    end
-  
-    else begin
-      hs.FlushDecode = KEEP;
-    end
+//Forwarding SrcA
+always_comb
+  if((RA1E == WA3M) && RegWriteM) 
+    ForwardAE = 2'b10; // SrcAE = ALUOutM
     
+  else if ((RA1E == WA3W) && RegWriteW) 
+    ForwardAE = 2'b01; // SrcAE = ResultW
+    
+  else
+    ForwardAE = 2'b00; // SrcAE from regfile
+
+//Forwarding SrcB
+always_comb
+  if((RA2E == WA3M) && RegWriteM) 
+    ForwardBE = 2'b10; // SrcBE = ALUOutM
+    
+  else if ((RA2E == WA3W) && RegWriteW) 
+    ForwardBE = 2'b01; // SrcBE = ResultW
+    
+  else
+    ForwardBE = 2'b00; // SrcBE from regfile
+    
+//Forwarding vectorial B
+always_comb
+  if((RA2VE == WA3W) && RegWriteVVW) 
+    ForwardBVE = 1; // SrcBVE = ReadDataVW
+  else
+    ForwardBVE = 0; // SrcBVE = RD2VE 
+    
+//Stalling
+always_comb begin
+
+  LDRStall = (((RA1D == WA3E) || (RA2D == WA3E)) && MemtoRegE);
+  LDRStallV = ((((RA1VD == WA3E) || (RA2VD == WA3E)) && RegWriteVVE));
+  
+  PCWrPendingF = (PCSrcD || PCSrcE || PCSrcM);
+  StallF = (LDRStall || PCWrPendingF) || LDRStallV;
+  StallD = LDRStall || LDRStallV;
+  FlushE = LDRStall || BranchTakenE || LDRStallV;
+  FlushD = PCWrPendingF || PCSrcW || BranchTakenE;
+  
   end
-      
+  
 endmodule
