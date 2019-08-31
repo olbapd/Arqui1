@@ -1,5 +1,5 @@
 module control_unit(
-	input logic CLK, RST,
+	input logic CLK, RST, B,
 	input logic [31:12] Instr, 
 	input logic [2:0] ShiftSel,
 	output logic PCS, RegW, MemW, NoWrite, B, MemToReg,

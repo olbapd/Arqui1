@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Sun Aug 18 22:54:28 2019
-Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Analysis & Synthesis Status : Failed - Sat Aug 31 14:05:59 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Filter-GPU
-Top-level Entity Name : regfileVec
+Top-level Entity Name : Fetch
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
