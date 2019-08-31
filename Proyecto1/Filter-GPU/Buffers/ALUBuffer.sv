@@ -9,7 +9,7 @@ module ALUBuffer #(parameter N=18)(
 		output logic [2:0][N-1:0] q1,
 		output logic [2:0][N-1:0] q2,
 		output logic [2:0][N-1:0] q3,
-		output logic [2:0]N-1:0] writeDataO,
+		output logic [2:0][N-1:0] writeDataO,
 		output logic [3:0] WA3O,
 		output logic PCSrcO, RegWriteO, MemtoRegO, MemWriteO
 		);
