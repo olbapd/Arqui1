@@ -1,4 +1,4 @@
-module filterGPU (input logic clk, reset,
+module main (input logic clk, reset,
 				output logic MemWrite,
 				output logic [31:0] DataAdr, WriteData,
 				//VGA
@@ -14,8 +14,12 @@ module filterGPU (input logic clk, reset,
 	
 	logic [31:0] PC, Instr, ReadData;
 	logic  MemWrite1;
+	filtergpu FILTERGPU();
 
+	imem imem(PC, Instr);
 
+	dmem dmem(clk, MemWrite, DataAdr, WriteData, ReadData);
 
+	system VGA( clk,reset,in1,mario_pos, barril_pos,vsync,hsync,blank,sync,r,g,b,vga_clk);
 
 endmodule 
