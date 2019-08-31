@@ -7,7 +7,7 @@ module Fetch (
 
 logic [17:0] PCP, PCNext, PCPlus4;
 
-n_bit_register #(18) pc_reg(clk, rst, PCNext, EN, PC);;   		//PC register
+n_bit_register #(32) pc_reg(clk, rst, PCNext, EN, PC);;   			//PC register
 
 assign PCPlus4 = PC+ 4;                                  			//PCPLUS4
 

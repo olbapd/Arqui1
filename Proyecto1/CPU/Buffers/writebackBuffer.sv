@@ -1,13 +1,13 @@
-module writebackBuffer (
-		input logic [15:0] register1 [0:2],
-		input logic [15:0] ALUOut [0:2],
+module writebackBuffer #(parameter N=18)(
+		input logic [N-1:0] register1 [0:2],
+		input logic [N-1:0] ALUOut [0:2],
 		input logic clk, reset,load,
 		input logic [3:0] WA3,
 		input logic PCSrc, RegWrite, MemtoReg,
-		output logic [15:0] q1 [0:2],
+		output logic [N-1:0] q1 [0:2],
 		output logic PCSrcO, RegWriteO, MemtoRegO,
 		output logic [3:0] WA3O,
-		output logic [15:0] ALUOutO [0:2]
+		output logic [N-1:0] ALUOutO [0:2]
 		);
 	 
 		always_ff@(posedge clk)
