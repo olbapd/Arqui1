@@ -30,8 +30,8 @@ mux_2to1 muxAlu3(out, ExtImmE, ALUSrcE, SrcBE);
 
 mux_2to1_esc m21esc(9'b1, 9'b1101,DirSrc, res);
 
-logic [8:0] A2 = AluResultE[8:0] + res; 
-logic [8:0] A3 = AluResultE[8:0] - res; 
+//logic [8:0] A2 = AluResultE[8:0] + res; 
+//logic [8:0] A3 = AluResultE[8:0] - res; 
 
 
 ALUBuffer alubuff (AluResultE, out, WA3E, CLK, RST, 1'b1, PCSrc, RegWrite, MemtoRegD, MemWrite, ALUResultM, writeDataM, WA3M, PCSrcM, RegWriteM, MemtoRegM, MemWriteM); //Falta agregar las otras 2 entradas y salidas A2,A3, donde A1 es AluResult
