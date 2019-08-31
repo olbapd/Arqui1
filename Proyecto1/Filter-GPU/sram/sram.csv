@@ -1,0 +1,18 @@
+# system info sram on 2019.08.31.15:37:15
+system_info:
+name,value
+DEVICE,5CSEMA5F31C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1567287433
+#
+#
+# Files generated for sram on 2019.08.31.15:37:15
+files:
+filepath,kind,attributes,module,is_top
+simulation/sram.v,VERILOG,,sram,true
+simulation/submodules/sram_sram_0.v,VERILOG,,sram_sram_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+sram.sram_0,sram_sram_0
