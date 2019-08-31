@@ -41,11 +41,34 @@ typedef struct packed {
 typedef enum logic { 
 	RUN = 1b'0;
 	STALL = 1b'1;
-
 } stall;
 
+typedef enum logic { 
+	FLUSH = 1b'0;
+	KEEP = 1b'1;
+} flush;
+
+typedef enum logic { 
+	ID_EX = 2'd0;
+	MEM_WB =2'd1;
+	EX_MEM  = 2'd2;
+ } fordward_alu;
+
+ typedef enum logic { 
+	 MEM_WB = 2'd0;
+	 EX_MEM = 2'd0;
+ } fordward_mem;
+
 typedef struct packed {
-	
+	stall StallFetch;
+	stall StallDecode;
+	stall StallExecute;
+	stall StallWriteBack;
+
+	flush FlushExecute;
+	flush FlushDecode;
+
+
 } hazard_unit_signals; 
 
 endpackage
