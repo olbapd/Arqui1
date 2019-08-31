@@ -1,5 +1,3 @@
-
-
 module aluVectorial #(parameter N=18, parameter V=3) 
 					(input logic [V-1:0][N-1:0] A, B,
 					 input logic [2:0] C,
