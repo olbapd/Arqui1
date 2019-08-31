@@ -1,15 +1,15 @@
 module ALUBuffer #(parameter N=18)(
-		input logic [N-1:0] ALUResult [0:2],
-		input logic [N-1:0] memoryDirection2 [0:2],
-		input logic [N-1:0] memoryDirection3 [0:2],
-		input logic [N-1:0] writeData [0:2],
+		input logic [2:0][N-1:0] ALUResult,
+		input logic [2:0][N-1:0] memoryDirection2,
+		input logic [2:0][N-1:0] memoryDirection3,
+		input logic [2:0][N-1:0] writeData,
 		input logic [3:0] WA3,
 		input logic clk, reset,load,
 		input logic PCSrc, RegWrite, MemtoReg, MemWrite,
-		output logic [N-1:0] q1 [0:2],
-		output logic [N-1:0] q2 [0:2],
-		output logic [N-1:0] q3 [0:2],
-		output logic [N-1:0] writeDataO [0:2],
+		output logic [2:0][N-1:0] q1,
+		output logic [2:0][N-1:0] q2,
+		output logic [2:0][N-1:0] q3,
+		output logic [2:0]N-1:0] writeDataO,
 		output logic [3:0] WA3O,
 		output logic PCSrcO, RegWriteO, MemtoRegO, MemWriteO
 		);

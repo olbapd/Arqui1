@@ -1,13 +1,13 @@
 module registersBuffer #(parameter N=18)(
-		input logic [N-1:0] register1 [0:2],
-		input logic [N-1:0] register2 [0:2],
-		input logic [N-1:0] extend [0:2],
+		input logic [2:0][N-1:0] register1,
+		input logic [2:0][N-1:0] register2,
+		input logic [2:0][N-1:0] extend,
 		input logic clk, reset,load,
 		input logic PCSrc, RegWrite, MemtoReg, MemWrite, Branch, ALUSrc, FlagWrite,
 		input logic [3:0] ALUControl, WA3,
-		output logic [N-1:0] q1 [0:2],
-		output logic [N-1:0] q2 [0:2],
-		output logic [N-1:0] extendO [0:2],
+		output logic [2:0][N-1:0] q1,
+		output logic [2:0][N-1:0] q2,
+		output logic [2:0][N-1:0] extendO,
 		output logic PCSrcO, RegWriteO, MemtoRegO, MemWriteO, BranchO, ALUSrcO, FlagWriteO,
 		output logic [3:0] ALUControlO, WA3O
 		);
