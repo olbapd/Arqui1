@@ -5,12 +5,10 @@ module aluMain_tb();
 	logic [2:0] Operation;
 	logic [3:0] Flags; //Overflow,carry,zero,negative
 	
-
 	// instantiate device to be tested
 	aluMain dut(A, B, Operation, Result, Flags);
 
 	initial begin
-		
 		reset <= 1; #5; reset <=0;
 	end
 	
@@ -20,26 +18,14 @@ module aluMain_tb();
 	
 	always @(posedge clk)
 	begin
-		
-		//TEST1
-		A[0]=18'b0; A[1]=18'b0; A[2]=18'b0;
-		B[0]=18'b0; B[1]=18'b0; B[2]=18'b0;
-		Operation = 3'b000;
-		if(Result[0]==0 && Result[1]==0 && Result[2]==0) begin
-				$display("Simulation 1 succeeded");
-				$display(Result);
-		end 
-		else begin 
-				$display("Simulation 1 failed");
-				$display(Result);
-		end
 		#10;
 		
+		
 		//TEST2
-		A[0]=18'b100; A[1]=18'b1000; A[2]=18'b101;
-		B[0]=18'b100; B[1]=18'b10; B[2]=18'b1010;
+		A[0]=18'b1; A[1]=18'b11; A[2]=18'b01;
+		B[0]=18'b0; B[1]=18'b10; B[2]=18'b10;
 		Operation = 3'b100;
-		if(Result[0]==8 && Result[1]==16 && Result[2]==50) begin
+		if(Result[0]==18'b0 && Result[1]==18'b110 && Result[2]==18'b10) begin
 				$display("Simulation 2 succeeded");
 				$display(Result);
 		end 
@@ -53,7 +39,7 @@ module aluMain_tb();
 		A[0]=2010; A[1]=300; A[2]=350;
 		B[0]=-10; B[1]=300; B[2]=-400;
 		Operation = 3'b010;
-		if(Result[0]==2002 && Result[1]==300 && Result[2]==80) begin
+		if(Result[0]==2000 && Result[1]==600 && Result[2]==-50) begin
 				$display("Simulation 3 succeeded");
 				$display(Result);
 		end 
@@ -63,11 +49,25 @@ module aluMain_tb();
 		end
 		#10;
 		
+		//TEST5
+		A[0]=20; A[1]=300; A[2]=350;
+		B[0]=-10; B[1]=300; B[2]=-400;
+		Operation = 3'b101;
+		if(Result[0]==670 && Result[1]==0 && Result[2]==0) begin
+				$display("Simulation 5 succeeded");
+				$display(Result);
+		end 
+		else begin 
+				$display("Simulation 5 failed");
+				$display(Result);
+		end
+		#10;
+		
 		//TEST4
 		A[0]=2010; A[1]=300; A[2]=350;
 		B[0]=-10; B[1]=300; B[2]=-400;
 		Operation = 3'b011;
-		if(Result==0) begin
+		if(Result[0]==2020 && Result[1]==0 && Result[2]==750) begin
 				$display("Simulation 4 succeeded");
 				$display(Result);
 		end 
@@ -77,18 +77,19 @@ module aluMain_tb();
 		end
 		#10;
 		
-		//TEST5
-		A[0]=2010; A[1]=300; A[2]=350;
-		B[0]=-10; B[1]=300; B[2]=-400;
-		Operation = 3'b100;
-		if(Result==0) begin
-				$display("Simulation 5 succeeded");
-				$display(Result);
+		//TEST1
+		A[0]=18'b0; A[1]=18'b0; A[2]=18'b0;
+		B[0]=18'b0; B[1]=18'b0; B[2]=18'b0;
+		Operation = 3'b000;
+		if(Result[0]==18'b0 && Result[1]==18'b0 && Result[2]==18'b0) begin
+				$display("Simulation 1 succeeded");
 		end 
 		else begin 
-				$display("Simulation 5 failed");
+				$display("Simulation 1 failed");
 				$display(Result);
 		end
+		#10;
+		
 		
 	end
 	

@@ -1,9 +1,10 @@
-module alu #(parameter N=18)(input logic [N-1:0] A, B,
+module aluScalar #(parameter N=18)(input logic [N-1:0] A, B,
  				 input logic [2:0] F,
 				 output logic [N-1:0] Result,
 				 output logic Negative, Zero, Carry,Overflow);
 	logic [N-1:0] S, Bout;
 	logic Cout;
+	
 	assign Bout = F[2] ? ~B : B;
 	
 	
@@ -15,9 +16,9 @@ module alu #(parameter N=18)(input logic [N-1:0] A, B,
 			3'b000: Result <= A & Bout;
 			3'b001: Result <= A | Bout;
 			3'b010: Result <= S;
-			3'b011: Result <= S[N-1]; //suB
+			3'b011: Result <= A-B; //sub
 			3'b100: Result <= A*B; 
-
+			default: Result <= A*B; 
 		endcase
 
 	assign Zero = (Result == 0);
