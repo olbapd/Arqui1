@@ -1,3 +1,4 @@
+package utils;
 
 // Fetch - Decode Pipeline Register Data
 typedef struct packed {
@@ -35,3 +36,16 @@ typedef struct packed {
 
 
 } decode_execute_t;
+
+
+typedef enum logic { 
+	RUN = 1b'0;
+	STALL = 1b'1;
+
+} stall;
+
+typedef struct packed {
+	
+} hazard_unit_signals; 
+
+endpackage
