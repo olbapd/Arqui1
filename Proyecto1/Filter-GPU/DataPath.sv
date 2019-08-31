@@ -8,6 +8,9 @@ module DataPath (
 
 logic [2:0] [17:0] wd3, rd1, rd2;
 logic [31:0] InstrD;
+logic [2:0] [17:0] AluResultE;
+logic [9:0] A2, A3;
+
 
 //Fetch-Decode
 Fetch fetch(CLK, RST, ~EN1, PCSrcW, BranchTakenE, wd3, PC);
@@ -26,15 +29,17 @@ mux_3to1 muxAlu1(rd1E, ResultW, ALUResultM, ForwardAE, SrcAE);
 mux_3to1 muxAlu2(rd2E, ResultW, ALUResultM, ForwardBE, out);
 mux_2to1 muxAlu3(out, ExtImmE, ALUSrcE, SrcBE);
 //Tambien hay que revisar la unidad de extend porque tiene que tirar un vector porque en muxAlu3 debe de elegir entre 2 vectores, no entre vector y escalar
-//AQUI VIENE EL ALU
 
 aluMain #(18, 3) alu(SrcAEA, SrcBE, ALUControlE, ALUResultE, ALUFlags); //Overflow,carry,zero,negative
 
 mux_2to1_esc m21esc(10'b1, 10'b111100000,DirSrc, res);
 
-logic [9:0] A2 = AluResultE[0][9:0] + res; 
-logic [9:0] A3 = AluResultE[0][9:0] - res; 
+logic [9:0] alures;
+assign alures = AluResultE[0][9:0];
 
-ALUBuffer alubuff (AluResultE,A2,A3 out, WA3E, CLK, RST, 1'b1, PCSrc, RegWrite, MemtoRegD, MemWrite, ALUResultM, writeDataM, WA3M, PCSrcM, RegWriteM, MemtoRegM, MemWriteM); //Falta agregar las otras 2 entradas y salidas A2,A3, donde A1 es AluResult
+assign A2 = alures + res; 
+assign A3 = alures - res; 
+
+ALUBuffer alubuff(AluResultE, A2, A3, out, WA3E, CLK, RST, 1'b1, PCSrc, RegWrite, MemtoRegD, MemWrite, ALUResultM, writeDataM, WA3M, PCSrcM, RegWriteM, MemtoRegM, MemWriteM); //Falta agregar las otras 2 entradas y salidas A2,A3, donde A1 es AluResult
 
 endmodule
