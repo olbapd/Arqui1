@@ -30,12 +30,11 @@ mux_2to1 muxAlu3(out, ExtImmE, ALUSrcE, SrcBE);
 
 aluMain #(18, 3) alu(SrcAEA, SrcBE, ALUControlE, ALUResultE, ALUFlags); //Overflow,carry,zero,negative
 
-mux_2to1_esc m21esc(9'b1, 9'b1101,DirSrc, res);
+mux_2to1_esc m21esc(10'b1, 10'b111100000,DirSrc, res);
 
-//logic [8:0] A2 = AluResultE[8:0] + res; 
-//logic [8:0] A3 = AluResultE[8:0] - res; 
+logic [9:0] A2 = AluResultE[0][9:0] + res; 
+logic [9:0] A3 = AluResultE[0][9:0] - res; 
 
-
-ALUBuffer alubuff (AluResultE, out, WA3E, CLK, RST, 1'b1, PCSrc, RegWrite, MemtoRegD, MemWrite, ALUResultM, writeDataM, WA3M, PCSrcM, RegWriteM, MemtoRegM, MemWriteM); //Falta agregar las otras 2 entradas y salidas A2,A3, donde A1 es AluResult
+ALUBuffer alubuff (AluResultE,A2,A3 out, WA3E, CLK, RST, 1'b1, PCSrc, RegWrite, MemtoRegD, MemWrite, ALUResultM, writeDataM, WA3M, PCSrcM, RegWriteM, MemtoRegM, MemWriteM); //Falta agregar las otras 2 entradas y salidas A2,A3, donde A1 es AluResult
 
 endmodule
