@@ -18,7 +18,7 @@ module main (input logic clk, reset,
 
 	imem imem(PC, Instr);
 
-	dmem dmem(clk, MemWrite, DataAdr, WriteData, ReadData);
+	dmem vectorMemory(clk, MemWrite, DataAdr, WriteData, ReadData);
 
 	system VGA( clk,reset,in1,mario_pos, barril_pos,vsync,hsync,blank,sync,r,g,b,vga_clk);
 

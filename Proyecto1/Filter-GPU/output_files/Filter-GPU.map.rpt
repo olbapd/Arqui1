@@ -1,17 +1,17 @@
-Analysis & Elaboration report for Filter-GPU
-Sun Aug 18 22:54:28 2019
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Analysis & Synthesis report for Filter-GPU
+Sat Aug 31 14:05:59 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |regfileVec
-  5. Analysis & Elaboration Settings
-  6. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -34,57 +34,31 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sun Aug 18 22:54:28 2019       ;
-; Quartus Prime Version         ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
-; Revision Name                 ; Filter-GPU                                  ;
-; Top-level Entity Name         ; regfileVec                                  ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |regfileVec ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; N              ; 18    ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Sat Aug 31 14:05:59 2019           ;
+; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name               ; Filter-GPU                                  ;
+; Top-level Entity Name       ; Fetch                                       ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; regfileVec         ; Filter-GPU         ;
+; Top-level entity name                                                           ; Fetch              ; Filter-GPU         ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -165,23 +139,140 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
-    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sun Aug 18 22:54:15 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Filter-GPU -c Filter-GPU --analysis_and_elaboration
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat Aug 31 14:05:44 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Filter-GPU -c Filter-GPU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file regfilevec.sv
-    Info (12023): Found entity 1: regfileVec File: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/regfileVec.sv Line: 2
-Info (12127): Elaborating entity "regfileVec" for the top level hierarchy
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4788 megabytes
-    Info: Processing ended: Sun Aug 18 22:54:28 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:30
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-components/extendunit.sv
+    Info (12023): Found entity 1: extendUnit File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Components/extendUnit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
+    Info (12023): Found entity 1: DataPath File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenchs/vectormemorytb.sv
+    Info (12023): Found entity 1: vectorMemoryTB File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/TestBenchs/vectorMemoryTB.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenchs/datamemorytb.sv
+    Info (12023): Found entity 1: dataMemoryTB File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/TestBenchs/dataMemoryTB.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenchs/aluvectorial_tb.sv
+    Info (12023): Found entity 1: aluVectorial_tb File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/TestBenchs/aluVectorial_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenchs/alumain_tb.sv
+    Info (12023): Found entity 1: aluMain_tb File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/TestBenchs/aluMain_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipeline/hazard_unit.sv
+    Info (12023): Found entity 1: hazard_unit File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Pipeline/hazard_unit.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mems/imem.sv
+    Info (12023): Found entity 1: imem File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Mems/imem.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-steps/datamemory/vectormemory.sv
+    Info (12023): Found entity 1: vectorMemory File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/dataMemory/vectorMemory.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-steps/datamemory/datamemory.sv
+    Info (12023): Found entity 1: dataMemory File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/dataMemory/dataMemory.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-steps/fetch.sv
+    Info (12023): Found entity 1: Fetch File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Fetch.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-steps/decode.sv
+    Info (12023): Found entity 1: Decode File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Decode.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-components/regfilevec.sv
+    Info (12023): Found entity 1: regfileVec File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Components/regfileVec.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-components/n_bit_register.sv
+    Info (12023): Found entity 1: n_bit_register File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_register.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-components/n_bit_mux.sv
+    Info (12023): Found entity 1: n_bit_mux File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_mux.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-components/mux_3to1.sv
+    Info (12023): Found entity 1: mux_3to1 File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_3to1.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-components/mux_2to1_esc.sv
+    Info (12023): Found entity 1: mux_2to1_esc File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_2to1_esc.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-components/mux_2to1.sv
+    Info (12023): Found entity 1: mux_2to1 File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_2to1.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu-components/extend_module.sv
+    Info (12023): Found entity 1: extend_module File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/CPU-Components/extend_module.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control-unit/main_decoder.sv
+    Info (12023): Found entity 1: main_decoder File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Control-Unit/main_decoder.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control-unit/decoder.sv
+    Info (12023): Found entity 1: decoder File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Control-Unit/decoder.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control-unit/control_unit.sv
+    Info (12023): Found entity 1: control_unit File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Control-Unit/control_unit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control-unit/condlogic.sv
+    Info (12023): Found entity 1: condlogic File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Control-Unit/condlogic.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control-unit/condcheck.sv
+    Info (12023): Found entity 1: condcheck File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Control-Unit/condcheck.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control-unit/alu_decoder.sv
+    Info (12023): Found entity 1: alu_decoder File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Control-Unit/alu_decoder.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buffers/writebackbuffer.sv
+    Info (12023): Found entity 1: writebackBuffer File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Buffers/writebackBuffer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buffers/registersbuffer.sv
+    Info (12023): Found entity 1: registersBuffer File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Buffers/registersBuffer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buffers/instructionbuffer.sv
+    Info (12023): Found entity 1: instructionBuffer File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Buffers/instructionBuffer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buffers/alubuffer.sv
+    Info (12023): Found entity 1: ALUBuffer File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Buffers/ALUBuffer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu-vectorial/aluscalar.sv
+    Info (12023): Found entity 1: alu File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluScalar.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu-vectorial/alumain.sv
+    Info (12023): Found entity 1: aluMain File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluMain.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file filtergpu.sv
+    Info (12023): Found entity 1: filterGPU File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv Line: 1
+Error (10161): Verilog HDL error at hazard_unit.sv(1): object "utils" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/Pipeline/hazard_unit.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(13): created implicit net for "PCSrcW" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 13
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(15): created implicit net for "RegWriteW" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(15): created implicit net for "wa3w" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(15): created implicit net for "RegSrc" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(15): created implicit net for "ExtImm" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "rd1E" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "rd2E" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "ExtImmE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "PCSrcE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "RegWriteE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "MemtoRegE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "MemWriteE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "BranchE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "ALUSrcE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "FlagWriteE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "ALUControlE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "WA3E" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(25): created implicit net for "ResultW" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(25): created implicit net for "ALUResultM" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(25): created implicit net for "ForwardAE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(25): created implicit net for "SrcAE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(26): created implicit net for "ForwardBE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 26
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(26): created implicit net for "out" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 26
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(27): created implicit net for "SrcBE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 27
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(31): created implicit net for "res" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 31
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(37): created implicit net for "AluResultE" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(37): created implicit net for "writeDataM" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(37): created implicit net for "WA3M" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(37): created implicit net for "PCSrcM" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(37): created implicit net for "RegWriteM" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(37): created implicit net for "MemtoRegM" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(37): created implicit net for "MemWriteM" File: C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 37
+Info (144001): Generated suppressed messages file C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/output_files/Filter-GPU.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 33 warnings
+    Error: Peak virtual memory: 4793 megabytes
+    Error: Processing ended: Sat Aug 31 14:05:59 2019
+    Error: Elapsed time: 00:00:15
+    Error: Total CPU time (on all processors): 00:00:37
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Jose Rivera/Arqui1/Proyecto1/Filter-GPU/output_files/Filter-GPU.map.smsg.
 
 

@@ -60,13 +60,14 @@ typedef enum logic {
  } fordward_mem;
 
 typedef struct packed {
-	stall StallFetch;
-	stall StallDecode;
-	stall StallExecute;
-	stall StallWriteBack;
+	stall StallF;
+	stall StallD;
+	
+	flush FlushE;
+	flush FlushD;
 
-	flush FlushExecute;
-	flush FlushDecode;
+	fordward_alu ForwardAE
+	fordward_mem ForwardBA
 
 
 } hazard_unit_signals; 

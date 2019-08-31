@@ -1,12 +1,7 @@
-module nBitCounter #(parameter n=3)( 
-	input clk, rst_n,
-	output logic [n-1:0] count
-	);
+module nBitCounter #(parameter n=3)
+                  (input logic clk, rst_n,
+	                 output logic [n-1:0] count);
 	
-	//output reg [n-1:0] count;
-  //input clk;
-  //input rst_n;
- 
   // Set the initial value
   initial
     count = 0;

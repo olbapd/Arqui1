@@ -11,7 +11,7 @@ module decoder(Rd, Op, Funct, PCS, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc,
 	output logic [3:0] ALUControl;
 	
 	// Wires
-	logic ALUOp;
+	logic B, ALUOp;
 	
 	// PCS logic
 	assign PCS = ((Rd == 4'b1111) & RegW) || B;

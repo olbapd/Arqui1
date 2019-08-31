@@ -85,3 +85,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE "ALU-Vectorial/aluScalar.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE "ALU-Vectorial/aluMain.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE filterGPU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE main.sv
+

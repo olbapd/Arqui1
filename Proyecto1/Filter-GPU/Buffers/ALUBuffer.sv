@@ -1,11 +1,15 @@
 module ALUBuffer #(parameter N=18)(
-		input logic [N-1:0] register1 [0:2],
-		input logic [N-1:0] writeData [0:2],
+		input logic [2:0][N-1:0] ALUResult,
+		input logic [2:0][N-1:0] memoryDirection2,
+		input logic [2:0][N-1:0] memoryDirection3,
+		input logic [2:0][N-1:0] writeData,
 		input logic [3:0] WA3,
 		input logic clk, reset,load,
 		input logic PCSrc, RegWrite, MemtoReg, MemWrite,
-		output logic [N-1:0] q1 [0:2],
-		output logic [N-1:0] writeDataO [0:2],
+		output logic [2:0][N-1:0] q1,
+		output logic [2:0][N-1:0] q2,
+		output logic [2:0][N-1:0] q3,
+		output logic [2:0]N-1:0] writeDataO,
 		output logic [3:0] WA3O,
 		output logic PCSrcO, RegWriteO, MemtoRegO, MemWriteO
 		);
@@ -16,6 +20,12 @@ module ALUBuffer #(parameter N=18)(
 				q1 [0]= 16'b0;
 				q1 [1]= 16'b0;
 				q1 [2]= 16'b0;
+				q2 [0]= 16'b0;
+				q2 [1]= 16'b0;
+				q2 [2]= 16'b0;
+				q3 [0]= 16'b0;
+				q3 [1]= 16'b0;
+				q3 [2]= 16'b0;
 				writeDataO [0]= 16'b0;
 				writeDataO [1]= 16'b0;
 				writeDataO [2]= 16'b0;
@@ -27,7 +37,9 @@ module ALUBuffer #(parameter N=18)(
 				end
 			else if(load)
 				begin
-				q1 = register1;
+				q1 = ALUResult;
+				q2 = memoryDirection2;
+				q3 = memoryDirection3;
 				PCSrcO = PCSrc;
 				RegWriteO = RegWrite;
 				MemtoRegO = MemtoReg;

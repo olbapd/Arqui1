@@ -6,13 +6,13 @@ module DataPath (
     output logic [31:0] PC
 );
 
-logic [2:0] [17:0] wd3, rd1, rd2;
+logic [2:0] [17:0] wd3, rd1, rd2, r15;
 logic [31:0] InstrD;
 
 //Fetch-Decode
-Fetch fetch(CLK, RST, ~EN1, PCSrcW, BranchTakenE, wd3, PC);
+Fetch fetch(CLK, RST, ~EN1, PCSrcW, BranchTakenE, wd3, PC, r15);
 instructionBuffer instbuff(InstrF, CLK, CLR1, ~EN2, InstrD);
-Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, wd3, wa3w, RegSrc, rd1, rd2, ExtImm);
+Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, wd3, r15, wa3w, RegSrc, rd1, rd2, ExtImm);
 
 //Decode-Execute
 logic [3:0] ALUFlags;
@@ -36,4 +36,3 @@ logic [8:0] A3 = AluResultE[8:0] - res;
 
 ALUBuffer alubuff (AluResultE, out, WA3E, CLK, RST, 1'b1, PCSrc, RegWrite, MemtoRegD, MemWrite, ALUResultM, writeDataM, WA3M, PCSrcM, RegWriteM, MemtoRegM, MemWriteM); //Falta agregar las otras 2 entradas y salidas A2,A3, donde A1 es AluResult
 
-endmodule

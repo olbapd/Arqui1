@@ -1,7 +1,7 @@
 module extendUnitTB();
 
 	logic [23:0] immediate;
-	logic [17:0] extended [0:2];
+	logic [2:0][17:0] extended;
 	
 	extendUnit uut(immediate, extended);
 	

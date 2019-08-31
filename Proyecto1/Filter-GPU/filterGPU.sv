@@ -10,7 +10,7 @@ module filterGPU (input logic clk, reset,
 				output logic [7:0] g,
 				output logic [7:0] b,
 				output logic vga_clk);
-		
+	
 	
 	logic [31:0] PC, Instr, ReadData;
 	logic  MemWrite1;
