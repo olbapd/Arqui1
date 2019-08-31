@@ -15,8 +15,8 @@ instructionBuffer instbuff(InstrF, CLK, CLR1, ~EN2, InstrD);
 Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, wd3, wa3w, RegSrc, rd1, rd2, ExtImm);
 
 //Decode-Execute
-logic [3:0] ALUFlags;
-logic PCSrc, RegWrite, MemWrite, BranchTakenE;
+//logic [3:0] ALUFlags;
+//logic PCSrc, RegWrite, MemWrite, BranchTakenE;
 registersBuffer regbuff(rd1, rd2, ExtImm, CLK, CLR2, 1'b1, PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD, FlagWriteD, ALUControlD, InstrF[15:12],    //Revisar load creo que no se ocupa
 		                rd1E, rd2E, ExtImmE, PCSrcE, RegWriteE, MemtoRegE, MemWriteE, BranchE, ALUSrcE, FlagWriteE, ALUControlE, WA3E);                                // ALUSrcD, FlagWriteD, ALUSrcE, FlagWriteE  Son 2 bits corregir
                                                                                                                                                                         //Revisar rd1,rd2,rd1E,rd2E, extend, ExtImmE xq tengo entendido que es de 18 bits no de 16.
@@ -27,6 +27,8 @@ mux_3to1 muxAlu2(rd2E, ResultW, ALUResultM, ForwardBE, out);
 mux_2to1 muxAlu3(out, ExtImmE, ALUSrcE, SrcBE);
 //Tambien hay que revisar la unidad de extend porque tiene que tirar un vector porque en muxAlu3 debe de elegir entre 2 vectores, no entre vector y escalar
 //AQUI VIENE EL ALU
+
+aluMain #(18, 3) alu(SrcAEA, SrcBE, ALUControlE, ALUResultE, ALUFlags); //Overflow,carry,zero,negative
 
 mux_2to1_esc m21esc(9'b1, 9'b1101,DirSrc, res);
 
