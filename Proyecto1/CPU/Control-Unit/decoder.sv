@@ -1,4 +1,4 @@
-module decoder(Rd, Op, Funct, PCS, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc, NoWrite, ALUControl, FlagW);
+module decoder(Rd, Op, Funct, PCS, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc, NoWrite, ALUControl, FlagW, B);
 
 	// Inputs
 	input logic [3:0] Rd;
@@ -6,7 +6,7 @@ module decoder(Rd, Op, Funct, PCS, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc,
 	input logic [5:0] Funct;
 	
 	// Outputs
-	output logic PCS, RegW, MemW, MemToReg, NoWrite;
+	output logic PCS, RegW, MemW, MemToReg, NoWrite, B;
 	output logic [1:0] ImmSrc, RegSrc, FlagW, ALUSrc;
 	output logic [3:0] ALUControl;
 	
