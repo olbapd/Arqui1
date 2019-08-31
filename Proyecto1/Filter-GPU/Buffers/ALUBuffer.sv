@@ -1,7 +1,7 @@
 module ALUBuffer #(parameter N=18)(
 		input logic [2:0][N-1:0] ALUResult,
-		input logic [2:0][N-1:0] memoryDirection2,
-		input logic [2:0][N-1:0] memoryDirection3,
+		input logic [9:0] memoryDirection2,
+		input logic [9:0] memoryDirection3,
 		input logic [2:0][N-1:0] writeData,
 		input logic [3:0] WA3,
 		input logic clk, reset,load,
