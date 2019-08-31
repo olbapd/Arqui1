@@ -17,12 +17,13 @@ def load_img(name): #Para subir imagnenes
 
     #unsharp masking 5x5
     #kernel2 = np.array(([-0.00390625, -0.015625, -0.0234375, -0.015625, -0.00390625], [-0.015625, -0.0625, -0.09375, -0.0625, -0.015625], [-0.0234375, -0.09375, 1.859375, -0.09375, -0.0234375], [-0.015625, -0.0625, -0.09375, -0.0625, -0.015625], [-0.00390625, -0.015625, -0.0234375, -0.015625, -0.00390625]),np.float32)
-    
-    kernel3 = np.array(([1,0,-1],[0,0,0],[-1,0,1]),np.float32)
 
-    output = cv2.filter2D(img,-1, kernel)
-    output = cv2.filter2D(output,-1, kernel2)
-    output = cv2.filter2D(output,-1, kernel)
+    #oversharpening
+    kernel3 = np.array(([0,-2,0],[-2,10,-2],[0,-2,0]),np.float32)
+
+    #output = cv2.filter2D(img,-1, kernel)
+    #output = cv2.filter2D(output,-1, kernel2)
+    output = cv2.filter2D(img,-1, kernel3)
 
     cv2.imshow('image',output)
     cv2.waitKey(0)

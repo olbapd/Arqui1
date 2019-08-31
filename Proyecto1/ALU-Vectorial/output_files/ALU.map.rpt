@@ -1,5 +1,5 @@
-Analysis & Synthesis report for ALU
-Sat Aug 31 13:21:22 2019
+Analysis & Elaboration report for ALU
+Sat Aug 31 13:30:23 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -7,27 +7,18 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis DSP Block Usage Summary
-  9. User-Specified and Inferred Latches
- 10. Logic Cells Representing Combinational Loops
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |aluMain
- 14. Parameter Settings for User Entity Instance: aluVectorial:alu1
- 15. Parameter Settings for User Entity Instance: aluVectorial:alu2
- 16. Parameter Settings for User Entity Instance: aluVectorial:alu3
- 17. Port Connectivity Checks: "aluVectorial:alu3"
- 18. Port Connectivity Checks: "aluVectorial:alu2"
- 19. Port Connectivity Checks: "aluVectorial:alu1"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: aluMain:dut
+  5. Parameter Settings for User Entity Instance: aluMain:dut|aluVectorial:alu1
+  6. Parameter Settings for User Entity Instance: aluMain:dut|aluVectorial:alu2
+  7. Parameter Settings for User Entity Instance: aluMain:dut|aluVectorial:alu3
+  8. Analysis & Elaboration Settings
+  9. Port Connectivity Checks: "aluMain:dut|aluVectorial:alu3"
+ 10. Port Connectivity Checks: "aluMain:dut|aluVectorial:alu2"
+ 11. Port Connectivity Checks: "aluMain:dut|aluVectorial:alu1"
+ 12. Port Connectivity Checks: "aluMain:dut"
+ 13. Analysis & Elaboration Messages
 
 
 
@@ -50,36 +41,91 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Aug 31 13:21:22 2019       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; ALU                                         ;
-; Top-level Entity Name           ; aluMain                                     ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 169                                         ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 5                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sat Aug 31 13:30:23 2019       ;
+; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                 ; ALU                                         ;
+; Top-level Entity Name         ; aluMain_tb                                  ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: aluMain:dut ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 18    ; Signed Integer                  ;
+; V              ; 3     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: aluMain:dut|aluVectorial:alu1 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; N              ; 18    ; Signed Integer                                    ;
+; V              ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: aluMain:dut|aluVectorial:alu2 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; N              ; 18    ; Signed Integer                                    ;
+; V              ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: aluMain:dut|aluVectorial:alu3 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; N              ; 18    ; Signed Integer                                    ;
+; V              ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; aluMain            ; ALU                ;
+; Top-level entity name                                                           ; aluMain_tb         ; ALU                ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -161,272 +207,8 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; aluMain.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain.sv      ;         ;
-; aluVectorial.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial.sv ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                      ;
-+---------------------------------------------+--------------------+
-; Resource                                    ; Usage              ;
-+---------------------------------------------+--------------------+
-; Estimate of Logic utilization (ALMs needed) ; 138                ;
-;                                             ;                    ;
-; Combinational ALUT usage for logic          ; 244                ;
-;     -- 7 input functions                    ; 0                  ;
-;     -- 6 input functions                    ; 31                 ;
-;     -- 5 input functions                    ; 92                 ;
-;     -- 4 input functions                    ; 73                 ;
-;     -- <=3 input functions                  ; 48                 ;
-;                                             ;                    ;
-; Dedicated logic registers                   ; 0                  ;
-;                                             ;                    ;
-; I/O pins                                    ; 169                ;
-;                                             ;                    ;
-; Total DSP Blocks                            ; 5                  ;
-;                                             ;                    ;
-; Maximum fan-out node                        ; Operation[2]~input ;
-; Maximum fan-out                             ; 101                ;
-; Total fan-out                               ; 1441               ;
-; Average fan-out                             ; 2.45               ;
-+---------------------------------------------+--------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                            ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+--------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name  ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+--------------+--------------+
-; |aluMain                   ; 244 (0)             ; 0 (0)                     ; 0                 ; 5          ; 169  ; 0            ; |aluMain                   ; aluMain      ; work         ;
-;    |aluVectorial:alu1|     ; 134 (134)           ; 0 (0)                     ; 0                 ; 3          ; 0    ; 0            ; |aluMain|aluVectorial:alu1 ; aluVectorial ; work         ;
-;    |aluVectorial:alu2|     ; 55 (55)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |aluMain|aluVectorial:alu2 ; aluVectorial ; work         ;
-;    |aluVectorial:alu3|     ; 55 (55)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |aluMain|aluVectorial:alu3 ; aluVectorial ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+--------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary  ;
-+---------------------------------+-------------+
-; Statistic                       ; Number Used ;
-+---------------------------------+-------------+
-; Two Independent 18x18           ; 5           ;
-; Total number of DSP blocks      ; 5           ;
-;                                 ;             ;
-; Fixed Point Unsigned Multiplier ; 5           ;
-+---------------------------------+-------------+
-
-
-+-------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                   ;
-+----------------------------------------------------+-------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal     ; Free of Timing Hazards ;
-+----------------------------------------------------+-------------------------+------------------------+
-; aluVectorial:alu1|result[1][18]                    ; aluVectorial:alu1|Mux58 ; yes                    ;
-; aluVectorial:alu1|result[0][18]                    ; aluVectorial:alu1|Mux58 ; yes                    ;
-; Number of user-specified and inferred latches = 2  ;                         ;                        ;
-+----------------------------------------------------+-------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+-------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                ;
-+--------------------------------------------------------+----+
-; Logic Cell Name                                        ;    ;
-+--------------------------------------------------------+----+
-; aluVectorial:alu1|R[0][0]                              ;    ;
-; aluVectorial:alu1|R[0][1]                              ;    ;
-; aluVectorial:alu1|R[0][2]                              ;    ;
-; aluVectorial:alu1|R[0][3]                              ;    ;
-; aluVectorial:alu1|R[0][4]                              ;    ;
-; aluVectorial:alu1|R[0][5]                              ;    ;
-; aluVectorial:alu1|R[0][6]                              ;    ;
-; aluVectorial:alu1|R[0][7]                              ;    ;
-; aluVectorial:alu1|R[0][8]                              ;    ;
-; aluVectorial:alu1|R[0][9]                              ;    ;
-; aluVectorial:alu1|R[0][10]                             ;    ;
-; aluVectorial:alu1|R[0][11]                             ;    ;
-; aluVectorial:alu1|R[0][12]                             ;    ;
-; aluVectorial:alu1|R[0][13]                             ;    ;
-; aluVectorial:alu1|R[0][14]                             ;    ;
-; aluVectorial:alu1|R[0][15]                             ;    ;
-; aluVectorial:alu1|R[0][16]                             ;    ;
-; aluVectorial:alu1|R[0][17]                             ;    ;
-; aluVectorial:alu2|R[0][0]                              ;    ;
-; aluVectorial:alu2|R[0][1]                              ;    ;
-; aluVectorial:alu2|R[0][2]                              ;    ;
-; aluVectorial:alu2|R[0][3]                              ;    ;
-; aluVectorial:alu2|R[0][4]                              ;    ;
-; aluVectorial:alu2|R[0][5]                              ;    ;
-; aluVectorial:alu2|R[0][6]                              ;    ;
-; aluVectorial:alu2|R[0][7]                              ;    ;
-; aluVectorial:alu2|R[0][8]                              ;    ;
-; aluVectorial:alu2|R[0][9]                              ;    ;
-; aluVectorial:alu2|R[0][10]                             ;    ;
-; aluVectorial:alu2|R[0][11]                             ;    ;
-; aluVectorial:alu2|R[0][12]                             ;    ;
-; aluVectorial:alu2|R[0][13]                             ;    ;
-; aluVectorial:alu2|R[0][14]                             ;    ;
-; aluVectorial:alu2|R[0][15]                             ;    ;
-; aluVectorial:alu2|R[0][16]                             ;    ;
-; aluVectorial:alu2|R[0][17]                             ;    ;
-; aluVectorial:alu3|R[0][0]                              ;    ;
-; aluVectorial:alu3|R[0][1]                              ;    ;
-; aluVectorial:alu3|R[0][2]                              ;    ;
-; aluVectorial:alu3|R[0][3]                              ;    ;
-; aluVectorial:alu3|R[0][4]                              ;    ;
-; aluVectorial:alu3|R[0][5]                              ;    ;
-; aluVectorial:alu3|R[0][6]                              ;    ;
-; aluVectorial:alu3|R[0][7]                              ;    ;
-; aluVectorial:alu3|R[0][8]                              ;    ;
-; aluVectorial:alu3|R[0][9]                              ;    ;
-; aluVectorial:alu3|R[0][10]                             ;    ;
-; aluVectorial:alu3|R[0][11]                             ;    ;
-; aluVectorial:alu3|R[0][12]                             ;    ;
-; aluVectorial:alu3|R[0][13]                             ;    ;
-; aluVectorial:alu3|R[0][14]                             ;    ;
-; aluVectorial:alu3|R[0][15]                             ;    ;
-; aluVectorial:alu3|R[0][16]                             ;    ;
-; aluVectorial:alu3|R[0][17]                             ;    ;
-; aluVectorial:alu1|F[1]                                 ;    ;
-; aluVectorial:alu1|R[1][0]                              ;    ;
-; aluVectorial:alu1|R[1][1]                              ;    ;
-; aluVectorial:alu1|R[1][2]                              ;    ;
-; aluVectorial:alu1|R[1][3]                              ;    ;
-; aluVectorial:alu1|R[1][4]                              ;    ;
-; aluVectorial:alu1|R[1][5]                              ;    ;
-; aluVectorial:alu1|R[1][6]                              ;    ;
-; aluVectorial:alu1|R[1][7]                              ;    ;
-; aluVectorial:alu1|R[1][8]                              ;    ;
-; aluVectorial:alu1|R[1][9]                              ;    ;
-; aluVectorial:alu1|R[1][10]                             ;    ;
-; aluVectorial:alu1|R[1][11]                             ;    ;
-; aluVectorial:alu1|R[1][12]                             ;    ;
-; aluVectorial:alu1|R[1][13]                             ;    ;
-; aluVectorial:alu1|R[1][14]                             ;    ;
-; aluVectorial:alu1|R[1][15]                             ;    ;
-; aluVectorial:alu1|R[1][16]                             ;    ;
-; aluVectorial:alu1|R[1][17]                             ;    ;
-; aluVectorial:alu1|R[2][0]                              ;    ;
-; aluVectorial:alu1|R[2][1]                              ;    ;
-; aluVectorial:alu1|R[2][2]                              ;    ;
-; aluVectorial:alu1|R[2][3]                              ;    ;
-; aluVectorial:alu1|R[2][4]                              ;    ;
-; aluVectorial:alu1|R[2][5]                              ;    ;
-; aluVectorial:alu1|R[2][6]                              ;    ;
-; aluVectorial:alu1|R[2][7]                              ;    ;
-; aluVectorial:alu1|R[2][8]                              ;    ;
-; aluVectorial:alu1|R[2][9]                              ;    ;
-; aluVectorial:alu1|R[2][10]                             ;    ;
-; aluVectorial:alu1|R[2][11]                             ;    ;
-; aluVectorial:alu1|R[2][12]                             ;    ;
-; aluVectorial:alu1|R[2][13]                             ;    ;
-; aluVectorial:alu1|R[2][14]                             ;    ;
-; aluVectorial:alu1|R[2][15]                             ;    ;
-; aluVectorial:alu1|R[2][16]                             ;    ;
-; aluVectorial:alu1|F[3]                                 ;    ;
-; Number of logic cells representing combinational loops ; 91 ;
-+--------------------------------------------------------+----+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 8:1                ; 37 bits   ; 185 LEs       ; 111 LEs              ; 74 LEs                 ; No         ; |aluMain|aluVectorial:alu1|Mux10 ;
-; 3:1                ; 36 bits   ; 72 LEs        ; 0 LEs                ; 72 LEs                 ; No         ; |aluMain|aluVectorial:alu3|Add0  ;
-; 8:1                ; 36 bits   ; 180 LEs       ; 108 LEs              ; 72 LEs                 ; No         ; |aluMain|aluVectorial:alu3|Mux48 ;
-; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; No         ; |aluMain|aluVectorial:alu3|Add0  ;
-; 8:1                ; 18 bits   ; 90 LEs        ; 72 LEs               ; 18 LEs                 ; No         ; |aluMain|aluVectorial:alu1|Mux46 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |aluMain ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; N              ; 18    ; Signed Integer                                 ;
-; V              ; 3     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: aluVectorial:alu1 ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; N              ; 18    ; Signed Integer                        ;
-; V              ; 3     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: aluVectorial:alu2 ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; N              ; 18    ; Signed Integer                        ;
-; V              ; 3     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: aluVectorial:alu3 ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; N              ; 18    ; Signed Integer                        ;
-; V              ; 3     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "aluVectorial:alu3"                                                                     ;
+; Port Connectivity Checks: "aluMain:dut|aluVectorial:alu3"                                                         ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -438,7 +220,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "aluVectorial:alu2"                                                                     ;
+; Port Connectivity Checks: "aluMain:dut|aluVectorial:alu2"                                                         ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -450,7 +232,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "aluVectorial:alu1"                                                                     ;
+; Port Connectivity Checks: "aluMain:dut|aluVectorial:alu1"                                                         ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -460,51 +242,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 245                         ;
-;     arith             ; 57                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 20                          ;
-;         4 data inputs ; 36                          ;
-;     normal            ; 169                         ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 37                          ;
-;         5 data inputs ; 92                          ;
-;         6 data inputs ; 31                          ;
-;     shared            ; 19                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 18                          ;
-; arriav_mac            ; 5                           ;
-; boundary_port         ; 169                         ;
-;                       ;                             ;
-; Max LUT depth         ; 4.80                        ;
-; Average LUT depth     ; 3.24                        ;
-+-----------------------+-----------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "aluMain:dut"                                                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Result ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; F      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:04     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Aug 31 13:20:50 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
+    Info: Processing started: Sat Aug 31 13:29:59 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file aluscalar.sv
@@ -517,29 +272,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file aluvect
     Info (12023): Found entity 1: aluVectorial_tb File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alumain_tb.sv
     Info (12023): Found entity 1: aluMain_tb File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain_tb.sv Line: 1
-Info (12127): Elaborating entity "aluMain" for the top level hierarchy
-Info (12128): Elaborating entity "aluVectorial" for hierarchy "aluVectorial:alu1" File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain.sv Line: 9
+Info (12127): Elaborating entity "aluMain_tb" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at aluMain_tb.sv(3): object "reset" assigned a value but never read File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain_tb.sv Line: 3
+Warning (10230): Verilog HDL assignment warning at aluMain_tb.sv(54): truncated value with size 32 to match size of target (18) File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain_tb.sv Line: 54
+Warning (10230): Verilog HDL assignment warning at aluMain_tb.sv(68): truncated value with size 32 to match size of target (18) File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain_tb.sv Line: 68
+Warning (10230): Verilog HDL assignment warning at aluMain_tb.sv(82): truncated value with size 32 to match size of target (18) File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain_tb.sv Line: 82
+Info (12128): Elaborating entity "aluMain" for hierarchy "aluMain:dut" File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain_tb.sv Line: 10
+Info (12128): Elaborating entity "aluVectorial" for hierarchy "aluMain:dut|aluVectorial:alu1" File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain.sv Line: 9
 Warning (10270): Verilog HDL Case Statement warning at aluVectorial.sv(12): incomplete case statement has no default case item File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial.sv Line: 12
 Info (10041): Inferred latch for "result[0][18]" at aluVectorial.sv(12) File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial.sv Line: 12
 Info (10041): Inferred latch for "result[1][18]" at aluVectorial.sv(12) File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial.sv Line: 12
-Warning (13012): Latch aluVectorial:alu1|result[1][18] has unsafe behavior File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial.sv Line: 12
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Operation[2] File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain.sv Line: 3
-Warning (13012): Latch aluVectorial:alu1|result[0][18] has unsafe behavior File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluVectorial.sv Line: 12
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Operation[2] File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain.sv Line: 3
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "F[0]" is stuck at GND File: C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/ALU-Vectorial/aluMain.sv Line: 5
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 418 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 111 input pins
-    Info (21059): Implemented 58 output pins
-    Info (21061): Implemented 244 logic cells
-    Info (21062): Implemented 5 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4836 megabytes
-    Info: Processing ended: Sat Aug 31 13:21:22 2019
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:59
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Sat Aug 31 13:30:23 2019
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:56
 
 

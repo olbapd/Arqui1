@@ -1,4 +1,7 @@
-|aluMain
+|aluMain_tb
+
+
+|aluMain_tb|aluMain:dut
 A[0][0] => aluVectorial:alu1.A[0][0]
 A[0][1] => aluVectorial:alu1.A[0][1]
 A[0][2] => aluVectorial:alu1.A[0][2]
@@ -176,7 +179,7 @@ F[2] <= aluVectorial:alu1.F[2]
 F[3] <= aluVectorial:alu1.F[3]
 
 
-|aluMain|aluVectorial:alu1
+|aluMain_tb|aluMain:dut|aluVectorial:alu1
 A[0][0] => Add0.IN36
 A[0][0] => result.IN0
 A[0][0] => result.IN0
@@ -957,7 +960,7 @@ F[2] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 F[3] <= F[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|aluMain|aluVectorial:alu2
+|aluMain_tb|aluMain:dut|aluVectorial:alu2
 A[0][0] => Add0.IN36
 A[0][0] => result.IN0
 A[0][0] => result.IN0
@@ -1738,7 +1741,7 @@ F[2] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 F[3] <= F[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|aluMain|aluVectorial:alu3
+|aluMain_tb|aluMain:dut|aluVectorial:alu3
 A[0][0] => Add0.IN36
 A[0][0] => result.IN0
 A[0][0] => result.IN0
