@@ -1,7 +1,7 @@
-module instructionBuffer (
-		input logic [31:0] data,
+module instructionBuffer #(parameter N=18)(
+		input logic [N-1:0] data,
 		input logic clk, reset,load,
-		output logic [31:0] q);
+		output logic [N-1:0] q);
 	 
 		always_ff@(posedge clk)
 			if(reset)
