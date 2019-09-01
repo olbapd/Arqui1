@@ -13,9 +13,9 @@ logic [9:0] A2, A3;
 
 
 //Fetch-Decode
-Fetch fetch(CLK, RST, ~EN1, PCSrcW, BranchTakenE, wd3, PC);
+Fetch fetch(CLK, RST, ~EN1, PCSrcW, BranchTakenE, ResultW, PC);
 instructionBuffer instbuff(InstrF, CLK, CLR1, ~EN2, InstrD);
-Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, wd3, wa3w, RegSrc, rd1, rd2, ExtImm);
+Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, rd1, rd2, ExtImm);
 
 //Decode-Execute
 //logic [3:0] ALUFlags;
@@ -32,14 +32,18 @@ mux_2to1 muxAlu3(out, ExtImmE, ALUSrcE, SrcBE);
 
 aluMain #(18, 3) alu(SrcAEA, SrcBE, ALUControlE, ALUResultE, ALUFlags); //Overflow,carry,zero,negative
 
-mux_2to1_esc m21esc(10'b1, 10'b111100000,DirSrc, res);
+//mux_2to1_esc m21esc(10'b1, 10'b111100000,DirSrc, res);
 
-logic [9:0] alures;
+//logic [9:0] alures;
 assign alures = AluResultE[0][9:0];
 
-assign A2 = alures + res; 
-assign A3 = alures - res; 
+assign A2 = alures + 1; 
+assign A3 = alures - 1; 
 
-ALUBuffer alubuff(AluResultE, A2, A3, out, WA3E, CLK, RST, 1'b1, PCSrc, RegWrite, MemtoRegD, MemWrite, ALUResultM, writeDataM, WA3M, PCSrcM, RegWriteM, MemtoRegM, MemWriteM); //Falta agregar las otras 2 entradas y salidas A2,A3, donde A1 es AluResult
+ALUBuffer alubuff(AluResultE, A2, A3, out, WA3E, CLK, 1'b0, 1'b1, PCSrc, RegWrite, MemtoRegD, MemWrite, ALUResultM, writeDataM, WA3M, PCSrcM, RegWriteM, MemtoRegM, MemWriteM); //Falta agregar las otras 2 entradas y salidas A2,A3, donde A1 es AluResult
 
+//DATAMEM
+
+writebackBuffer #(18) wrbBuff(RDE, ALUResultM, CLK, 1'b0, 1'b1, WA3M, PCSrcM, RegWriteM, MemtoRegM, ReadDataW, PCSrcW, RegWriteW, MemtoRegW, WA3W, ALUOutW);
+mux_2to1 mux2to1(ReadDataW, ALUOutW, MemtoRegW,ResultW); 
 endmodule
