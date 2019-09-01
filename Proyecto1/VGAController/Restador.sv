@@ -1,11 +1,8 @@
-module Restador 
-	( 
-	input X1, X2, Cin, 
-	output S, Cout
-	);  
+module Restador (input logic X1, X2, Cin, 
+				output logic S, Cout);  
+	
 	logic a1, a2, a3, a4;
 	logic notX1;
-	
 	not n0(notX1, X1);
 	
 	xor u1(a1,X1,X2);

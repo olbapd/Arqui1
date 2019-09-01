@@ -1,12 +1,12 @@
 module Comparador #(parameter N=11) 
-	( 
-	input [N-1:0] Contador, Constante,
-	output Cout,
-	output [N-1:0] S
-	); 
+					(input logic [N-1:0] Contador, Constante,
+					output logic Cout,
+					output logic [N-1:0] S); 
 	logic [N-1:0] carrys;
 	assign carrys[0]=0;
+	
 	genvar i;
+	
 	generate
 		for (i=0; i<N ; i++)begin :forloop
 			if(i==N-1) begin
@@ -20,7 +20,5 @@ module Comparador #(parameter N=11)
 		
 	endgenerate
 
-	
-	
 endmodule
 
