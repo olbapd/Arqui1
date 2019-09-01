@@ -1,0 +1,45 @@
+set_global_assignment -entity "microSD" -library "microSD" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_TOOL_VERSION "17.1"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "microSD" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../microSD.sopcinfo"]
+set_global_assignment -entity "microSD" -library "microSD" -name SLD_INFO "QSYS_NAME microSD HAS_SOPCINFO 1 GENERATION_ID 1567295770"
+set_global_assignment -library "microSD" -name MISC_FILE [file join $::quartus(qip_path) "../microSD.cmp"]
+set_global_assignment -library "microSD" -name SLD_FILE [file join $::quartus(qip_path) "microSD.debuginfo"]
+set_global_assignment -entity "microSD" -library "microSD" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone V}"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "microSD" -name MISC_FILE [file join $::quartus(qip_path) "../../microSD.qsys"]
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_NAME "bWljcm9TRA=="
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_DISPLAY_NAME "bWljcm9TRA=="
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU2NzI5NTc3MA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfRE9NQUlO::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "microSD" -library "microSD" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfUkVTRVRfRE9NQUlO::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "Altera_UP_SD_Card_Avalon_Interface" -library "microSD" -name IP_COMPONENT_NAME "QWx0ZXJhX1VQX1NEX0NhcmRfQXZhbG9uX0ludGVyZmFjZQ=="
+set_global_assignment -entity "Altera_UP_SD_Card_Avalon_Interface" -library "microSD" -name IP_COMPONENT_DISPLAY_NAME "U0QgQ2FyZCBJbnRlcmZhY2U="
+set_global_assignment -entity "Altera_UP_SD_Card_Avalon_Interface" -library "microSD" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "Altera_UP_SD_Card_Avalon_Interface" -library "microSD" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "Altera_UP_SD_Card_Avalon_Interface" -library "microSD" -name IP_COMPONENT_VERSION "MTcuMQ=="
+set_global_assignment -entity "Altera_UP_SD_Card_Avalon_Interface" -library "microSD" -name IP_COMPONENT_DESCRIPTION "QSBtb2R1bGUgdGhhdCBhbGxvd3MgY29tbXVuaWNhdGlvbiB3aXRoIGFuIFNEIENhcmQ="
+set_global_assignment -entity "Altera_UP_SD_Card_Avalon_Interface" -library "microSD" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "Altera_UP_SD_Card_Avalon_Interface" -library "microSD" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::MA==::QXV0byBDTE9DS19SQVRF"
+
+set_global_assignment -library "microSD" -name VERILOG_FILE [file join $::quartus(qip_path) "microSD.v"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_Card_Avalon_Interface.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_Card_48_bit_Command_Generator.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_Card_Buffer.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_Card_Clock.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_Card_Control_FSM.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_Card_Interface.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_Card_Response_Receiver.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_CRC16_Generator.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_CRC7_Generator.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_Signal_Trigger.vhd"]
+set_global_assignment -library "microSD" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/Altera_UP_SD_Card_Memory_Block.vhd"]
