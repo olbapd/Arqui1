@@ -9,7 +9,7 @@
    categories="" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element sram_0
+   element Altera_UP_SD_Card_Avalon_Interface_0
    {
       datum _sortIndex
       {
@@ -39,47 +39,51 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface
-   name="avalon_sram_slave"
-   internal="sram_0.avalon_sram_slave"
+   name="avalon_sdcard_slave"
+   internal="Altera_UP_SD_Card_Avalon_Interface_0.avalon_sdcard_slave"
    type="avalon"
    dir="end">
-  <port name="address" internal="address" />
-  <port name="byteenable" internal="byteenable" />
-  <port name="read" internal="read" />
-  <port name="write" internal="write" />
-  <port name="writedata" internal="writedata" />
-  <port name="readdata" internal="readdata" />
-  <port name="readdatavalid" internal="readdatavalid" />
- </interface>
- <interface name="clk" internal="sram_0.clk" type="clock" dir="end">
-  <port name="clk" internal="clk" />
+  <port name="i_avalon_chip_select" internal="i_avalon_chip_select" />
+  <port name="i_avalon_address" internal="i_avalon_address" />
+  <port name="i_avalon_read" internal="i_avalon_read" />
+  <port name="i_avalon_write" internal="i_avalon_write" />
+  <port name="i_avalon_byteenable" internal="i_avalon_byteenable" />
+  <port name="i_avalon_writedata" internal="i_avalon_writedata" />
+  <port name="o_avalon_readdata" internal="o_avalon_readdata" />
+  <port name="o_avalon_waitrequest" internal="o_avalon_waitrequest" />
  </interface>
  <interface
-   name="external_interface"
-   internal="sram_0.external_interface"
+   name="clk"
+   internal="Altera_UP_SD_Card_Avalon_Interface_0.clk"
+   type="clock"
+   dir="end">
+  <port name="i_clock" internal="i_clock" />
+ </interface>
+ <interface
+   name="conduit_end"
+   internal="Altera_UP_SD_Card_Avalon_Interface_0.conduit_end"
    type="conduit"
    dir="end">
-  <port name="SRAM_DQ" internal="SRAM_DQ" />
-  <port name="SRAM_ADDR" internal="SRAM_ADDR" />
-  <port name="SRAM_LB_N" internal="SRAM_LB_N" />
-  <port name="SRAM_UB_N" internal="SRAM_UB_N" />
-  <port name="SRAM_CE_N" internal="SRAM_CE_N" />
-  <port name="SRAM_OE_N" internal="SRAM_OE_N" />
-  <port name="SRAM_WE_N" internal="SRAM_WE_N" />
+  <port name="b_SD_cmd" internal="b_SD_cmd" />
+  <port name="b_SD_dat" internal="b_SD_dat" />
+  <port name="b_SD_dat3" internal="b_SD_dat3" />
+  <port name="o_SD_clock" internal="o_SD_clock" />
  </interface>
- <interface name="reset" internal="sram_0.reset" type="reset" dir="end">
-  <port name="reset" internal="reset" />
+ <interface
+   name="reset"
+   internal="Altera_UP_SD_Card_Avalon_Interface_0.reset"
+   type="reset"
+   dir="end">
+  <port name="i_reset_n" internal="i_reset_n" />
  </interface>
  <module
-   name="sram_0"
-   kind="altera_up_avalon_sram"
+   name="Altera_UP_SD_Card_Avalon_Interface_0"
+   kind="Altera_UP_SD_Card_Avalon_Interface"
    version="17.1"
    enabled="1"
    autoexport="1">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
-  <parameter name="board" value="DE2-115" />
-  <parameter name="pixel_buffer" value="false" />
  </module>
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
