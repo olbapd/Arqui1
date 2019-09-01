@@ -47,7 +47,7 @@ module alu_decoder(ALUOp, Funct, NoWrite, ALUControl, FlagW, SrcA);
 		  7'b1X10101 : begin // CMP
 				logicOutputs <= 8'b00011110;
 		  end
-		  7'b1X00010 : begin // XOR
+		  7'b1X00010 : begin // XOR => MUL, CAMBIAR
 				logicOutputs <= 8'b01010000;
 		  end
 		  7'b1011010 : begin // LSR

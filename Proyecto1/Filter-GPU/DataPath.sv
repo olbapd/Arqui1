@@ -1,7 +1,7 @@
 module DataPath (
-    input logic CLK, RST, CLR1, CLR2, EN1, EN2, PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, NoWrite, DirSrc,
+    input logic CLK, RST, CLR1, CLR2, EN1, EN2, PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, NoWrite, DirSrc, ALUSrcD,
     input logic [3:0] ALUControlD, Cond,
-    input logic [1:0] ALUSrcD, ImmSrcD, FlagWriteD,
+    input logic [1:0] ImmSrcD, FlagWriteD,
     input logic [31:0] InstrF,
     output logic [31:0] PC
 );
@@ -27,7 +27,7 @@ condlogic conditionLogic (CLK, RST, PCSrcE, RegWriteE, BranchE, NoWrite, MemWrit
 
 mux_3to1 muxAlu1(rd1E, ResultW, ALUResultM, ForwardAE, SrcAE); 
 mux_3to1 muxAlu2(rd2E, ResultW, ALUResultM, ForwardBE, out);
-mux_2to1 muxAlu3(out, ExtImmE, ALUSrcE, SrcBE);
+mux_2to1 muxAlu3(out, ExtImmE, ALUSrcE, SrcBE); //ALUSRC 1 BIT NADA MAS
 //Tambien hay que revisar la unidad de extend porque tiene que tirar un vector porque en muxAlu3 debe de elegir entre 2 vectores, no entre vector y escalar
 
 aluMain #(18, 3) alu(SrcAEA, SrcBE, ALUControlE, ALUResultE, ALUFlags); //Overflow,carry,zero,negative
