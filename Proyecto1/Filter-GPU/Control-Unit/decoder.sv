@@ -6,8 +6,8 @@ module decoder(Rd, Op, Funct, PCS, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc,
 	input logic [5:0] Funct;
 	
 	// Outputs
-	output logic PCS, RegW, MemW, MemToReg, NoWrite, B;
-	output logic [1:0] ImmSrc, RegSrc, FlagW, ALUSrc;
+	output logic PCS, RegW, MemW, MemToReg, NoWrite, B, ALUSrc;
+	output logic [1:0] ImmSrc, RegSrc, FlagW;
 	output logic [3:0] ALUControl;
 	
 	// Wires
@@ -17,9 +17,9 @@ module decoder(Rd, Op, Funct, PCS, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc,
 	assign PCS = ((Rd == 4'b1111) & RegW) || B;
 	
 	// Main decoder logic
-	main_decoder mainDecoder (Op, {Funct[5], Funct[0]}, B, RegW, MemW, MemToReg, ALUSrc[1], ImmSrc, RegSrc, ALUOp);
+	main_decoder mainDecoder (Op, {Funct[5], Funct[0]}, B, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc, ALUOp);
 	
 	// ALU decoder logic
-	alu_decoder aluDecoder (ALUOp, Funct, NoWrite, ALUControl, FlagW, ALUSrc[0]);
+	alu_decoder aluDecoder (ALUOp, Funct, NoWrite, ALUControl, FlagW);
 	
 endmodule 
