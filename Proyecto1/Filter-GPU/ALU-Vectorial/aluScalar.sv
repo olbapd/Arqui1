@@ -17,6 +17,7 @@ module aluScalar #(parameter N=18)(input logic [N-1:0] A, B,
 			3'b011: Result <= A-B; //sub
 			3'b100: Result <= A*B; 
 			default: Result <= A*B; 
+		endcase
 
 	assign Zero = (Result == 0);
 	assign Negative = (Result[N-1]==18'b1);

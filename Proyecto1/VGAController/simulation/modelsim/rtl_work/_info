@@ -1,0 +1,292 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/simulation/modelsim
+vclockDivider
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1567319669
+!i10b 1
+!s100 `Rd1L`GFabem2LYj0RQ3Y1
+I6TQ70jh^MneI1]b77>4591
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 clockDivider_sv_unit
+S1
+R0
+Z4 w1567315185
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/clockDivider.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/clockDivider.sv
+L0 1
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1567319669.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/clockDivider.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/clockDivider.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController
+Z9 tCvgOpt 0
+nclock@divider
+vComparador
+R1
+R2
+!i10b 1
+!s100 EX9>3e_B?HZINN4C9DYEi2
+Io_o_hFabBOU@10z`aJKHQ1
+R3
+!s105 Comparador_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/Comparador.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/Comparador.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/Comparador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/Comparador.sv|
+!i113 1
+R7
+R8
+R9
+n@comparador
+vdisplayAreaVerificator
+R1
+R2
+!i10b 1
+!s100 5g7I:4e1JFW?E2G_zQ>mF2
+IYD2UWQ2i0bNTmi`^Daize1
+R3
+!s105 displayAreaVerificator_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/displayAreaVerificator.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/displayAreaVerificator.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/displayAreaVerificator.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/displayAreaVerificator.sv|
+!i113 1
+R7
+R8
+R9
+ndisplay@area@verificator
+vhdisplayareaverificator
+R1
+R2
+!i10b 1
+!s100 E6eLFBB_h:iC4^`gk5Y?^3
+IXz?0<YQgh>1g7GG:6Uj]@3
+R3
+!s105 hdisplayareaverificator_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/hdisplayareaverificator.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/hdisplayareaverificator.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/hdisplayareaverificator.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/hdisplayareaverificator.sv|
+!i113 1
+R7
+R8
+R9
+vhsync_generator
+R1
+R2
+!i10b 1
+!s100 mKYFeD0lIJWWUJX@ohAe63
+IR<g]o@4AlUBMKfGZJVoNA1
+R3
+!s105 hsync_generator_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/hsync_generator.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/hsync_generator.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/hsync_generator.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/hsync_generator.sv|
+!i113 1
+R7
+R8
+R9
+vnBitCounter
+R1
+R2
+!i10b 1
+!s100 CHD]X;2U9i=;P@XchjWTe1
+I[eezoae_Q58X=;7?E6BMe0
+R3
+!s105 nBitCounter_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/nBitCounter.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/nBitCounter.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/nBitCounter.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/nBitCounter.sv|
+!i113 1
+R7
+R8
+R9
+nn@bit@counter
+vRestador
+R1
+R2
+!i10b 1
+!s100 b397DgfC8N3[KkUIz1A`F2
+I6WNHHjSGCoI=cCUR9;zHb0
+R3
+!s105 Restador_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/Restador.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/Restador.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/Restador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/Restador.sv|
+!i113 1
+R7
+R8
+R9
+n@restador
+vvdisplayareaverificator
+R1
+R2
+!i10b 1
+!s100 jb5OeWcREejO038U6GbZ80
+ImPAKWm<1jR`MX[I4N:lNZ0
+R3
+!s105 vdisplayareaverificator_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/vdisplayareaverificator.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/vdisplayareaverificator.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/vdisplayareaverificator.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/vdisplayareaverificator.sv|
+!i113 1
+R7
+R8
+R9
+vVGA_Controller
+R1
+Z10 !s110 1567319668
+!i10b 1
+!s100 [MVhPcXY8QVV_HzbVJF_^3
+IEMbNaQaN3S7Oe<n4VB>F>0
+R3
+!s105 VGA_Controller_sv_unit
+S1
+R0
+w1567317768
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/VGA_Controller.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/VGA_Controller.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1567319668.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/VGA_Controller.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/VGA_Controller.sv|
+!i113 1
+R7
+R8
+R9
+n@v@g@a_@controller
+vVGA_ControllerTB
+R1
+R2
+!i10b 1
+!s100 cinT;I>z88nh<@lH1Ll_`2
+I:=E2U610JYRR:DDoS?Jj_1
+R3
+!s105 VGA_ControllerTB_sv_unit
+S1
+R0
+w1567319635
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/VGA_ControllerTB.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/VGA_ControllerTB.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/VGA_ControllerTB.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/VGA_ControllerTB.sv|
+!i113 1
+R7
+R8
+R9
+n@v@g@a_@controller@t@b
+vvsync_generator
+R1
+R10
+!i10b 1
+!s100 nzEAgY>hJnbUhb8?<Oc=83
+Ia5_Sak9Wa[Wza?0UBn]A21
+R3
+!s105 vsync_generator_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/vsync_generator.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/vsync_generator.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1567319667.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/vsync_generator.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/VGAController/vsync_generator.sv|
+!i113 1
+R7
+R8
+R9

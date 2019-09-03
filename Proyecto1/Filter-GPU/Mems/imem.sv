@@ -13,6 +13,6 @@ module imem (input logic [31:0] PC,
 	
 	//$readmemh("C://",RAM);
 
-	assign Instr = RAM[PC[17:2]]; 
+	assign Instr = RAM[PC[31:2]]; 
 
 endmodule

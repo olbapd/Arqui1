@@ -1,4 +1,4 @@
-module alu_decoder(ALUOp, Funct, NoWrite, ALUControl, FlagW, SrcA);
+module alu_decoder(ALUOp, Funct, NoWrite, ALUControl, FlagW);
 
 	// Inputs
 	input logic ALUOp;
@@ -7,11 +7,11 @@ module alu_decoder(ALUOp, Funct, NoWrite, ALUControl, FlagW, SrcA);
 	// Outputs
 	output logic [3:0] ALUControl;
 	output logic [1:0] FlagW;
-	output logic NoWrite, SrcA;
+	output logic NoWrite;
 	
 
-	logic [7:0] logicOutputs;
-	assign {ALUControl, FlagW, NoWrite, SrcA} = logicOutputs;
+	logic [6:0] logicOutputs;
+	assign {ALUControl, FlagW, NoWrite} = logicOutputs;
 	
 	logic [6:0] caseCond;
 	assign caseCond = {ALUOp, Funct};
@@ -24,43 +24,43 @@ module alu_decoder(ALUOp, Funct, NoWrite, ALUControl, FlagW, SrcA);
 				logicOutputs <= 0;
 		  end
 		  7'b1X01001 : begin // ADD
-				logicOutputs <= 8'b00001100;
+				logicOutputs <= 7'b0000110;
 		  end
 		  7'b1X00100 : begin // SUB
-				logicOutputs <= 8'b00010000;
+				logicOutputs <= 7'b0001000;
 		  end
 		  7'b1X00101 : begin // SUB
-				logicOutputs <= 8'b00011100;
+				logicOutputs <= 7'b0001110;
 		  end
 		  7'b1X00000 : begin // AND
-				logicOutputs <= 8'b00100000;
+				logicOutputs <= 7'b0010000;
 		  end
 		  7'b1X00001 : begin // AND
-				logicOutputs <= 8'b00101000;
+				logicOutputs <= 7'b0010100;
 		  end
 		  7'b1X11000 : begin // ORR
-				logicOutputs <= 8'b00110000;
+				logicOutputs <= 7'b0011000;
 		  end
 		  7'b1X11001 : begin // ORR
-				logicOutputs <= 8'b00111000;
+				logicOutputs <= 7'b0011100;
 		  end
 		  7'b1X10101 : begin // CMP
-				logicOutputs <= 8'b00011110;
+				logicOutputs <= 7'b0001111;
 		  end
-		  7'b1X00010 : begin // XOR
-				logicOutputs <= 8'b01010000;
+		  7'b1X00010 : begin // XOR => MUL, CAMBIAR
+				logicOutputs <= 7'b0101000;
 		  end
 		  7'b1011010 : begin // LSR
-				logicOutputs <= 8'b10010000;
+				logicOutputs <= 7'b1001000;
 		  end
 		  7'b1111010 : begin // MOV pos
-				logicOutputs <= 01;
+				logicOutputs <= 01; // cambiar uno xq era de SrcA
 		  end
 		  7'b1111110 : begin // MOV neg
-				logicOutputs <= 8'b00010001;
+				logicOutputs <= 7'b0001000;
 		  end
 		  7'b1010010 : begin // B
-				logicOutputs <= 8'b01110000;
+				logicOutputs <= 7'b0111000;
 		  end
 		  default : begin
 		  end

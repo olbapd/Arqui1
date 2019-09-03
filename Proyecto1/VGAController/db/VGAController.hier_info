@@ -1,0 +1,1703 @@
+|main
+clk => clk.IN1
+VGA_Clock => VGA_Clock.IN1
+VGA_R[0] <= VGA_Controller:controller.port4
+VGA_R[1] <= VGA_Controller:controller.port4
+VGA_R[2] <= VGA_Controller:controller.port4
+VGA_R[3] <= VGA_Controller:controller.port4
+VGA_R[4] <= VGA_Controller:controller.port4
+VGA_R[5] <= VGA_Controller:controller.port4
+VGA_R[6] <= VGA_Controller:controller.port4
+VGA_R[7] <= VGA_Controller:controller.port4
+VGA_G[0] <= VGA_Controller:controller.port5
+VGA_G[1] <= VGA_Controller:controller.port5
+VGA_G[2] <= VGA_Controller:controller.port5
+VGA_G[3] <= VGA_Controller:controller.port5
+VGA_G[4] <= VGA_Controller:controller.port5
+VGA_G[5] <= VGA_Controller:controller.port5
+VGA_G[6] <= VGA_Controller:controller.port5
+VGA_G[7] <= VGA_Controller:controller.port5
+VGA_B[0] <= VGA_Controller:controller.port6
+VGA_B[1] <= VGA_Controller:controller.port6
+VGA_B[2] <= VGA_Controller:controller.port6
+VGA_B[3] <= VGA_Controller:controller.port6
+VGA_B[4] <= VGA_Controller:controller.port6
+VGA_B[5] <= VGA_Controller:controller.port6
+VGA_B[6] <= VGA_Controller:controller.port6
+VGA_B[7] <= VGA_Controller:controller.port6
+VGA_SYNC_N <= VGA_Controller:controller.port8
+VGA_BLANK_N <= VGA_Controller:controller.port9
+VGA_HS <= VGA_Controller:controller.port10
+VGA_VS <= VGA_Controller:controller.port11
+H_COUNT[0] <= VGA_Controller:controller.port12
+H_COUNT[1] <= VGA_Controller:controller.port12
+H_COUNT[2] <= VGA_Controller:controller.port12
+H_COUNT[3] <= VGA_Controller:controller.port12
+H_COUNT[4] <= VGA_Controller:controller.port12
+H_COUNT[5] <= VGA_Controller:controller.port12
+H_COUNT[6] <= VGA_Controller:controller.port12
+H_COUNT[7] <= VGA_Controller:controller.port12
+H_COUNT[8] <= VGA_Controller:controller.port12
+H_COUNT[9] <= VGA_Controller:controller.port12
+V_COUNT[0] <= VGA_Controller:controller.port13
+V_COUNT[1] <= VGA_Controller:controller.port13
+V_COUNT[2] <= VGA_Controller:controller.port13
+V_COUNT[3] <= VGA_Controller:controller.port13
+V_COUNT[4] <= VGA_Controller:controller.port13
+V_COUNT[5] <= VGA_Controller:controller.port13
+V_COUNT[6] <= VGA_Controller:controller.port13
+V_COUNT[7] <= VGA_Controller:controller.port13
+V_COUNT[8] <= VGA_Controller:controller.port13
+V_COUNT[9] <= VGA_Controller:controller.port13
+
+
+|main|VGA_Controller:controller
+FPGA_Clock => FPGA_Clock.IN1
+R[0] => VGA_R[0].DATAIN
+R[1] => VGA_R[1].DATAIN
+R[2] => VGA_R[2].DATAIN
+R[3] => VGA_R[3].DATAIN
+R[4] => VGA_R[4].DATAIN
+R[5] => VGA_R[5].DATAIN
+R[6] => VGA_R[6].DATAIN
+R[7] => VGA_R[7].DATAIN
+G[0] => VGA_G[0].DATAIN
+G[1] => VGA_G[1].DATAIN
+G[2] => VGA_G[2].DATAIN
+G[3] => VGA_G[3].DATAIN
+G[4] => VGA_G[4].DATAIN
+G[5] => VGA_G[5].DATAIN
+G[6] => VGA_G[6].DATAIN
+G[7] => VGA_G[7].DATAIN
+B[0] => VGA_B[0].DATAIN
+B[1] => VGA_B[1].DATAIN
+B[2] => VGA_B[2].DATAIN
+B[3] => VGA_B[3].DATAIN
+B[4] => VGA_B[4].DATAIN
+B[5] => VGA_B[5].DATAIN
+B[6] => VGA_B[6].DATAIN
+B[7] => VGA_B[7].DATAIN
+VGA_R[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[0] <= G[0].DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[1] <= G[1].DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[2] <= G[2].DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[3] <= G[3].DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[4] <= G[4].DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[5] <= G[5].DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[6] <= G[6].DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[7] <= G[7].DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[0] <= B[0].DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[1] <= B[1].DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[2] <= B[2].DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[3] <= B[3].DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[4] <= B[4].DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[5] <= B[5].DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[6] <= B[6].DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[7] <= B[7].DB_MAX_OUTPUT_PORT_TYPE
+VGA_Clock <= dividedClock.DB_MAX_OUTPUT_PORT_TYPE
+VGA_SYNC_N <= n1.DB_MAX_OUTPUT_PORT_TYPE
+VGA_BLANK_N <= displayAreaVerificator:dav.port2
+VGA_HS <= hsync_generator:hsg.port2
+VGA_VS <= vsync_generator:vsg.port2
+H_COUNT[0] <= H_COUNT_TEMP[0].DB_MAX_OUTPUT_PORT_TYPE
+H_COUNT[1] <= H_COUNT_TEMP[1].DB_MAX_OUTPUT_PORT_TYPE
+H_COUNT[2] <= H_COUNT_TEMP[2].DB_MAX_OUTPUT_PORT_TYPE
+H_COUNT[3] <= H_COUNT_TEMP[3].DB_MAX_OUTPUT_PORT_TYPE
+H_COUNT[4] <= H_COUNT_TEMP[4].DB_MAX_OUTPUT_PORT_TYPE
+H_COUNT[5] <= H_COUNT_TEMP[5].DB_MAX_OUTPUT_PORT_TYPE
+H_COUNT[6] <= H_COUNT_TEMP[6].DB_MAX_OUTPUT_PORT_TYPE
+H_COUNT[7] <= H_COUNT_TEMP[7].DB_MAX_OUTPUT_PORT_TYPE
+H_COUNT[8] <= H_COUNT_TEMP[8].DB_MAX_OUTPUT_PORT_TYPE
+H_COUNT[9] <= H_COUNT_TEMP[9].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[0] <= V_COUNT_TEMP[0].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[1] <= V_COUNT_TEMP[1].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[2] <= V_COUNT_TEMP[2].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[3] <= V_COUNT_TEMP[3].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[4] <= V_COUNT_TEMP[4].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[5] <= V_COUNT_TEMP[5].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[6] <= V_COUNT_TEMP[6].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[7] <= V_COUNT_TEMP[7].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[8] <= V_COUNT_TEMP[8].DB_MAX_OUTPUT_PORT_TYPE
+V_COUNT[9] <= V_COUNT_TEMP[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|clockDivider:cd1
+inclock => counter[0].CLK
+inclock => counter[1].CLK
+inclock => counter[2].CLK
+inclock => counter[3].CLK
+inclock => counter[4].CLK
+inclock => counter[5].CLK
+inclock => counter[6].CLK
+inclock => counter[7].CLK
+inclock => counter[8].CLK
+inclock => counter[9].CLK
+inclock => counter[10].CLK
+inclock => counter[11].CLK
+inclock => counter[12].CLK
+inclock => counter[13].CLK
+inclock => counter[14].CLK
+inclock => counter[15].CLK
+inclock => counter[16].CLK
+inclock => counter[17].CLK
+inclock => counter[18].CLK
+inclock => counter[19].CLK
+inclock => counter[20].CLK
+inclock => counter[21].CLK
+inclock => counter[22].CLK
+inclock => counter[23].CLK
+inclock => counter[24].CLK
+inclock => counter[25].CLK
+inclock => counter[26].CLK
+inclock => counter[27].CLK
+outclock <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg
+vga_clock => nBitCounter:nb1.clk
+h_count[0] <= h_count_temp[0].DB_MAX_OUTPUT_PORT_TYPE
+h_count[1] <= h_count_temp[1].DB_MAX_OUTPUT_PORT_TYPE
+h_count[2] <= h_count_temp[2].DB_MAX_OUTPUT_PORT_TYPE
+h_count[3] <= h_count_temp[3].DB_MAX_OUTPUT_PORT_TYPE
+h_count[4] <= h_count_temp[4].DB_MAX_OUTPUT_PORT_TYPE
+h_count[5] <= h_count_temp[5].DB_MAX_OUTPUT_PORT_TYPE
+h_count[6] <= h_count_temp[6].DB_MAX_OUTPUT_PORT_TYPE
+h_count[7] <= h_count_temp[7].DB_MAX_OUTPUT_PORT_TYPE
+h_count[8] <= h_count_temp[8].DB_MAX_OUTPUT_PORT_TYPE
+h_count[9] <= h_count_temp[9].DB_MAX_OUTPUT_PORT_TYPE
+vga_hs <= Comparador:c1.port2
+enable <= Comparador:c2.Cout
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|nBitCounter:nb1
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+clk => count[4]~reg0.CLK
+clk => count[5]~reg0.CLK
+clk => count[6]~reg0.CLK
+clk => count[7]~reg0.CLK
+clk => count[8]~reg0.CLK
+clk => count[9]~reg0.CLK
+rst_n => count[0]~reg0.ACLR
+rst_n => count[1]~reg0.ACLR
+rst_n => count[2]~reg0.ACLR
+rst_n => count[3]~reg0.ACLR
+rst_n => count[4]~reg0.ACLR
+rst_n => count[5]~reg0.ACLR
+rst_n => count[6]~reg0.ACLR
+rst_n => count[7]~reg0.ACLR
+rst_n => count[8]~reg0.ACLR
+rst_n => count[9]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[4] <= count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[5] <= count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[6] <= count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[7] <= count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[8] <= count[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[9] <= count[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1
+Contador[0] => Contador[0].IN1
+Contador[1] => Contador[1].IN1
+Contador[2] => Contador[2].IN1
+Contador[3] => Contador[3].IN1
+Contador[4] => Contador[4].IN1
+Contador[5] => Contador[5].IN1
+Contador[6] => Contador[6].IN1
+Contador[7] => Contador[7].IN1
+Contador[8] => Contador[8].IN1
+Contador[9] => Contador[9].IN1
+Constante[0] => Constante[0].IN1
+Constante[1] => Constante[1].IN1
+Constante[2] => Constante[2].IN1
+Constante[3] => Constante[3].IN1
+Constante[4] => Constante[4].IN1
+Constante[5] => Constante[5].IN1
+Constante[6] => Constante[6].IN1
+Constante[7] => Constante[7].IN1
+Constante[8] => Constante[8].IN1
+Constante[9] => Constante[9].IN1
+Cout <= Restador:forloop[9].i1.port4
+S[0] <= Restador:forloop[0].i2.port3
+S[1] <= Restador:forloop[1].i2.port3
+S[2] <= Restador:forloop[2].i2.port3
+S[3] <= Restador:forloop[3].i2.port3
+S[4] <= Restador:forloop[4].i2.port3
+S[5] <= Restador:forloop[5].i2.port3
+S[6] <= Restador:forloop[6].i2.port3
+S[7] <= Restador:forloop[7].i2.port3
+S[8] <= Restador:forloop[8].i2.port3
+S[9] <= Restador:forloop[9].i1.port3
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[0].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[1].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[2].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[3].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[4].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[5].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[6].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[7].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[8].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c1|Restador:forloop[9].i1
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2
+Contador[0] => Contador[0].IN1
+Contador[1] => Contador[1].IN1
+Contador[2] => Contador[2].IN1
+Contador[3] => Contador[3].IN1
+Contador[4] => Contador[4].IN1
+Contador[5] => Contador[5].IN1
+Contador[6] => Contador[6].IN1
+Contador[7] => Contador[7].IN1
+Contador[8] => Contador[8].IN1
+Contador[9] => Contador[9].IN1
+Constante[0] => Constante[0].IN1
+Constante[1] => Constante[1].IN1
+Constante[2] => Constante[2].IN1
+Constante[3] => Constante[3].IN1
+Constante[4] => Constante[4].IN1
+Constante[5] => Constante[5].IN1
+Constante[6] => Constante[6].IN1
+Constante[7] => Constante[7].IN1
+Constante[8] => Constante[8].IN1
+Constante[9] => Constante[9].IN1
+Cout <= Restador:forloop[9].i1.port4
+S[0] <= Restador:forloop[0].i2.port3
+S[1] <= Restador:forloop[1].i2.port3
+S[2] <= Restador:forloop[2].i2.port3
+S[3] <= Restador:forloop[3].i2.port3
+S[4] <= Restador:forloop[4].i2.port3
+S[5] <= Restador:forloop[5].i2.port3
+S[6] <= Restador:forloop[6].i2.port3
+S[7] <= Restador:forloop[7].i2.port3
+S[8] <= Restador:forloop[8].i2.port3
+S[9] <= Restador:forloop[9].i1.port3
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[0].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[1].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[2].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[3].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[4].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[5].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[6].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[7].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[8].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|hsync_generator:hsg|Comparador:c2|Restador:forloop[9].i1
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg
+enable => nBitCounter:nb1.clk
+v_count[0] <= v_count_temp[0].DB_MAX_OUTPUT_PORT_TYPE
+v_count[1] <= v_count_temp[1].DB_MAX_OUTPUT_PORT_TYPE
+v_count[2] <= v_count_temp[2].DB_MAX_OUTPUT_PORT_TYPE
+v_count[3] <= v_count_temp[3].DB_MAX_OUTPUT_PORT_TYPE
+v_count[4] <= v_count_temp[4].DB_MAX_OUTPUT_PORT_TYPE
+v_count[5] <= v_count_temp[5].DB_MAX_OUTPUT_PORT_TYPE
+v_count[6] <= v_count_temp[6].DB_MAX_OUTPUT_PORT_TYPE
+v_count[7] <= v_count_temp[7].DB_MAX_OUTPUT_PORT_TYPE
+v_count[8] <= v_count_temp[8].DB_MAX_OUTPUT_PORT_TYPE
+v_count[9] <= v_count_temp[9].DB_MAX_OUTPUT_PORT_TYPE
+vga_vs <= Comparador:c1.port2
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|nBitCounter:nb1
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+clk => count[4]~reg0.CLK
+clk => count[5]~reg0.CLK
+clk => count[6]~reg0.CLK
+clk => count[7]~reg0.CLK
+clk => count[8]~reg0.CLK
+clk => count[9]~reg0.CLK
+rst_n => count[0]~reg0.ACLR
+rst_n => count[1]~reg0.ACLR
+rst_n => count[2]~reg0.ACLR
+rst_n => count[3]~reg0.ACLR
+rst_n => count[4]~reg0.ACLR
+rst_n => count[5]~reg0.ACLR
+rst_n => count[6]~reg0.ACLR
+rst_n => count[7]~reg0.ACLR
+rst_n => count[8]~reg0.ACLR
+rst_n => count[9]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[4] <= count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[5] <= count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[6] <= count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[7] <= count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[8] <= count[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[9] <= count[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1
+Contador[0] => Contador[0].IN1
+Contador[1] => Contador[1].IN1
+Contador[2] => Contador[2].IN1
+Contador[3] => Contador[3].IN1
+Contador[4] => Contador[4].IN1
+Contador[5] => Contador[5].IN1
+Contador[6] => Contador[6].IN1
+Contador[7] => Contador[7].IN1
+Contador[8] => Contador[8].IN1
+Contador[9] => Contador[9].IN1
+Constante[0] => Constante[0].IN1
+Constante[1] => Constante[1].IN1
+Constante[2] => Constante[2].IN1
+Constante[3] => Constante[3].IN1
+Constante[4] => Constante[4].IN1
+Constante[5] => Constante[5].IN1
+Constante[6] => Constante[6].IN1
+Constante[7] => Constante[7].IN1
+Constante[8] => Constante[8].IN1
+Constante[9] => Constante[9].IN1
+Cout <= Restador:forloop[9].i1.port4
+S[0] <= Restador:forloop[0].i2.port3
+S[1] <= Restador:forloop[1].i2.port3
+S[2] <= Restador:forloop[2].i2.port3
+S[3] <= Restador:forloop[3].i2.port3
+S[4] <= Restador:forloop[4].i2.port3
+S[5] <= Restador:forloop[5].i2.port3
+S[6] <= Restador:forloop[6].i2.port3
+S[7] <= Restador:forloop[7].i2.port3
+S[8] <= Restador:forloop[8].i2.port3
+S[9] <= Restador:forloop[9].i1.port3
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[0].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[1].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[2].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[3].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[4].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[5].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[6].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[7].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[8].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c1|Restador:forloop[9].i1
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2
+Contador[0] => Contador[0].IN1
+Contador[1] => Contador[1].IN1
+Contador[2] => Contador[2].IN1
+Contador[3] => Contador[3].IN1
+Contador[4] => Contador[4].IN1
+Contador[5] => Contador[5].IN1
+Contador[6] => Contador[6].IN1
+Contador[7] => Contador[7].IN1
+Contador[8] => Contador[8].IN1
+Contador[9] => Contador[9].IN1
+Constante[0] => Constante[0].IN1
+Constante[1] => Constante[1].IN1
+Constante[2] => Constante[2].IN1
+Constante[3] => Constante[3].IN1
+Constante[4] => Constante[4].IN1
+Constante[5] => Constante[5].IN1
+Constante[6] => Constante[6].IN1
+Constante[7] => Constante[7].IN1
+Constante[8] => Constante[8].IN1
+Constante[9] => Constante[9].IN1
+Cout <= Restador:forloop[9].i1.port4
+S[0] <= Restador:forloop[0].i2.port3
+S[1] <= Restador:forloop[1].i2.port3
+S[2] <= Restador:forloop[2].i2.port3
+S[3] <= Restador:forloop[3].i2.port3
+S[4] <= Restador:forloop[4].i2.port3
+S[5] <= Restador:forloop[5].i2.port3
+S[6] <= Restador:forloop[6].i2.port3
+S[7] <= Restador:forloop[7].i2.port3
+S[8] <= Restador:forloop[8].i2.port3
+S[9] <= Restador:forloop[9].i1.port3
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[0].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[1].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[2].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[3].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[4].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[5].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[6].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[7].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[8].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|vsync_generator:vsg|Comparador:c2|Restador:forloop[9].i1
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav
+H_COUNT[0] => H_COUNT[0].IN1
+H_COUNT[1] => H_COUNT[1].IN1
+H_COUNT[2] => H_COUNT[2].IN1
+H_COUNT[3] => H_COUNT[3].IN1
+H_COUNT[4] => H_COUNT[4].IN1
+H_COUNT[5] => H_COUNT[5].IN1
+H_COUNT[6] => H_COUNT[6].IN1
+H_COUNT[7] => H_COUNT[7].IN1
+H_COUNT[8] => H_COUNT[8].IN1
+H_COUNT[9] => H_COUNT[9].IN1
+V_COUNT[0] => V_COUNT[0].IN1
+V_COUNT[1] => V_COUNT[1].IN1
+V_COUNT[2] => V_COUNT[2].IN1
+V_COUNT[3] => V_COUNT[3].IN1
+V_COUNT[4] => V_COUNT[4].IN1
+V_COUNT[5] => V_COUNT[5].IN1
+V_COUNT[6] => V_COUNT[6].IN1
+V_COUNT[7] => V_COUNT[7].IN1
+V_COUNT[8] => V_COUNT[8].IN1
+V_COUNT[9] => V_COUNT[9].IN1
+DisplayArea <= n1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv
+h_count[0] => h_count[0].IN2
+h_count[1] => h_count[1].IN2
+h_count[2] => h_count[2].IN2
+h_count[3] => h_count[3].IN2
+h_count[4] => h_count[4].IN2
+h_count[5] => h_count[5].IN2
+h_count[6] => h_count[6].IN2
+h_count[7] => h_count[7].IN2
+h_count[8] => h_count[8].IN2
+h_count[9] => h_count[9].IN2
+h_display_area <= n1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1
+Contador[0] => Contador[0].IN1
+Contador[1] => Contador[1].IN1
+Contador[2] => Contador[2].IN1
+Contador[3] => Contador[3].IN1
+Contador[4] => Contador[4].IN1
+Contador[5] => Contador[5].IN1
+Contador[6] => Contador[6].IN1
+Contador[7] => Contador[7].IN1
+Contador[8] => Contador[8].IN1
+Contador[9] => Contador[9].IN1
+Constante[0] => Constante[0].IN1
+Constante[1] => Constante[1].IN1
+Constante[2] => Constante[2].IN1
+Constante[3] => Constante[3].IN1
+Constante[4] => Constante[4].IN1
+Constante[5] => Constante[5].IN1
+Constante[6] => Constante[6].IN1
+Constante[7] => Constante[7].IN1
+Constante[8] => Constante[8].IN1
+Constante[9] => Constante[9].IN1
+Cout <= Restador:forloop[9].i1.port4
+S[0] <= Restador:forloop[0].i2.port3
+S[1] <= Restador:forloop[1].i2.port3
+S[2] <= Restador:forloop[2].i2.port3
+S[3] <= Restador:forloop[3].i2.port3
+S[4] <= Restador:forloop[4].i2.port3
+S[5] <= Restador:forloop[5].i2.port3
+S[6] <= Restador:forloop[6].i2.port3
+S[7] <= Restador:forloop[7].i2.port3
+S[8] <= Restador:forloop[8].i2.port3
+S[9] <= Restador:forloop[9].i1.port3
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[0].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[1].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[2].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[3].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[4].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[5].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[6].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[7].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[8].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c1|Restador:forloop[9].i1
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2
+Contador[0] => Contador[0].IN1
+Contador[1] => Contador[1].IN1
+Contador[2] => Contador[2].IN1
+Contador[3] => Contador[3].IN1
+Contador[4] => Contador[4].IN1
+Contador[5] => Contador[5].IN1
+Contador[6] => Contador[6].IN1
+Contador[7] => Contador[7].IN1
+Contador[8] => Contador[8].IN1
+Contador[9] => Contador[9].IN1
+Constante[0] => Constante[0].IN1
+Constante[1] => Constante[1].IN1
+Constante[2] => Constante[2].IN1
+Constante[3] => Constante[3].IN1
+Constante[4] => Constante[4].IN1
+Constante[5] => Constante[5].IN1
+Constante[6] => Constante[6].IN1
+Constante[7] => Constante[7].IN1
+Constante[8] => Constante[8].IN1
+Constante[9] => Constante[9].IN1
+Cout <= Restador:forloop[9].i1.port4
+S[0] <= Restador:forloop[0].i2.port3
+S[1] <= Restador:forloop[1].i2.port3
+S[2] <= Restador:forloop[2].i2.port3
+S[3] <= Restador:forloop[3].i2.port3
+S[4] <= Restador:forloop[4].i2.port3
+S[5] <= Restador:forloop[5].i2.port3
+S[6] <= Restador:forloop[6].i2.port3
+S[7] <= Restador:forloop[7].i2.port3
+S[8] <= Restador:forloop[8].i2.port3
+S[9] <= Restador:forloop[9].i1.port3
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[0].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[1].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[2].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[3].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[4].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[5].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[6].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[7].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[8].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|hdisplayareaverificator:hdv|Comparador:c2|Restador:forloop[9].i1
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv
+v_count[0] => v_count[0].IN2
+v_count[1] => v_count[1].IN2
+v_count[2] => v_count[2].IN2
+v_count[3] => v_count[3].IN2
+v_count[4] => v_count[4].IN2
+v_count[5] => v_count[5].IN2
+v_count[6] => v_count[6].IN2
+v_count[7] => v_count[7].IN2
+v_count[8] => v_count[8].IN2
+v_count[9] => v_count[9].IN2
+v_display_area <= n1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1
+Contador[0] => Contador[0].IN1
+Contador[1] => Contador[1].IN1
+Contador[2] => Contador[2].IN1
+Contador[3] => Contador[3].IN1
+Contador[4] => Contador[4].IN1
+Contador[5] => Contador[5].IN1
+Contador[6] => Contador[6].IN1
+Contador[7] => Contador[7].IN1
+Contador[8] => Contador[8].IN1
+Contador[9] => Contador[9].IN1
+Constante[0] => Constante[0].IN1
+Constante[1] => Constante[1].IN1
+Constante[2] => Constante[2].IN1
+Constante[3] => Constante[3].IN1
+Constante[4] => Constante[4].IN1
+Constante[5] => Constante[5].IN1
+Constante[6] => Constante[6].IN1
+Constante[7] => Constante[7].IN1
+Constante[8] => Constante[8].IN1
+Constante[9] => Constante[9].IN1
+Cout <= Restador:forloop[9].i1.port4
+S[0] <= Restador:forloop[0].i2.port3
+S[1] <= Restador:forloop[1].i2.port3
+S[2] <= Restador:forloop[2].i2.port3
+S[3] <= Restador:forloop[3].i2.port3
+S[4] <= Restador:forloop[4].i2.port3
+S[5] <= Restador:forloop[5].i2.port3
+S[6] <= Restador:forloop[6].i2.port3
+S[7] <= Restador:forloop[7].i2.port3
+S[8] <= Restador:forloop[8].i2.port3
+S[9] <= Restador:forloop[9].i1.port3
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[0].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[1].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[2].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[3].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[4].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[5].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[6].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[7].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[8].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c1|Restador:forloop[9].i1
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2
+Contador[0] => Contador[0].IN1
+Contador[1] => Contador[1].IN1
+Contador[2] => Contador[2].IN1
+Contador[3] => Contador[3].IN1
+Contador[4] => Contador[4].IN1
+Contador[5] => Contador[5].IN1
+Contador[6] => Contador[6].IN1
+Contador[7] => Contador[7].IN1
+Contador[8] => Contador[8].IN1
+Contador[9] => Contador[9].IN1
+Constante[0] => Constante[0].IN1
+Constante[1] => Constante[1].IN1
+Constante[2] => Constante[2].IN1
+Constante[3] => Constante[3].IN1
+Constante[4] => Constante[4].IN1
+Constante[5] => Constante[5].IN1
+Constante[6] => Constante[6].IN1
+Constante[7] => Constante[7].IN1
+Constante[8] => Constante[8].IN1
+Constante[9] => Constante[9].IN1
+Cout <= Restador:forloop[9].i1.port4
+S[0] <= Restador:forloop[0].i2.port3
+S[1] <= Restador:forloop[1].i2.port3
+S[2] <= Restador:forloop[2].i2.port3
+S[3] <= Restador:forloop[3].i2.port3
+S[4] <= Restador:forloop[4].i2.port3
+S[5] <= Restador:forloop[5].i2.port3
+S[6] <= Restador:forloop[6].i2.port3
+S[7] <= Restador:forloop[7].i2.port3
+S[8] <= Restador:forloop[8].i2.port3
+S[9] <= Restador:forloop[9].i1.port3
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[0].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[1].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[2].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[3].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[4].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[5].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[6].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[7].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[8].i2
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|VGA_Controller:controller|displayAreaVerificator:dav|vdisplayareaverificator:vdv|Comparador:c2|Restador:forloop[9].i1
+X1 => u1.IN0
+X1 => u2.IN0
+X1 => u3.IN0
+X2 => u1.IN1
+X2 => u2.IN1
+X2 => u4.IN0
+Cin => u3.IN1
+Cin => u4.IN1
+Cin => u6.IN1
+S <= u6.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= u5.DB_MAX_OUTPUT_PORT_TYPE
+
+
