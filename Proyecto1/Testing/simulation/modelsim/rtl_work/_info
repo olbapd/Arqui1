@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/simulation/modelsim
+valuMain
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1567295269
+!i10b 1
+!s100 HBGA;]6^Z5Jn3:3iN4`f:2
+IB1@WKBeT7]QRDBzC=:1N?2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 aluMain_sv_unit
+S1
+R0
+w1567293888
+8C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluMain.sv
+FC:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluMain.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1567295269.000000
+!s107 C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluMain.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing|C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluMain.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing
+Z8 tCvgOpt 0
+nalu@main
+valuMain_tb
+R1
+R2
+!i10b 1
+!s100 mV[XOeJkNiGj9@Jn?8kNS1
+IjcY^c[1mQedULagOKW?a;2
+R3
+!s105 aluMain_tb_sv_unit
+S1
+R0
+w1567293922
+8C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluMain_tb.sv
+FC:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluMain_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluMain_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing|C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluMain_tb.sv|
+!i113 1
+R6
+R7
+R8
+nalu@main_tb
+valuScalar
+R1
+R2
+!i10b 1
+!s100 @3_VhV;izoSf9I@:WWQF50
+IU7`AS?habL=3N2klP=aj;0
+R3
+!s105 aluScalar_sv_unit
+S1
+R0
+w1567294796
+8C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluScalar.sv
+FC:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluScalar.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluScalar.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing|C:/Users/pablo/Documents/1-TEC/Arqui1/Proyecto1/Testing/aluScalar.sv|
+!i113 1
+R6
+R7
+R8
+nalu@scalar
