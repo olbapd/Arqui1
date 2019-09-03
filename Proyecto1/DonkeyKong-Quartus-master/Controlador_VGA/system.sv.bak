@@ -1,0 +1,6 @@
+module system (input logic clk, output logic q);
+
+logic d;
+
+
+fdd(clk, 0, d, q, d);

@@ -1,0 +1,16 @@
+module map(input logic clk,
+			  input logic [9:0] hcount, vcount,
+			  output logic draw);
+	
+	
+	
+	always @(posedge clk) begin		
+		if(hcount < 150) begin	
+			assign draw = 0;
+		end
+		else if (hcount > 662) begin
+			assign draw = 0;
+		end
+	end
+
+endmodule

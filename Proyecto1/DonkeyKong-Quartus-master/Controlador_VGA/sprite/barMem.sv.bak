@@ -1,0 +1,12 @@
+module barMem(input logic [9:0] x,y,
+					output logic draw);
+	
+	logic RAM [31:0] [31:0];
+	
+	initial
+	
+	$readmemh("C://Users//Pablo//Documents//1-TEC//Taller//DonkeyKong-Quartus//bar.dat",RAM);
+	
+	assign image = RAM;
+	
+endmodule

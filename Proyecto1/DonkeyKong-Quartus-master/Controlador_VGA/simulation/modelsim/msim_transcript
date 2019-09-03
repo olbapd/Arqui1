@@ -1,0 +1,135 @@
+# Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
+# do Controlador_VGA_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/sprite {C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/sprite/dkStandMem.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:29:02 on Nov 01,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/sprite" C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/sprite/dkStandMem.sv 
+# -- Compiling module dkStandMem
+# 
+# Top level modules:
+# 	dkStandMem
+# End time: 01:29:02 on Nov 01,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/dk_pos.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:29:02 on Nov 01,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/dk_pos.sv 
+# -- Compiling module dk_pos
+# 
+# Top level modules:
+# 	dk_pos
+# End time: 01:29:02 on Nov 01,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/testbenches {C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/testbenches/dk_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:29:02 on Nov 01,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/testbenches" C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/testbenches/dk_tb.sv 
+# -- Compiling module dk_tb
+# 
+# Top level modules:
+# 	dk_tb
+# End time: 01:29:02 on Nov 01,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/tb_system.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:29:02 on Nov 01,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/tb_system.sv 
+# -- Compiling module tb_system
+# 
+# Top level modules:
+# 	tb_system
+# End time: 01:29:02 on Nov 01,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_system
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_system 
+# Start time: 01:29:02 on Nov 01,2018
+# Loading sv_std.std
+# Loading work.tb_system
+# ** Error: (vsim-3033) C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/tb_system.sv(16): Instantiation of 'system' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_system File: C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/tb_system.sv
+#         Searched libraries:
+#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/verilog/altera
+#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/verilog/220model
+#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/verilog/sgate
+#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/verilog/altera_mf
+#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/verilog/altera_lnsim
+#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/verilog/cyclonev
+#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/verilog/cyclonev_hssi
+#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/verilog/cyclonev_pcie_hip
+#             C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/simulation/modelsim/rtl_work
+#             C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./Controlador_VGA_run_msim_rtl_verilog.do PAUSED at line 14
+vsim work.dk_tb
+# vsim work.dk_tb 
+# Start time: 01:29:02 on Nov 01,2018
+# Loading sv_std.std
+# Loading work.dk_tb
+# Loading work.dk_pos
+# Loading work.dkStandMem
+# ** Warning: (vsim-3015) C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/testbenches/dk_tb.sv(11): [PCDPC] - Port size (1) does not match connection size (2) for port 'sprite_selec'. The port definition is at: C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/dk_pos.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /dk_tb/dut File: C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/dk_pos.sv
+do C:/Users/Pablo/Documents/1-TEC/Taller/DonkeyKong-Quartus/Controlador_VGA/simulation/modelsim/dk.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate -radix decimal /dk_tb/dut/hcount
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: user  Hostname: DESKTOP-TR37EKV  ProcessID: 11664
+#           Attempting to use alternate WLF file "./wlft7x66hb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft7x66hb
+# add wave -noupdate -radix decimal /dk_tb/dut/vcount
+# add wave -noupdate -radix decimal /dk_tb/dut/curr_h
+# add wave -noupdate -radix decimal /dk_tb/dut/curr_v
+# add wave -noupdate /dk_tb/dut/sprite_selec
+# add wave -noupdate /dk_tb/dut/dk_draw
+# add wave -noupdate /dk_tb/dut/is_tileV
+# add wave -noupdate /dk_tb/dut/is_tileH
+# add wave -noupdate -radix decimal /dk_tb/dut/horz
+# add wave -noupdate -radix decimal /dk_tb/dut/vert
+# add wave -noupdate -radix decimal /dk_tb/dut/posV
+# add wave -noupdate -radix decimal /dk_tb/dut/posH
+# add wave -noupdate /dk_tb/dut/stand_value
+# add wave -noupdate /dk_tb/dut/side_value
+# add wave -noupdate /dk_tb/dut/temp
+# add wave -noupdate -radix decimal /dk_tb/dut/dk/horz
+# add wave -noupdate -radix decimal /dk_tb/dut/dk/vert
+# add wave -noupdate /dk_tb/dut/dk/draw_dk
+# add wave -noupdate /dk_tb/dut/dk/RAM
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {131 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 189
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ps} {579 ps}
+run
+# Error in test 2.
+# Error in test 3.
+# End time: 01:34:00 on Nov 01,2018, Elapsed time: 0:04:58
+# Errors: 1, Warnings: 3

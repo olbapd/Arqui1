@@ -1,0 +1,25 @@
+module mario_pos(input logic clk,
+			  input logic [9:0] hcount, vcount,
+			  input logic [9:0] curr_h, curr_v,
+			  input logic bounds_draw,
+			  output logic mario_draw);
+	
+	logic is_tileV;
+	logic [9:0] horz,vert;
+	logic temp_value;
+
+	assign is_tileV = ((vcount>=418 && vcount<=450) && bounds_draw) ? 1 : 0; //Posicion de tile de abajo
+	assign vert=(vcount-418); 
+	assign horz=(hcount-150);
+	
+	marioMem mario(horz,vert,temp_value);
+	
+	always @(posedge clk) begin		
+		if (is_tileV==1) begin
+			mario_draw  = temp_value;
+		end
+		else begin 
+			mario_draw= 0;
+		end
+	end
+endmodule

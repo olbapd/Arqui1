@@ -1,0 +1,17 @@
+module tb_system (input logic clk,
+              input logic rst_n,
+              output logic vsync,
+              output logic hsync,
+				  output logic blank,
+				  output logic sync,
+				  output logic [7:0] r,
+				  output logic [7:0] g,
+				  output logic [7:0] b);
+				  
+
+				  
+				  
+				  
+				  
+				  
+endmodule

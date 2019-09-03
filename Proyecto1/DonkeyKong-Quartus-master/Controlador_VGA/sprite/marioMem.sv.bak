@@ -1,0 +1,16 @@
+module marioMem(input logic [1:0] selec,
+					 output logic [31:0] sprite [31:0]);
+	logic [31:0] RAM[63:0];
+	initial
+	
+	always_comb
+	case(selec)
+		2'b00: $readmemh("C://Users//Pablo//Documents//1-TEC//Taller//DonkeyKong-Quartus//mStand.dat",RAM);
+		2'b01: $readmemh("C://Users//Pablo//Documents//1-TEC//Taller//DonkeyKong-Quartus//mRun.dat",RAM);
+		2'b10: $readmemh("C://Users//Pablo//Documents//1-TEC//Taller//DonkeyKong-Quartus//mJump.dat",RAM);
+		default: $readmemh("C://Users//Pablo//Documents//1-TEC//Taller//DonkeyKong-Quartus//mStand.dat",RAM);
+	endcase
+	
+	assign rd = RAM[a[31:2]]; // word aligned
+
+endmodule
