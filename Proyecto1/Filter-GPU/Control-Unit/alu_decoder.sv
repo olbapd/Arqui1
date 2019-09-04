@@ -1,4 +1,4 @@
-module alu_decoder(ALUOp, Funct, NoWrite, ALUControl, FlagW);
+module alu_decoder(ALUOp, Funct, ALUControl);
 
 	// Inputs
 	input logic ALUOp;
@@ -6,8 +6,9 @@ module alu_decoder(ALUOp, Funct, NoWrite, ALUControl, FlagW);
 	
 	// Outputs
 	output logic [3:0] ALUControl;
-	output logic [1:0] FlagW;
-	output logic NoWrite;
+
+	logic [1:0] FlagW;
+	logic NoWrite;
 	
 
 	logic [6:0] logicOutputs;
