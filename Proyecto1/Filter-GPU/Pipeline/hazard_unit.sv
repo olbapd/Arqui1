@@ -2,18 +2,15 @@ module hazard_unit(
     //Forwarding input/output
     input logic [3:0] RA1E,
     input logic [3:0] RA2E,
-    input logic [3:0] RA2VE,
     input logic [3:0] WA3M,
     input logic [3:0] WA3W,
     input logic RegWriteM,
     input logic RegWriteW,
     output logic [1:0] ForwardAE,
-    output logic [1:0] ForwardBE
+    output logic [1:0] ForwardBE,
     //Stall input/output LDR
     input logic [3:0] RA1D,
     input logic [3:0] RA2D,
-    input logic [3:0] RA1VD,
-    input logic [3:0] RA2VD,
     input logic [3:0] WA3E,
     input logic MemtoRegE,
     output logic StallF,
@@ -26,11 +23,10 @@ module hazard_unit(
     input logic BranchTakenE,
     input logic PCSrcW,
     output logic FlushD
-    
-    
 );
 
-logic LDRStall = 0;
+//Initial Values
+logic LDRstall = 0;
 logic PCWrPendingF = 0;
 
 //Forwarding SrcA
@@ -58,11 +54,11 @@ always_comb
     
 //Stalling
 always_comb begin
-  LDRStall = (((RA1D == WA3E) || (RA2D == WA3E)) && MemtoRegE);
+  LDRstall = (((RA1D == WA3E) || (RA2D == WA3E)) && MemtoRegE);
   PCWrPendingF = (PCSrcD || PCSrcE || PCSrcM);
-  StallF = (LDRStall || PCWrPendingF) || LDRStallV;
-  StallD = LDRStall || LDRStallV;
-  FlushE = LDRStall || BranchTakenE || LDRStallV;
+  StallF = LDRstall || PCWrPendingF;
+  StallD = LDRstall;
+  FlushE = LDRstall || BranchTakenE ;
   FlushD = PCWrPendingF || PCSrcW || BranchTakenE;
   
   end

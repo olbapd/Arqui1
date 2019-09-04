@@ -143,6 +143,26 @@ module VGA_Controller(
 				oVGA_H_SYNC <= 0;
 				oVGA_V_SYNC <= 0;
 			end
+		/*else if (H_Cont <150) //If I want to reset
+			begin
+				oVGA_R <= 8'b00000000;
+				oVGA_G <= 8'b00000000;
+				oVGA_B <= 8'b00000000;
+				oVGA_BLANK <= mVGA_BLANK;
+				oVGA_SYNC <= mVGA_SYNC;
+				oVGA_H_SYNC <= mVGA_H_SYNC;
+				oVGA_V_SYNC <= mVGA_V_SYNC;
+			end
+		else if (H_Cont >662) 
+			begin
+				oVGA_R <= 8'b00000000;
+				oVGA_G <= 8'b00000000;
+				oVGA_B <= 8'b00000000;
+				oVGA_BLANK <= mVGA_BLANK;
+				oVGA_SYNC <= mVGA_SYNC;
+				oVGA_H_SYNC <= mVGA_H_SYNC;
+				oVGA_V_SYNC <= mVGA_V_SYNC;
+			end*/
 		else
 			begin
 				oVGA_BLANK <= mVGA_BLANK;
