@@ -1,10 +1,10 @@
-module main_decoder(Op, Funct_FO, B, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc, ALUOp);
+module main_decoder(Op, Funct_FO, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc, ALUOp);
 
 	// Inputs
 	input logic [1:0] Op, Funct_FO;
 	
 	// Outputs
-	output logic B, RegW, MemW, MemToReg, ALUSrc, ALUOp;
+	output logic  RegW, MemW, MemToReg, ALUSrc, ALUOp;
 	output logic [1:0] ImmSrc, RegSrc;
 	
 	// For ease of assigment
