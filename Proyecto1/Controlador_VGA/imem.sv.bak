@@ -1,0 +1,8 @@
+module imem(input logic [31:0] a,
+				output logic [7:0] rd);
+	logic [7:0] RAM[17:0];
+	initial
+	$readmemh("C://Users//Pablo//Documents//1-TEC//Arqui1//Proyecto1//PythonTesting//pandita.dat",RAM);
+	assign rd = RAM[a]; // word aligned
+	
+endmodule
