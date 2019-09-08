@@ -1,33 +1,36 @@
 module DataPath (
     input logic CLK, RST, CLR1, CLR2, EN1, EN2, RegWriteD, MemtoRegD, MemWriteD, ALUSrcD,
-    input logic [3:0] ALUControlD, Cond,
+    input logic [3:0] ALUControlD,
     input logic [1:0] ImmSrcD,
     input logic [31:0] InstrF,
     input logic [2:0][17:0] RDM,
     input logic [1:0] ForwardAE,
     input logic [1:0] ForwardBE,
-	 input logic [2:0] RegSrc,
+	input logic [2:0] RegSrc,
     output logic [31:0] PC,
     output logic [9:0] A1M,A2M,A3M,
     output logic [2:0][17:0] writeDataM,
-    output logic MemWriteM
+    output logic MemWriteM,
+    output logic [3:0] ra1D, ra2D, ra1E, ra2E,
+    output logic [3:0] WA3E, WA3M, WA3W,
+    output logic RegWriteM, RegWriteW,
+    output logic MemtoRegE
 );
 logic [2:0] [17:0] wd3, rd1, rd2;
 logic [31:0] InstrD;
-logic [3:0] ra1D, ra2D, ra1E, ra2E;
+
 
 
 
 //Fetch-Decode
-Fetch fetch(CLK, RST, ~EN1, PC);
-instructionBuffer instbuff(InstrF, CLK, CLR1, ~EN2, InstrD);
+Fetch fetch(CLK, RST, EN1, PC);
+instructionBuffer instbuff(InstrF, CLK, CLR1, EN2, InstrD);
 Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, rd1, rd2, ExtImm, ra1D, ra2D); //Falta el logic del ExtImm
 
 //Decode-Execute
 logic [2:0] [17:0] rd1E, rd2E;
-logic RegWriteE, MemtoRegE, MemWriteE, ALUSrcE, RegWriteM, MemtoRegM, RegWriteW, MemtoRegW, WA3W, ALUOutW;
+logic RegWriteE, MemWriteE, ALUSrcE, MemtoRegM, MemtoRegW, WA3W, ALUOutW;
 logic [3:0] ALUControlE;
-logic [3:0] WA3E, WA3M;
 logic [2:0] [17:0] SrcAE, writeDataE, SrcBE;
 logic [3:0] ALUFlags;
 logic [2:0] [17:0] AluResultE, ALUResultM;

@@ -6,6 +6,6 @@ module instructionBuffer #(parameter N=18)(
 		always_ff@(posedge clk)
 			if(reset)
 				q = 0;
-			else if(load)
+			else if(~load)
 				q = data;	 
 endmodule
