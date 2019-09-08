@@ -29,7 +29,7 @@ Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, rd1, rd2, 
 
 //Decode-Execute
 logic [2:0] [17:0] rd1E, rd2E;
-logic RegWriteE, MemWriteE, ALUSrcE, MemtoRegM, MemtoRegW, WA3W, ALUOutW;
+logic RegWriteE, MemWriteE, ALUSrcE, MemtoRegM, MemtoRegW,/* WA3W,*/ ALUOutW;
 logic [3:0] ALUControlE;
 logic [2:0] [17:0] SrcAE, writeDataE, SrcBE;
 logic [3:0] ALUFlags;

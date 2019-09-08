@@ -5,7 +5,7 @@ module filterGPU (
 	output logic [31:0] PC,
 	output logic MemWriteM,
 	output logic [2:0][17:0] writeData,
-	output logic [9:0] A1,A2,A3,
+	output logic [9:0] A1,A2,A3
 	
 );
 logic RegWrite, MemToReg;

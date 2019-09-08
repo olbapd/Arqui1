@@ -1,52 +1,29 @@
-Analysis & Synthesis report for Filter-GPU
-Sat Aug 31 17:58:05 2019
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Analysis & Elaboration report for Filter-GPU
+Sun Sep 08 15:00:35 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|current_cmd_state
- 11. State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|current_state
- 12. State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|current_state
- 13. State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Control_FSM:control_FSM|current_state
- 14. State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver|current_state
- 15. Registers Removed During Synthesis
- 16. General Register Statistics
- 17. Inverted Register Statistics
- 18. Multiplexer Restructuring Statistics (Restructuring Performed)
- 19. Source assignments for Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component|altsyncram_92g2:auto_generated
- 20. Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0
- 21. Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator
- 22. Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver
- 23. Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Control_FSM:control_FSM
- 24. Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line
- 25. Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component
- 26. altsyncram Parameter Settings by Entity Instance
- 27. Port Connectivity Checks: "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory"
- 28. Port Connectivity Checks: "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver|Altera_UP_SD_CRC7_Generator:crc_checker"
- 29. Port Connectivity Checks: "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|Altera_UP_SD_CRC7_Generator:CRC7_Gen"
- 30. Port Connectivity Checks: "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator"
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
- 34. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration IP Cores Summary
+  5. Source assignments for sdram:sdram|altsyncram:altsyncram_component|altsyncram_c9k2:auto_generated
+  6. Parameter Settings for User Entity Instance: sdram:sdram|altsyncram:altsyncram_component
+  7. altsyncram Parameter Settings by Entity Instance
+  8. Analysis & Elaboration Settings
+  9. Port Connectivity Checks: "sdram:sdram"
+ 10. Analysis & Elaboration Messages
+ 11. Analysis & Elaboration Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -62,39 +39,149 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Aug 31 17:58:05 2019       ;
-; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                   ; Filter-GPU                                  ;
-; Top-level Entity Name           ; microSD                                     ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 893                                         ;
-; Total pins                      ; 86                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 4,096                                       ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sun Sep 08 15:00:35 2019       ;
+; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                 ; Filter-GPU                                  ;
+; Top-level Entity Name         ; ramTB                                       ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration IP Cores Summary                                                              ;
++--------+--------------+---------+--------------+--------------+--------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance    ; IP Include File ;
++--------+--------------+---------+--------------+--------------+--------------------+-----------------+
+; Altera ; RAM: 2-PORT  ; 18.1    ; N/A          ; N/A          ; |ramTB|sdram:sdram ; sdram.v         ;
++--------+--------------+---------+--------------+--------------+--------------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Source assignments for sdram:sdram|altsyncram:altsyncram_component|altsyncram_c9k2:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------+
+; Assignment                      ; Value              ; From ; To                                  ;
++---------------------------------+--------------------+------+-------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                   ;
++---------------------------------+--------------------+------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sdram:sdram|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------+
+; Parameter Name                     ; Value                ; Type                         ;
++------------------------------------+----------------------+------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                      ;
+; OPERATION_MODE                     ; BIDIR_DUAL_PORT      ; Untyped                      ;
+; WIDTH_A                            ; 8                    ; Signed Integer               ;
+; WIDTHAD_A                          ; 16                   ; Signed Integer               ;
+; NUMWORDS_A                         ; 65536                ; Signed Integer               ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WIDTH_B                            ; 8                    ; Signed Integer               ;
+; WIDTHAD_B                          ; 16                   ; Signed Integer               ;
+; NUMWORDS_B                         ; 65536                ; Signed Integer               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                      ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                      ;
+; OUTDATA_REG_B                      ; CLOCK1               ; Untyped                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; INIT_FILE                          ; data.mif             ; Untyped                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_B               ; BYPASS               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                      ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_c9k2      ; Untyped                      ;
++------------------------------------+----------------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                        ;
++-------------------------------------------+---------------------------------------------+
+; Name                                      ; Value                                       ;
++-------------------------------------------+---------------------------------------------+
+; Number of entity instances                ; 1                                           ;
+; Entity Instance                           ; sdram:sdram|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                             ;
+;     -- WIDTH_A                            ; 8                                           ;
+;     -- NUMWORDS_A                         ; 65536                                       ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                      ;
+;     -- WIDTH_B                            ; 8                                           ;
+;     -- NUMWORDS_B                         ; 65536                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                      ;
+;     -- OUTDATA_REG_B                      ; CLOCK1                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                        ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                   ;
++-------------------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; microSD            ; Filter-GPU         ;
+; Top-level entity name                                                           ; ramTB              ; Filter-GPU         ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
 ; Enable compact report table                                                     ; Off                ; Off                ;
 ; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
 ; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
@@ -172,608 +259,46 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
-+----------------------------+-------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sdram:sdram"                                                                                    ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; address_a[15..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; address_a[1]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; address_a[0]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; address_b        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; clock_a          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; clock_b          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_a           ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_b           ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wren_a           ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wren_b           ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q_a              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q_b              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                           ;
-+-----------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                            ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                            ; Library ;
-+-----------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------+
-; microSD/synthesis/microSD.v                                                 ; yes             ; User Verilog HDL File        ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/microSD.v                                                 ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_Card_Avalon_Interface.vhd         ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Avalon_Interface.vhd         ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_Card_48_bit_Command_Generator.vhd ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_48_bit_Command_Generator.vhd ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_Card_Buffer.vhd                   ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Buffer.vhd                   ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_Card_Clock.vhd                    ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Clock.vhd                    ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_Card_Control_FSM.vhd              ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Control_FSM.vhd              ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_Card_Interface.vhd                ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Interface.vhd                ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_Card_Response_Receiver.vhd        ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Response_Receiver.vhd        ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_CRC16_Generator.vhd               ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_CRC16_Generator.vhd               ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_CRC7_Generator.vhd                ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_CRC7_Generator.vhd                ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_Signal_Trigger.vhd                ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Signal_Trigger.vhd                ; microSD ;
-; microSD/synthesis/submodules/Altera_UP_SD_Card_Memory_Block.vhd             ; yes             ; User VHDL File               ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Memory_Block.vhd             ; microSD ;
-; altsyncram.tdf                                                              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                   ;         ;
-; stratix_ram_block.inc                                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                            ;         ;
-; lpm_mux.inc                                                                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                      ;         ;
-; lpm_decode.inc                                                              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                   ;         ;
-; aglobal171.inc                                                              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc                                                                   ;         ;
-; a_rdenreg.inc                                                               ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                    ;         ;
-; altrom.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc                                                                       ;         ;
-; altram.inc                                                                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc                                                                       ;         ;
-; altdpram.inc                                                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                                                                     ;         ;
-; db/altsyncram_92g2.tdf                                                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/db/altsyncram_92g2.tdf                                                      ;         ;
-+-----------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 625           ;
-;                                             ;               ;
-; Combinational ALUT usage for logic          ; 806           ;
-;     -- 7 input functions                    ; 8             ;
-;     -- 6 input functions                    ; 209           ;
-;     -- 5 input functions                    ; 171           ;
-;     -- 4 input functions                    ; 83            ;
-;     -- <=3 input functions                  ; 335           ;
-;                                             ;               ;
-; Dedicated logic registers                   ; 893           ;
-;                                             ;               ;
-; I/O pins                                    ; 86            ;
-; Total MLAB memory bits                      ; 0             ;
-; Total block memory bits                     ; 4096          ;
-;                                             ;               ;
-; Total DSP Blocks                            ; 0             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; i_clock~input ;
-; Maximum fan-out                             ; 894           ;
-; Total fan-out                               ; 7091          ;
-; Average fan-out                             ; 3.78          ;
-+---------------------------------------------+---------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
-+------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+--------------+
-; Compilation Hierarchy Node                                                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                      ; Entity Name                                ; Library Name ;
-+------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+--------------+
-; |microSD                                                                     ; 806 (0)             ; 893 (0)                   ; 4096              ; 0          ; 86   ; 0            ; |microSD                                                                                                                                                                                                                                                                 ; microSD                                    ; microSD      ;
-;    |Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0| ; 806 (238)           ; 893 (136)                 ; 4096              ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0                                                                                                                                                                                         ; Altera_UP_SD_Card_Avalon_Interface         ; microsd      ;
-;       |Altera_UP_SD_Card_Interface:SD_Card_Port|                             ; 568 (54)            ; 757 (385)                 ; 4096              ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port                                                                                                                                                ; Altera_UP_SD_Card_Interface                ; microsd      ;
-;          |Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|      ; 141 (139)           ; 72 (65)                   ; 0                 ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator                                                                                   ; Altera_UP_SD_Card_48_bit_Command_Generator ; microsd      ;
-;             |Altera_UP_SD_CRC7_Generator:CRC7_Gen|                           ; 2 (2)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|Altera_UP_SD_CRC7_Generator:CRC7_Gen                                              ; Altera_UP_SD_CRC7_Generator                ; microsd      ;
-;          |Altera_UP_SD_Card_Buffer:data_line|                                ; 87 (80)             ; 80 (64)                   ; 4096              ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line                                                                                                             ; Altera_UP_SD_Card_Buffer                   ; microsd      ;
-;             |Altera_UP_SD_CRC16_Generator:crc16_checker|                     ; 7 (7)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_CRC16_Generator:crc16_checker                                                                  ; Altera_UP_SD_CRC16_Generator               ; microsd      ;
-;             |Altera_UP_SD_Card_Memory_Block:packet_memory|                   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory                                                                ; Altera_UP_SD_Card_Memory_Block             ; microsd      ;
-;                |altsyncram:altsyncram_component|                             ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component                                ; altsyncram                                 ; work         ;
-;                   |altsyncram_92g2:auto_generated|                           ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component|altsyncram_92g2:auto_generated ; altsyncram_92g2                            ; work         ;
-;          |Altera_UP_SD_Card_Clock:clock_generator|                           ; 16 (16)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Clock:clock_generator                                                                                                        ; Altera_UP_SD_Card_Clock                    ; microsd      ;
-;          |Altera_UP_SD_Card_Control_FSM:control_FSM|                         ; 74 (74)             ; 52 (52)                   ; 0                 ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Control_FSM:control_FSM                                                                                                      ; Altera_UP_SD_Card_Control_FSM              ; microsd      ;
-;          |Altera_UP_SD_Card_Response_Receiver:response_receiver|             ; 196 (194)           ; 159 (152)                 ; 0                 ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver                                                                                          ; Altera_UP_SD_Card_Response_Receiver        ; microsd      ;
-;             |Altera_UP_SD_CRC7_Generator:crc_checker|                        ; 2 (2)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver|Altera_UP_SD_CRC7_Generator:crc_checker                                                  ; Altera_UP_SD_CRC7_Generator                ; microsd      ;
-;          |Altera_UP_SD_Signal_Trigger:SD_clock_pulse_trigger|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Signal_Trigger:SD_clock_pulse_trigger                                                                                             ; Altera_UP_SD_Signal_Trigger                ; microsd      ;
-+------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                                                                                             ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------+
-; Name                                                                                                                                                                                                                                                                       ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------+
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component|altsyncram_92g2:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 256          ; 16           ; 4096         ; 1            ; 4096 ; None ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------+
-
-
-+---------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                             ;
-+--------+--------------+---------+--------------+--------------+-----------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+-----------------+-----------------+
-; N/A    ; Qsys         ; 17.1    ; N/A          ; N/A          ; |microSD        ; microSD.qsys    ;
-+--------+--------------+---------+--------------+--------------+-----------------+-----------------+
-
-
-Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|current_cmd_state                                                           ;
-+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------+-------------------------------+
-; Name                              ; current_cmd_state.s_UPDATE_AUX_SR ; current_cmd_state.s_WAIT_RESPONSE ; current_cmd_state.s_WAIT_COMMAND ; current_cmd_state.s_RESET_CMD ;
-+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------+-------------------------------+
-; current_cmd_state.s_RESET_CMD     ; 0                                 ; 0                                 ; 0                                ; 0                             ;
-; current_cmd_state.s_WAIT_COMMAND  ; 0                                 ; 0                                 ; 1                                ; 1                             ;
-; current_cmd_state.s_WAIT_RESPONSE ; 0                                 ; 1                                 ; 0                                ; 1                             ;
-; current_cmd_state.s_UPDATE_AUX_SR ; 1                                 ; 0                                 ; 0                                ; 1                             ;
-+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------+-------------------------------+
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|current_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
-+-------------------------------------------+------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------+-------------------------------------+----------------------------------+----------------------------------+------------------------------------------+------------------------------------+-------------------------------------+------------------------------------+----------------------------------+---------------------------------+------------------------------+-----------------------+
-; Name                                      ; current_state.s_WAIT_RELEASE ; current_state.s_WRITE_SECOND_WORD ; current_state.s_WRITE_SECOND_BYTE ; current_state.s_WR_READ_SECOND_WORD_DELAY ; current_state.s_WR_READ_SECOND_WORD ; current_state.s_WRITE_FIRST_WORD ; current_state.s_WRITE_FIRST_BYTE ; current_state.s_WR_READ_FIRST_WORD_DELAY ; current_state.s_WR_READ_FIRST_WORD ; current_state.s_RECEIVE_SECOND_WORD ; current_state.s_RECEIVE_FIRST_WORD ; current_state.s_READ_SECOND_WORD ; current_state.s_READ_FIRST_WORD ; current_state.s_WAIT_REQUEST ; current_state.s_RESET ;
-+-------------------------------------------+------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------+-------------------------------------+----------------------------------+----------------------------------+------------------------------------------+------------------------------------+-------------------------------------+------------------------------------+----------------------------------+---------------------------------+------------------------------+-----------------------+
-; current_state.s_RESET                     ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 0                     ;
-; current_state.s_WAIT_REQUEST              ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 1                            ; 1                     ;
-; current_state.s_READ_FIRST_WORD           ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 1                               ; 0                            ; 1                     ;
-; current_state.s_READ_SECOND_WORD          ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 1                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_RECEIVE_FIRST_WORD        ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 1                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_RECEIVE_SECOND_WORD       ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 1                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_WR_READ_FIRST_WORD        ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 1                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_WR_READ_FIRST_WORD_DELAY  ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 1                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_WRITE_FIRST_BYTE          ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 1                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_WRITE_FIRST_WORD          ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 1                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_WR_READ_SECOND_WORD       ; 0                            ; 0                                 ; 0                                 ; 0                                         ; 1                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_WR_READ_SECOND_WORD_DELAY ; 0                            ; 0                                 ; 0                                 ; 1                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_WRITE_SECOND_BYTE         ; 0                            ; 0                                 ; 1                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_WRITE_SECOND_WORD         ; 0                            ; 1                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-; current_state.s_WAIT_RELEASE              ; 1                            ; 0                                 ; 0                                 ; 0                                         ; 0                                   ; 0                                ; 0                                ; 0                                        ; 0                                  ; 0                                   ; 0                                  ; 0                                ; 0                               ; 0                            ; 1                     ;
-+-------------------------------------------+------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------+-------------------------------------+----------------------------------+----------------------------------+------------------------------------------+------------------------------------+-------------------------------------+------------------------------------+----------------------------------+---------------------------------+------------------------------+-----------------------+
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|current_state                                                                                                                                                                                                                                                                     ;
-+----------------------------------------+-------------------------------+------------------------------------+--------------------------------+----------------------------------------+---------------------------------+-------------------------------+---------------------------+---------------------------+--------------------------+---------------------------+--------------------------------+------------------------------+-----------------------+
-; Name                                   ; current_state.s_WAIT_DEASSERT ; current_state.s_RECEIVING_STOP_BIT ; current_state.s_RECEIVING_DATA ; current_state.s_RECEIVING_LEADING_BITS ; current_state.s_WAIT_DATA_START ; current_state.s_WAIT_BUSY_END ; current_state.s_WAIT_BUSY ; current_state.s_SEND_STOP ; current_state.s_SEND_CRC ; current_state.s_SEND_DATA ; current_state.s_SEND_START_BIT ; current_state.s_WAIT_REQUEST ; current_state.s_RESET ;
-+----------------------------------------+-------------------------------+------------------------------------+--------------------------------+----------------------------------------+---------------------------------+-------------------------------+---------------------------+---------------------------+--------------------------+---------------------------+--------------------------------+------------------------------+-----------------------+
-; current_state.s_RESET                  ; 0                             ; 0                                  ; 0                              ; 0                                      ; 0                               ; 0                             ; 0                         ; 0                         ; 0                        ; 0                         ; 0                              ; 0                            ; 0                     ;
-; current_state.s_WAIT_REQUEST           ; 0                             ; 0                                  ; 0                              ; 0                                      ; 0                               ; 0                             ; 0                         ; 0                         ; 0                        ; 0                         ; 0                              ; 1                            ; 1                     ;
-; current_state.s_SEND_START_BIT         ; 0                             ; 0                                  ; 0                              ; 0                                      ; 0                               ; 0                             ; 0                         ; 0                         ; 0                        ; 0                         ; 1                              ; 0                            ; 1                     ;
-; current_state.s_SEND_DATA              ; 0                             ; 0                                  ; 0                              ; 0                                      ; 0                               ; 0                             ; 0                         ; 0                         ; 0                        ; 1                         ; 0                              ; 0                            ; 1                     ;
-; current_state.s_SEND_CRC               ; 0                             ; 0                                  ; 0                              ; 0                                      ; 0                               ; 0                             ; 0                         ; 0                         ; 1                        ; 0                         ; 0                              ; 0                            ; 1                     ;
-; current_state.s_SEND_STOP              ; 0                             ; 0                                  ; 0                              ; 0                                      ; 0                               ; 0                             ; 0                         ; 1                         ; 0                        ; 0                         ; 0                              ; 0                            ; 1                     ;
-; current_state.s_WAIT_BUSY              ; 0                             ; 0                                  ; 0                              ; 0                                      ; 0                               ; 0                             ; 1                         ; 0                         ; 0                        ; 0                         ; 0                              ; 0                            ; 1                     ;
-; current_state.s_WAIT_BUSY_END          ; 0                             ; 0                                  ; 0                              ; 0                                      ; 0                               ; 1                             ; 0                         ; 0                         ; 0                        ; 0                         ; 0                              ; 0                            ; 1                     ;
-; current_state.s_WAIT_DATA_START        ; 0                             ; 0                                  ; 0                              ; 0                                      ; 1                               ; 0                             ; 0                         ; 0                         ; 0                        ; 0                         ; 0                              ; 0                            ; 1                     ;
-; current_state.s_RECEIVING_LEADING_BITS ; 0                             ; 0                                  ; 0                              ; 1                                      ; 0                               ; 0                             ; 0                         ; 0                         ; 0                        ; 0                         ; 0                              ; 0                            ; 1                     ;
-; current_state.s_RECEIVING_DATA         ; 0                             ; 0                                  ; 1                              ; 0                                      ; 0                               ; 0                             ; 0                         ; 0                         ; 0                        ; 0                         ; 0                              ; 0                            ; 1                     ;
-; current_state.s_RECEIVING_STOP_BIT     ; 0                             ; 1                                  ; 0                              ; 0                                      ; 0                               ; 0                             ; 0                         ; 0                         ; 0                        ; 0                         ; 0                              ; 0                            ; 1                     ;
-; current_state.s_WAIT_DEASSERT          ; 1                             ; 0                                  ; 0                              ; 0                                      ; 0                               ; 0                             ; 0                         ; 0                         ; 0                        ; 0                         ; 0                              ; 0                            ; 1                     ;
-+----------------------------------------+-------------------------------+------------------------------------+--------------------------------+----------------------------------------+---------------------------------+-------------------------------+---------------------------+---------------------------+--------------------------+---------------------------+--------------------------------+------------------------------+-----------------------+
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Control_FSM:control_FSM|current_state                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
-+-----------------------------------------------------+---------------------------------------+-------------------------------+----------------------------------------------------+-------------------------------+------------------------------+----------------------------------+----------------------------------+------------------------------------+----------------------------------------+------------------------------------+--------------------------------------------------+-----------------------------------------------------+---------------------------------------------+--------------------------------+-----------------------+
-; Name                                                ; current_state.s_PERIODIC_STATUS_CHECK ; current_state.s_WAIT_DEASSERT ; current_state.s_WAIT_FOR_CLOCK_EDGE_BEFORE_DISABLE ; current_state.s_WAIT_RESPONSE ; current_state.s_SEND_COMMAND ; current_state.s_GENERATE_COMMAND ; current_state.s_REACTIVATE_CLOCK ; current_state.s_AWAIT_USER_COMMAND ; current_state.s_TOGGLE_CLOCK_FREQUENCY ; current_state.s_GO_TO_NEXT_COMMAND ; current_state.s_WAIT_PREDEFINED_COMMAND_RESPONSE ; current_state.s_WAIT_PREDEFINED_COMMAND_TRANSMITTED ; current_state.s_GENERATE_PREDEFINED_COMMAND ; current_state.s_WAIT_74_CYCLES ; current_state.s_RESET ;
-+-----------------------------------------------------+---------------------------------------+-------------------------------+----------------------------------------------------+-------------------------------+------------------------------+----------------------------------+----------------------------------+------------------------------------+----------------------------------------+------------------------------------+--------------------------------------------------+-----------------------------------------------------+---------------------------------------------+--------------------------------+-----------------------+
-; current_state.s_RESET                               ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 0                     ;
-; current_state.s_WAIT_74_CYCLES                      ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 1                              ; 1                     ;
-; current_state.s_GENERATE_PREDEFINED_COMMAND         ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 1                                           ; 0                              ; 1                     ;
-; current_state.s_WAIT_PREDEFINED_COMMAND_TRANSMITTED ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 1                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_WAIT_PREDEFINED_COMMAND_RESPONSE    ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 1                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_GO_TO_NEXT_COMMAND                  ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 1                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_TOGGLE_CLOCK_FREQUENCY              ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 1                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_AWAIT_USER_COMMAND                  ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 1                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_REACTIVATE_CLOCK                    ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 1                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_GENERATE_COMMAND                    ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 1                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_SEND_COMMAND                        ; 0                                     ; 0                             ; 0                                                  ; 0                             ; 1                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_WAIT_RESPONSE                       ; 0                                     ; 0                             ; 0                                                  ; 1                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_WAIT_FOR_CLOCK_EDGE_BEFORE_DISABLE  ; 0                                     ; 0                             ; 1                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_WAIT_DEASSERT                       ; 0                                     ; 1                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-; current_state.s_PERIODIC_STATUS_CHECK               ; 1                                     ; 0                             ; 0                                                  ; 0                             ; 0                            ; 0                                ; 0                                ; 0                                  ; 0                                      ; 0                                  ; 0                                                ; 0                                                   ; 0                                           ; 0                              ; 1                     ;
-+-----------------------------------------------------+---------------------------------------+-------------------------------+----------------------------------------------------+-------------------------------+------------------------------+----------------------------------+----------------------------------+------------------------------------+----------------------------------------+------------------------------------+--------------------------------------------------+-----------------------------------------------------+---------------------------------------------+--------------------------------+-----------------------+
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver|current_state                           ;
-+---------------------------------------+-------------------------------------+-------------------------------+---------------------------+---------------------------------------+--------------------------+----------------------------+
-; Name                                  ; current_state.s_WAIT_BEGIN_DEASSERT ; current_state.s_WAIT_BUSY_END ; current_state.s_WAIT_BUSY ; current_state.s_WAIT_PROCESSING_DELAY ; current_state.s_WAIT_END ; current_state.s_WAIT_BEGIN ;
-+---------------------------------------+-------------------------------------+-------------------------------+---------------------------+---------------------------------------+--------------------------+----------------------------+
-; current_state.s_WAIT_BEGIN            ; 0                                   ; 0                             ; 0                         ; 0                                     ; 0                        ; 0                          ;
-; current_state.s_WAIT_END              ; 0                                   ; 0                             ; 0                         ; 0                                     ; 1                        ; 1                          ;
-; current_state.s_WAIT_PROCESSING_DELAY ; 0                                   ; 0                             ; 0                         ; 1                                     ; 0                        ; 1                          ;
-; current_state.s_WAIT_BUSY             ; 0                                   ; 0                             ; 1                         ; 0                                     ; 0                        ; 1                          ;
-; current_state.s_WAIT_BUSY_END         ; 0                                   ; 1                             ; 0                         ; 0                                     ; 0                        ; 1                          ;
-; current_state.s_WAIT_BEGIN_DEASSERT   ; 1                                   ; 0                             ; 0                         ; 0                                     ; 0                        ; 1                          ;
-+---------------------------------------+-------------------------------------+-------------------------------+---------------------------+---------------------------------------+--------------------------+----------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                                                                            ;
-+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                         ; Reason for Removal                                                                                                                                                                    ;
-+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|current_cmd_state.s_RESET_CMD ; Merged with Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|current_state.s_RESET ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|current_state.s_RESET         ; Merged with Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|current_state.s_RESET ;
-; Total Number of Removed Registers = 2                                                                 ;                                                                                                                                                                                       ;
-+-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 893   ;
-; Number of registers using Synchronous Clear  ; 186   ;
-; Number of registers using Synchronous Load   ; 16    ;
-; Number of registers using Asynchronous Clear ; 883   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 799   ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Inverted Register Statistics                                                                                                                                                                        ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Inverted Register                                                                                                                                                                         ; Fan out ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[0]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[1]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[2]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[3]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[4]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[5]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[6]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[7]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[8]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[9]                                                    ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[10]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[11]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[12]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[13]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[14]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[15]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[16]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[17]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[18]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[19]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[20]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[21]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[22]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[23]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[24]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[25]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[26]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[27]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[28]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[29]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[30]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[31]                                                   ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver|shift_crc_bits     ; 3       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|bit_to_send ; 1       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|dataout_1bit                          ; 2       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|bit_counter[0]                        ; 5       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|bit_counter[1]                        ; 4       ;
-; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|bit_counter[2]                        ; 3       ;
-; Total number of inverted registers = 38                                                                                                                                                   ;         ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Control_FSM:control_FSM|periodic_status_check[8]                               ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver|counter[4]                                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|argument_reg[16]                                                                                                                          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|argument_reg[15]                                                                                                                          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_operating_conditions_register[20]                                                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|counter[2]                          ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|byte_counter[8]                                               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|timeout_register[6]                                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver|timeout_counter[2]                         ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Control_FSM:control_FSM|delay_counter[3]                                       ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|shift_register[3]                                             ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 0 LEs                ; 26 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_CRC16_Generator:crc16_checker|shift_register[15] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|response_type_reg[2]                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_CRC16_Generator:crc16_checker|shift_register[12] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|crc_counter[0]                                                ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Control_FSM:control_FSM|id_sequence_step_index[0]                              ;
-; 18:1               ; 6 bits    ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|message_bits[35]                    ;
-; 10:1               ; 14 bits   ; 84 LEs        ; 28 LEs               ; 56 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|message_bits[4]                     ;
-; 78:1               ; 11 bits   ; 572 LEs       ; 22 LEs               ; 550 LEs                ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|message_bits[31]                    ;
-; 73:1               ; 4 bits    ; 192 LEs       ; 20 LEs               ; 172 LEs                ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|message_bits[27]                    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|SD_REG_response_R1[27]                                                                           ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|bit_counter[0]                                                ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|buffer_data_in[10]                                                                                                                        ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|buffer_data_in[3]                                                                                                                         ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|o_avalon_readdata[28]                                                                                                                     ;
-; 16:1               ; 10 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|o_avalon_readdata[6]                                                                                                                      ;
-; 16:1               ; 6 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |microSD|Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|o_avalon_readdata[5]                                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component|altsyncram_92g2:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                                                                                                                       ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                                                                                                        ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0 ;
-+------------------+----------+----------------------------------------------------------------------------------------+
-; Parameter Name   ; Value    ; Type                                                                                   ;
-+------------------+----------+----------------------------------------------------------------------------------------+
-; ADDRESS_BUFFER   ; 00000000 ; Unsigned Binary                                                                        ;
-; ADDRESS_CID      ; 10000000 ; Unsigned Binary                                                                        ;
-; ADDRESS_CSD      ; 10000100 ; Unsigned Binary                                                                        ;
-; ADDRESS_OCR      ; 10001000 ; Unsigned Binary                                                                        ;
-; ADDRESS_SR       ; 10001001 ; Unsigned Binary                                                                        ;
-; ADDRESS_RCA      ; 10001010 ; Unsigned Binary                                                                        ;
-; ADDRESS_ARGUMENT ; 10001011 ; Unsigned Binary                                                                        ;
-; ADDRESS_COMMAND  ; 10001100 ; Unsigned Binary                                                                        ;
-; ADDRESS_ASR      ; 10001101 ; Unsigned Binary                                                                        ;
-; ADDRESS_R1       ; 10001110 ; Unsigned Binary                                                                        ;
-+------------------+----------+----------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator ;
-+----------------------------------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name                   ; Value  ; Type                                                                                                                                                                           ;
-+----------------------------------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; command_0_go_idle                ; 000000 ; Unsigned Binary                                                                                                                                                                ;
-; command_2_all_send_cid           ; 000010 ; Unsigned Binary                                                                                                                                                                ;
-; command_3_send_rca               ; 000011 ; Unsigned Binary                                                                                                                                                                ;
-; command_4_set_dsr                ; 000100 ; Unsigned Binary                                                                                                                                                                ;
-; command_6_switch_function        ; 000110 ; Unsigned Binary                                                                                                                                                                ;
-; command_7_select_card            ; 000111 ; Unsigned Binary                                                                                                                                                                ;
-; command_9_send_csd               ; 001001 ; Unsigned Binary                                                                                                                                                                ;
-; command_10_send_cid              ; 001010 ; Unsigned Binary                                                                                                                                                                ;
-; command_12_stop_transmission     ; 001100 ; Unsigned Binary                                                                                                                                                                ;
-; command_13_send_status           ; 001101 ; Unsigned Binary                                                                                                                                                                ;
-; command_15_go_inactive           ; 001111 ; Unsigned Binary                                                                                                                                                                ;
-; command_16_set_block_length      ; 010000 ; Unsigned Binary                                                                                                                                                                ;
-; command_17_read_block            ; 010001 ; Unsigned Binary                                                                                                                                                                ;
-; command_18_read_multiple_blocks  ; 010010 ; Unsigned Binary                                                                                                                                                                ;
-; command_24_write_block           ; 011000 ; Unsigned Binary                                                                                                                                                                ;
-; command_25_write_multiple_blocks ; 011001 ; Unsigned Binary                                                                                                                                                                ;
-; command_27_program_csd           ; 011011 ; Unsigned Binary                                                                                                                                                                ;
-; command_28_set_write_protect     ; 011100 ; Unsigned Binary                                                                                                                                                                ;
-; command_29_clear_write_protect   ; 011101 ; Unsigned Binary                                                                                                                                                                ;
-; command_30_send_protected_groups ; 011110 ; Unsigned Binary                                                                                                                                                                ;
-; command_32_erase_block_start     ; 100000 ; Unsigned Binary                                                                                                                                                                ;
-; command_33_erase_block_end       ; 100001 ; Unsigned Binary                                                                                                                                                                ;
-; command_38_erase_selected_groups ; 100110 ; Unsigned Binary                                                                                                                                                                ;
-; command_42_lock_unlock           ; 101010 ; Unsigned Binary                                                                                                                                                                ;
-; command_55_app_cmd               ; 110111 ; Unsigned Binary                                                                                                                                                                ;
-; command_56_gen_cmd               ; 111000 ; Unsigned Binary                                                                                                                                                                ;
-; acommand_6_set_bus_width         ; 000110 ; Unsigned Binary                                                                                                                                                                ;
-; acommand_13_sd_status            ; 001101 ; Unsigned Binary                                                                                                                                                                ;
-; acommand_22_send_num_wr_blocks   ; 010100 ; Unsigned Binary                                                                                                                                                                ;
-; acommand_23_set_blk_erase_count  ; 010101 ; Unsigned Binary                                                                                                                                                                ;
-; acommand_41_send_op_condition    ; 101001 ; Unsigned Binary                                                                                                                                                                ;
-; acommand_42_set_clr_card_detect  ; 101010 ; Unsigned Binary                                                                                                                                                                ;
-; acommand_51_send_scr             ; 110011 ; Unsigned Binary                                                                                                                                                                ;
-; first_non_predefined_command     ; 1010   ; Unsigned Binary                                                                                                                                                                ;
-+----------------------------------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver ;
-+------------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name   ; Value    ; Type                                                                                                                                                                                  ;
-+------------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; timeout          ; 00111000 ; Unsigned Binary                                                                                                                                                                       ;
-; busy_wait        ; 00110000 ; Unsigned Binary                                                                                                                                                                       ;
-; processing_delay ; 00001000 ; Unsigned Binary                                                                                                                                                                       ;
-+------------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Control_FSM:control_FSM ;
-+-------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name                ; Value ; Type                                                                                                                                                            ;
-+-------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; predefined_command_get_status ; 1001  ; Unsigned Binary                                                                                                                                                 ;
-+-------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line ;
-+----------------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name ; Value            ; Type                                                                                                                                                         ;
-+----------------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; timeout        ; 1111111111111111 ; Unsigned Binary                                                                                                                                              ;
-; busy_wait      ; 0000001111110000 ; Unsigned Binary                                                                                                                                              ;
-+----------------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                                                                                                                                                                                              ;
-+------------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                                                                                                                                                           ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                                                                                                                                                        ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                                                                                                                                                      ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                                                                                                                                                      ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                                                                                                                                                                    ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                                                                                                                                                           ;
-; OPERATION_MODE                     ; BIDIR_DUAL_PORT      ; Untyped                                                                                                                                                                                                           ;
-; WIDTH_A                            ; 16                   ; Signed Integer                                                                                                                                                                                                    ;
-; WIDTHAD_A                          ; 8                    ; Signed Integer                                                                                                                                                                                                    ;
-; NUMWORDS_A                         ; 256                  ; Signed Integer                                                                                                                                                                                                    ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                                                                                                                                                                           ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; WIDTH_B                            ; 1                    ; Signed Integer                                                                                                                                                                                                    ;
-; WIDTHAD_B                          ; 12                   ; Signed Integer                                                                                                                                                                                                    ;
-; NUMWORDS_B                         ; 4096                 ; Signed Integer                                                                                                                                                                                                    ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                                                                                                                                                           ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                                                                                                                                                           ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                                                                                                                                                           ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                                                                                                                                                           ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                                                                                                                                                           ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                                                                                                                                                           ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                                                                                                                                                           ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                                                                                                                                                                    ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                                                                                                                                                                                                    ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                                                                                                                                                           ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                                                                                                                                                                                           ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                                                                                                                                                           ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                                                                                                                                                           ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                                                                                                                                                           ;
-; INIT_FILE                          ; initial_data.mif     ; Untyped                                                                                                                                                                                                           ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                                                                                                                                                           ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                                                                                                                                                           ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                                                                                                                                                                           ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                                                                                                                                                           ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                                                                                                                                                           ;
-; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                                                                                                                                                                                                           ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                                                                                                                                                           ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                                                                                                                                                           ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                                                                                                                                                                                           ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                                                                                                                                                           ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                                                                                                                                                           ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                                                                                                                                                                           ;
-; CBXI_PARAMETER                     ; altsyncram_92g2      ; Untyped                                                                                                                                                                                                           ;
-+------------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                                                                                                                                                                                             ;
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Name                                      ; Value                                                                                                                                                                                                                            ;
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Number of entity instances                ; 1                                                                                                                                                                                                                                ;
-; Entity Instance                           ; Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                                                                                                                                                                                                  ;
-;     -- WIDTH_A                            ; 16                                                                                                                                                                                                                               ;
-;     -- NUMWORDS_A                         ; 256                                                                                                                                                                                                                              ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                                                                                                                                                                     ;
-;     -- WIDTH_B                            ; 1                                                                                                                                                                                                                                ;
-;     -- NUMWORDS_B                         ; 4096                                                                                                                                                                                                                             ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                                                                                                                                                           ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                                                                                                                                                     ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                                                                                                                                                             ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                                                                                                                                                        ;
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory" ;
-+----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                                                                                                                                                                        ;
-+----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; enable_b ; Input ; Info     ; Stuck at VCC                                                                                                                                                                                   ;
-+----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver|Altera_UP_SD_CRC7_Generator:crc_checker" ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                                                    ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; o_dataout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                                        ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|Altera_UP_SD_CRC7_Generator:CRC7_Gen" ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                                                                                                         ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; o_crcout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                                             ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator" ;
-+-------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                                                        ;
-+-------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; i_dsr ; Input ; Info     ; Stuck at GND                                                                                                                                                                   ;
-+-------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 893                         ;
-;     CLR               ; 92                          ;
-;     CLR SCLR          ; 2                           ;
-;     ENA               ; 10                          ;
-;     ENA CLR           ; 589                         ;
-;     ENA CLR SCLR      ; 184                         ;
-;     ENA CLR SLD       ; 16                          ;
-; arriav_io_obuf        ; 3                           ;
-; arriav_lcell_comb     ; 806                         ;
-;     arith             ; 85                          ;
-;         1 data inputs ; 84                          ;
-;         2 data inputs ; 1                           ;
-;     extend            ; 8                           ;
-;         7 data inputs ; 8                           ;
-;     normal            ; 713                         ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 162                         ;
-;         3 data inputs ; 83                          ;
-;         4 data inputs ; 83                          ;
-;         5 data inputs ; 171                         ;
-;         6 data inputs ; 209                         ;
-; boundary_port         ; 86                          ;
-; stratixv_ram_block    ; 1                           ;
-;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.66                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:02     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Aug 31 17:57:50 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Filter-GPU -c Filter-GPU
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sun Sep 08 15:00:16 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Filter-GPU -c Filter-GPU --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file testbenchs/ramtb.sv
+    Info (12023): Found entity 1: ramTB File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/TestBenchs/ramTB.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file sdram.v
+    Info (12023): Found entity 1: sdram File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file vga-controller/vga_controller.sv
+    Info (12023): Found entity 1: VGA_Controller File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/VGA_Controller.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga-controller/system.sv
+    Info (12023): Found entity 1: system File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/system.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga-controller/counter.sv
+    Info (12023): Found entity 1: counter File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/counter.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file microsd/synthesis/microsd.v
     Info (12023): Found entity 1: microSD File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/microSD.v Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file microsd/synthesis/submodules/altera_up_sd_card_avalon_interface.vhd
@@ -875,112 +400,68 @@ Info (12021): Found 1 design units, including 1 entities, in source file filterg
 Info (12021): Found 1 design units, including 1 entities, in source file main.sv
     Info (12023): Found entity 1: main File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/main.sv Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at vectorMemory.sv(8): created implicit net for "clock" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/Mems/vectorMemory.sv Line: 8
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(13): created implicit net for "PCSrcW" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 13
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(13): created implicit net for "BranchTakenE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 13
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(15): created implicit net for "RegWriteW" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 15
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(15): created implicit net for "wa3w" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 15
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(15): created implicit net for "RegSrc" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 15
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(15): created implicit net for "ExtImm" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 15
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "rd1E" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "rd2E" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "ExtImmE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "PCSrcE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "RegWriteE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "MemtoRegE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "MemWriteE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "BranchE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "ALUSrcE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "FlagWriteE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "ALUControlE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(21): created implicit net for "WA3E" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(23): created implicit net for "ALUFlags" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 23
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(23): created implicit net for "PCSrc" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 23
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(23): created implicit net for "RegWrite" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 23
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(23): created implicit net for "MemWrite" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 23
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(25): created implicit net for "ResultW" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 25
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(25): created implicit net for "ALUResultM" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 25
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(25): created implicit net for "ForwardAE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 25
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(25): created implicit net for "SrcAE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 25
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(26): created implicit net for "ForwardBE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 26
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(26): created implicit net for "out" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 26
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(27): created implicit net for "SrcBE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 27
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(31): created implicit net for "SrcAEA" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 31
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(31): created implicit net for "ALUResultE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 31
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(33): created implicit net for "res" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 33
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(39): created implicit net for "AluResultE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(39): created implicit net for "writeDataM" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(39): created implicit net for "WA3M" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(39): created implicit net for "PCSrcM" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(39): created implicit net for "RegWriteM" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(39): created implicit net for "MemtoRegM" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(39): created implicit net for "MemWriteM" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at main.sv(23): created implicit net for "in1" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/main.sv Line: 23
-Warning (10236): Verilog HDL Implicit Net warning at main.sv(23): created implicit net for "mario_pos" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/main.sv Line: 23
-Warning (10236): Verilog HDL Implicit Net warning at main.sv(23): created implicit net for "barril_pos" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/main.sv Line: 23
-Info (12127): Elaborating entity "microSD" for the top level hierarchy
-Info (12128): Elaborating entity "Altera_UP_SD_Card_Avalon_Interface" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/microSD.v Line: 38
-Info (12128): Elaborating entity "Altera_UP_SD_Card_Interface" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Avalon_Interface.vhd Line: 479
-Info (12128): Elaborating entity "Altera_UP_SD_Card_48_bit_Command_Generator" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Interface.vhd Line: 371
-Info (12128): Elaborating entity "Altera_UP_SD_CRC7_Generator" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_48_bit_Command_Generator:command_generator|Altera_UP_SD_CRC7_Generator:CRC7_Gen" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_48_bit_Command_Generator.vhd Line: 382
-Info (12128): Elaborating entity "Altera_UP_SD_Card_Response_Receiver" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Response_Receiver:response_receiver" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Interface.vhd Line: 398
-Info (12128): Elaborating entity "Altera_UP_SD_Card_Control_FSM" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Control_FSM:control_FSM" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Interface.vhd Line: 413
-Info (12128): Elaborating entity "Altera_UP_SD_Card_Clock" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Clock:clock_generator" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Interface.vhd Line: 445
-Info (12128): Elaborating entity "Altera_UP_SD_Signal_Trigger" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Signal_Trigger:SD_clock_pulse_trigger" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Interface.vhd Line: 457
-Info (12128): Elaborating entity "Altera_UP_SD_Card_Buffer" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Interface.vhd Line: 465
-Info (12128): Elaborating entity "Altera_UP_SD_CRC16_Generator" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_CRC16_Generator:crc16_checker" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Buffer.vhd Line: 350
-Info (12128): Elaborating entity "Altera_UP_SD_Card_Memory_Block" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Buffer.vhd Line: 363
-Info (12128): Elaborating entity "altsyncram" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Memory_Block.vhd Line: 129
-Info (12130): Elaborated megafunction instantiation "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Memory_Block.vhd Line: 129
-Info (12133): Instantiated megafunction "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Memory_Block.vhd Line: 129
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(28): created implicit net for "ExtImm" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 28
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.sv(41): created implicit net for "ExtImmE" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/DataPath.sv Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at filterGPU.sv(33): created implicit net for "clk" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at filterGPU.sv(33): created implicit net for "reset" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at filterGPU.sv(35): created implicit net for "CLR1" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv Line: 35
+Warning (10236): Verilog HDL Implicit Net warning at filterGPU.sv(35): created implicit net for "MemtoReg" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv Line: 35
+Info (12127): Elaborating entity "ramTB" for the top level hierarchy
+Info (12128): Elaborating entity "sdram" for hierarchy "sdram:sdram" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/TestBenchs/ramTB.sv Line: 18
+Info (12128): Elaborating entity "altsyncram" for hierarchy "sdram:sdram|altsyncram:altsyncram_component" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram.v Line: 99
+Info (12130): Elaborated megafunction instantiation "sdram:sdram|altsyncram:altsyncram_component" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram.v Line: 99
+Info (12133): Instantiated megafunction "sdram:sdram|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram.v Line: 99
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
-    Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
-    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "initial_data.mif"
-    Info (12134): Parameter "init_file_layout" = "PORT_A"
-    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "init_file" = "data.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "256"
-    Info (12134): Parameter "numwords_b" = "4096"
+    Info (12134): Parameter "numwords_a" = "65536"
+    Info (12134): Parameter "numwords_b" = "65536"
     Info (12134): Parameter "operation_mode" = "BIDIR_DUAL_PORT"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
     Info (12134): Parameter "outdata_aclr_b" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
-    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_b" = "CLOCK1"
     Info (12134): Parameter "power_up_uninitialized" = "FALSE"
-    Info (12134): Parameter "widthad_a" = "8"
-    Info (12134): Parameter "widthad_b" = "12"
-    Info (12134): Parameter "width_a" = "16"
-    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "16"
+    Info (12134): Parameter "widthad_b" = "16"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_b" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
     Info (12134): Parameter "width_byteena_b" = "1"
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_92g2.tdf
-    Info (12023): Found entity 1: altsyncram_92g2 File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/db/altsyncram_92g2.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_92g2" for hierarchy "Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0|Altera_UP_SD_Card_Interface:SD_Card_Port|Altera_UP_SD_Card_Buffer:data_line|Altera_UP_SD_Card_Memory_Block:packet_memory|altsyncram:altsyncram_component|altsyncram_92g2:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Critical Warning (127003): Can't find Memory Initialization File or Hexadecimal (Intel-Format) File C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/initial_data.mif -- setting all initial values to 0 File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/microSD/synthesis/submodules/Altera_UP_SD_Card_Memory_Block.vhd Line: 129
-Info (286030): Timing-Driven Synthesis is running
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c9k2.tdf
+    Info (12023): Found entity 1: altsyncram_c9k2 File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/db/altsyncram_c9k2.tdf Line: 33
+Info (12128): Elaborating entity "altsyncram_c9k2" for hierarchy "sdram:sdram|altsyncram:altsyncram_component|altsyncram_c9k2:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Critical Warning (127005): Memory depth (65536) in the design file differs from memory depth (3) in the Memory Initialization File "C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/data.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram.v Line: 99
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dla.tdf
+    Info (12023): Found entity 1: decode_dla File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/db/decode_dla.tdf Line: 22
+Info (12128): Elaborating entity "decode_dla" for hierarchy "sdram:sdram|altsyncram:altsyncram_component|altsyncram_c9k2:auto_generated|decode_dla:decode2" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/db/altsyncram_c9k2.tdf Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
+    Info (12023): Found entity 1: decode_61a File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/db/decode_61a.tdf Line: 22
+Info (12128): Elaborating entity "decode_61a" for hierarchy "sdram:sdram|altsyncram:altsyncram_component|altsyncram_c9k2:auto_generated|decode_61a:rden_decode_a" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/db/altsyncram_c9k2.tdf Line: 53
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_tfb.tdf
+    Info (12023): Found entity 1: mux_tfb File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/db/mux_tfb.tdf Line: 22
+Info (12128): Elaborating entity "mux_tfb" for hierarchy "sdram:sdram|altsyncram:altsyncram_component|altsyncram_c9k2:auto_generated|mux_tfb:mux4" File: C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/db/altsyncram_c9k2.tdf Line: 55
+Warning (20013): Ignored 19 assignments for entity "microSD" -- entity does not exist in design
 Info (144001): Generated suppressed messages file C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/output_files/Filter-GPU.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1546 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 49 input pins
-    Info (21059): Implemented 34 output pins
-    Info (21060): Implemented 3 bidirectional pins
-    Info (21061): Implemented 1459 logic cells
-    Info (21064): Implemented 1 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
-    Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Sat Aug 31 17:58:05 2019
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:28
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4864 megabytes
+    Info: Processing ended: Sun Sep 08 15:00:36 2019
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:42
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
 The suppressed messages can be found in C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/output_files/Filter-GPU.map.smsg.
 
 

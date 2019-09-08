@@ -1,6 +1,6 @@
 Flow report for Filter-GPU
-Sat Aug 31 17:58:05 2019
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Sun Sep 08 15:00:35 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -37,29 +37,24 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Aug 31 17:58:05 2019       ;
-; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                   ; Filter-GPU                                  ;
-; Top-level Entity Name           ; microSD                                     ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSEMA5F31C6                                ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 893                                         ;
-; Total pins                      ; 86                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 4,096                                       ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Flow Summary                                                              ;
++-----------------------------+---------------------------------------------+
+; Flow Status                 ; Successful - Sun Sep 08 15:00:35 2019       ;
+; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name               ; Filter-GPU                                  ;
+; Top-level Entity Name       ; ramTB                                       ;
+; Family                      ; Cyclone V                                   ;
+; Device                      ; 5CSEMA5F31C6                                ;
+; Timing Models               ; Final                                       ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,59 +62,62 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/31/2019 17:57:51 ;
+; Start date & time ; 09/08/2019 15:00:17 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Filter-GPU          ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                           ;
-+-------------------------------------+-----------------------------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                                     ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+-----------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589202.156729587026292                            ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                        ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                         ; --            ; --          ; --         ;
-; MISC_FILE                           ; microSD/synthesis/../microSD.cmp                          ; --            ; --          ; --         ;
-; MISC_FILE                           ; microSD/synthesis/../../microSD.qsys                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                    ; --            ; microSD     ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                    ; --            ; microSD     ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                    ; --            ; microSD     ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                       ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                     ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                              ; --            ; --          ; --         ;
-; SLD_FILE                            ; microSD/synthesis/microSD.debuginfo                       ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME microSD HAS_SOPCINFO 1 GENERATION_ID 1567295770 ; --            ; microSD     ; --         ;
-; SOPCINFO_FILE                       ; microSD/synthesis/../../microSD.sopcinfo                  ; --            ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                        ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; microSD                                                   ; Filter-GPU    ; --          ; --         ;
-+-------------------------------------+-----------------------------------------------------------+---------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                               ;
++-------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                                     ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 167403784248344.156797641605180                           ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                         ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                           ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                        ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                         ; --            ; --          ; --             ;
+; MISC_FILE                           ; sdram_bb.v                                                ; --            ; --          ; --             ;
+; MISC_FILE                           ; microSD/synthesis/../microSD.cmp                          ; --            ; --          ; --             ;
+; MISC_FILE                           ; microSD/synthesis/../../microSD.qsys                      ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                    ; --            ; ramTB       ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                    ; --            ; ramTB       ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                    ; --            ; ramTB       ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                       ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                     ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                              ; --            ; --          ; --             ;
+; SLD_FILE                            ; microSD/synthesis/microSD.debuginfo                       ; --            ; --          ; --             ;
+; SLD_INFO                            ; QSYS_NAME microSD HAS_SOPCINFO 1 GENERATION_ID 1567295770 ; --            ; microSD     ; --             ;
+; SOPCINFO_FILE                       ; microSD/synthesis/../../microSD.sopcinfo                  ; --            ; --          ; --             ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                        ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; ramTB                                                     ; Filter-GPU    ; --          ; --             ;
++-------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4907 MB             ; 00:00:27                           ;
-; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:27                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:19     ; 1.0                     ; 4864 MB             ; 00:00:42                           ;
+; Total                  ; 00:00:19     ; --                      ; --                  ; 00:00:42                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-5T1AOBL  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; DESKTOP-644FO7G  ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off Filter-GPU -c Filter-GPU
+quartus_map --read_settings_files=on --write_settings_files=off Filter-GPU -c Filter-GPU --analysis_and_elaboration
 
 
 
