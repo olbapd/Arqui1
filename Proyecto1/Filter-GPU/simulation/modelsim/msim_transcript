@@ -1,4 +1,4 @@
-# Reading C:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # do Filter-GPU_run_msim_rtl_systemverilog.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
@@ -7,163 +7,27 @@
 # vmap work rtl_work
 # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
 # vmap work rtl_work 
-# Copying C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlib sdram
-# vmap sdram sdram
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap sdram sdram 
-# Modifying modelsim.ini
-# vlog -vlog01compat -work sdram +incdir+C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules {C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules/sdram_sram_0.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU {C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:55:28 on Aug 31,2019
-# vlog -reportprogress 300 -vlog01compat -work sdram "+incdir+C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules" C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules/sdram_sram_0.v 
-# -- Compiling module sdram_sram_0
+# Start time: 15:00:45 on Sep 08,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU" C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram.v 
+# -- Compiling module sdram
 # 
 # Top level modules:
-# 	sdram_sram_0
-# End time: 16:55:28 on Aug 31,2019, Elapsed time: 0:00:00
+# 	sdram
+# End time: 15:00:45 on Sep 08,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/TestBenchs {C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/TestBenchs/ramTB.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:00:45 on Sep 08,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/TestBenchs" C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/TestBenchs/ramTB.sv 
+# -- Compiling module ramTB
+# 
+# Top level modules:
+# 	ramTB
+# End time: 15:00:45 on Sep 08,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-vsim sdram.sdram_sram_0
-# vsim sdram.sdram_sram_0 
-# Start time: 16:55:53 on Aug 31,2019
-# Loading sdram.sdram_sram_0
-add wave -position insertpoint  \
-sim:/sdram_sram_0/clk \
-sim:/sdram_sram_0/reset \
-sim:/sdram_sram_0/address \
-sim:/sdram_sram_0/byteenable \
-sim:/sdram_sram_0/read \
-sim:/sdram_sram_0/write \
-sim:/sdram_sram_0/writedata \
-sim:/sdram_sram_0/SRAM_DQ \
-sim:/sdram_sram_0/readdata \
-sim:/sdram_sram_0/readdatavalid \
-sim:/sdram_sram_0/SRAM_ADDR \
-sim:/sdram_sram_0/SRAM_LB_N \
-sim:/sdram_sram_0/SRAM_UB_N \
-sim:/sdram_sram_0/SRAM_CE_N \
-sim:/sdram_sram_0/SRAM_OE_N \
-sim:/sdram_sram_0/SRAM_WE_N \
-sim:/sdram_sram_0/is_read \
-sim:/sdram_sram_0/is_write \
-sim:/sdram_sram_0/writedata_reg
-run
-run
-run
-run
-run
-run
-run
-run
-run -all
-run -continue
-run
-resetTime
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-vsim sdram.sdram_sram_0
-# End time: 16:58:23 on Aug 31,2019, Elapsed time: 0:02:30
-# Errors: 0, Warnings: 0
-# vsim sdram.sdram_sram_0 
-# Start time: 16:58:23 on Aug 31,2019
-# Loading sdram.sdram_sram_0
-add dataflow  \
-sim:/sdram_sram_0/clk \
-sim:/sdram_sram_0/reset \
-sim:/sdram_sram_0/address \
-sim:/sdram_sram_0/byteenable \
-sim:/sdram_sram_0/read \
-sim:/sdram_sram_0/write \
-sim:/sdram_sram_0/writedata \
-sim:/sdram_sram_0/SRAM_DQ \
-sim:/sdram_sram_0/readdata \
-sim:/sdram_sram_0/readdatavalid \
-sim:/sdram_sram_0/SRAM_ADDR \
-sim:/sdram_sram_0/SRAM_LB_N \
-sim:/sdram_sram_0/SRAM_UB_N \
-sim:/sdram_sram_0/SRAM_CE_N \
-sim:/sdram_sram_0/SRAM_OE_N \
-sim:/sdram_sram_0/SRAM_WE_N \
-sim:/sdram_sram_0/is_read \
-sim:/sdram_sram_0/is_write \
-sim:/sdram_sram_0/writedata_reg
-# WARNING: No extended dataflow license exists
-# No drivers or ports for reset
-# No drivers or ports for address
-# No drivers or ports for byteenable
-# No drivers or ports for read
-# No drivers or ports for write
-# No drivers or ports for SRAM_DQ
-# No drivers or ports for readdata
-# No drivers or ports for readdatavalid
-# No drivers or ports for SRAM_ADDR
-# No drivers or ports for 6 additional signals omitted for message brevity.
-add wave -position insertpoint  \
-sim:/sdram_sram_0/clk \
-sim:/sdram_sram_0/reset \
-sim:/sdram_sram_0/address \
-sim:/sdram_sram_0/byteenable \
-sim:/sdram_sram_0/read \
-sim:/sdram_sram_0/write \
-sim:/sdram_sram_0/writedata \
-sim:/sdram_sram_0/SRAM_DQ \
-sim:/sdram_sram_0/readdata \
-sim:/sdram_sram_0/readdatavalid \
-sim:/sdram_sram_0/SRAM_ADDR \
-sim:/sdram_sram_0/SRAM_LB_N \
-sim:/sdram_sram_0/SRAM_UB_N \
-sim:/sdram_sram_0/SRAM_CE_N \
-sim:/sdram_sram_0/SRAM_OE_N \
-sim:/sdram_sram_0/SRAM_WE_N \
-sim:/sdram_sram_0/is_read \
-sim:/sdram_sram_0/is_write \
-sim:/sdram_sram_0/writedata_reg
-add wave -position insertpoint  \
-sim:/sdram_sram_0/clk \
-sim:/sdram_sram_0/reset \
-sim:/sdram_sram_0/address \
-sim:/sdram_sram_0/byteenable \
-sim:/sdram_sram_0/read \
-sim:/sdram_sram_0/write \
-sim:/sdram_sram_0/writedata \
-sim:/sdram_sram_0/SRAM_DQ \
-sim:/sdram_sram_0/readdata \
-sim:/sdram_sram_0/readdatavalid \
-sim:/sdram_sram_0/SRAM_ADDR \
-sim:/sdram_sram_0/SRAM_LB_N \
-sim:/sdram_sram_0/SRAM_UB_N \
-sim:/sdram_sram_0/SRAM_CE_N \
-sim:/sdram_sram_0/SRAM_OE_N \
-sim:/sdram_sram_0/SRAM_WE_N \
-sim:/sdram_sram_0/is_read \
-sim:/sdram_sram_0/is_write \
-sim:/sdram_sram_0/writedata_reg
-run -all
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# End time: 16:59:32 on Aug 31,2019, Elapsed time: 0:01:09
-# Errors: 1, Warnings: 11

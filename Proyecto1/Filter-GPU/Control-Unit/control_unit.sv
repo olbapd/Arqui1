@@ -5,7 +5,7 @@ module control_unit(
 	output logic RegW, MemW, MemToReg,ALUSrc,
  	output logic [1:0] ImmSrc,
 	output logic [2:0] RegSrc,
-	output logic [3:0] ALUControl,
+	output logic [3:0] ALUControl
 	);
 	
 	// Wires
