@@ -7,8 +7,9 @@ module DecodeTB ();
     logic [2:0] RegSrc;
     logic [2:0][17:0] rd1, rd2;
     logic [2:0][17:0] ExtImm;
+    logic [3:0] ra1, ra2;
 
-    Decode uut(clk, RegWriteW,ImmSrcD,Instr,wd3,wa3w,RegSrc,rd1, rd2,ExtImm);
+    Decode uut(clk, RegWriteW,ImmSrcD,Instr,wd3,wa3w,RegSrc,rd1, rd2,ExtImm, ra1, ra2);
 
 	initial begin
 	RegWriteW = 1'b0;
