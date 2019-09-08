@@ -35,13 +35,13 @@ module hazardUnitTB();
     RegWriteM = 0;
     #5; 
 
-    if(ForwardAE = 2'b10) begin
+    if(ForwardAE == 2'b10) begin
             $display("Fordward succeeded");
-            $display(Result);
+            
     end 
     else begin 
             $display("Fordward failed");
-            $display(Result);
+            
     end
 
     //Case 2
@@ -53,13 +53,13 @@ module hazardUnitTB();
     RegWriteW = 1;
     #5; 
 
-    if(ForwardAE = 2'b01) begin
+    if(ForwardAE == 2'b01) begin
             $display("Fordward succeeded");
-            $display(Result);
+            
     end 
     else begin 
             $display("Fordward failed");
-            $display(Result);
+            
     end
 
     //Case 3 
@@ -71,13 +71,13 @@ module hazardUnitTB();
     RegWriteW = 0;
     #5; 
 
-    if(ForwardAE = 2'00) begin
+    if(ForwardAE == 2'b00) begin
             $display("Fordward succeeded");
-            $display(Result);
+           
     end 
     else begin 
             $display("Test Failed");
-            $display(Result);
+            
     end
 
     //Forwarding SrcB
@@ -90,13 +90,13 @@ module hazardUnitTB();
     RegWriteW = 0;
     #5; 
 
-     if(ForwardBE = 2'b10) begin
+     if(ForwardBE == 2'b10) begin
             $display("Fordward succeeded");
-            $display(Result);
+            
     end 
     else begin 
             $display("Fordward failed");
-            $display(Result);
+            
     end
 
     RA1E = 4'b0;
@@ -106,13 +106,13 @@ module hazardUnitTB();
     RegWriteM = 1;
     #5; 
 
-    if(ForwardBE = 2'b01) begin
+    if(ForwardBE == 2'b01) begin
             $display("Fordward succeeded");
-            $display(Result);
+           
     end 
     else begin 
             $display("Fordward failed");
-            $display(Result);
+            
     end
 
     RA1E = 4'b0;
@@ -122,13 +122,11 @@ module hazardUnitTB();
     RegWriteM = 1;
     #5; 
 
-    if(ForwardBE = 2'00) begin
+    if(ForwardBE == 2'b00) begin
             $display("Fordward succeeded");
-            $display(Result);
     end 
     else begin 
             $display("Test Failed");
-            $display(Result);
     end
 
     
