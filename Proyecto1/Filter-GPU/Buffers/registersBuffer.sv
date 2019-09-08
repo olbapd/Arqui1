@@ -1,12 +1,14 @@
 module registersBuffer #(parameter N=18)(
-		input logic [2:0][N-1:0] register1,
-		input logic [2:0][N-1:0] register2,
+		input logic [2:0][N-1:0] rd1,
+		input logic [2:0][N-1:0] rd2,
+		input logic [3:0] ra1,ra2,
 		input logic [2:0][N-1:0] extend,
 		input logic clk, reset,load,
 		input logic PCSrc, RegWrite, MemtoReg, MemWrite, Branch, ALUSrc, FlagWrite,
 		input logic [3:0] ALUControl, WA3,
-		output logic [2:0][N-1:0] q1,
-		output logic [2:0][N-1:0] q2,
+		output logic [2:0][N-1:0] rd1o,
+		output logic [2:0][N-1:0] rd2o,
+		output logic [3:0] ra1o, ra2o,
 		output logic [2:0][N-1:0] extendO,
 		output logic PCSrcO, RegWriteO, MemtoRegO, MemWriteO, BranchO, ALUSrcO, FlagWriteO,
 		output logic [3:0] ALUControlO, WA3O
@@ -15,12 +17,14 @@ module registersBuffer #(parameter N=18)(
 		always_ff@(posedge clk)
 			if(reset) 
 				begin
-				q1 [0]= 16'b0;
-				q1 [1]= 16'b0;
-				q1 [2]= 16'b0;
-				q2 [0]= 16'b0;
-				q2 [1]= 16'b0;
-				q2 [2]= 16'b0;
+				rd1o [0]= 16'b0;
+				rd1o [1]= 16'b0;
+				rd1o [2]= 16'b0;
+				rd2o [0]= 16'b0;
+				rd2o [1]= 16'b0;
+				rd2o [2]= 16'b0;
+				ra1 = 4'b0;
+				ra2 = 4'b0;
 				extendO[0] = 16'b0;
 				extendO[1] = 16'b0;
 				extendO[2] = 16'b0;
@@ -36,8 +40,10 @@ module registersBuffer #(parameter N=18)(
 				end
 			else if(load)
 				begin
-				q1 = register1;
-				q2 = register2;
+				rd1o = rd1;
+				rd2o = rd2;
+				ra1o = ra1;
+				ra2o = ra2;
 				PCSrcO = PCSrc;
 				extendO = extend;
 				RegWriteO = RegWrite;
