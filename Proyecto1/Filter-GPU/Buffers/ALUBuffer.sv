@@ -5,13 +5,13 @@ module ALUBuffer #(parameter N=18)(
 		input logic [2:0][N-1:0] writeData,
 		input logic [3:0] WA3,
 		input logic clk, reset,load,
-		input logic PCSrc, RegWrite, MemtoReg, MemWrite,
+		input logic RegWrite, MemtoReg, MemWrite,
 		output logic [2:0][N-1:0] q1,
 		output logic [9:0] q2,
 		output logic [9:0] q3,
 		output logic [2:0][N-1:0] writeDataO,
 		output logic [3:0] WA3O,
-		output logic PCSrcO, RegWriteO, MemtoRegO, MemWriteO
+		output logic RegWriteO, MemtoRegO, MemWriteO
 		);
 	 
 		always_ff@(posedge clk)
@@ -25,7 +25,6 @@ module ALUBuffer #(parameter N=18)(
 				writeDataO [0]= 16'b0;
 				writeDataO [1]= 16'b0;
 				writeDataO [2]= 16'b0;
-				PCSrcO = 1'b0;
 				RegWriteO = 1'b0;
 				MemtoRegO = 1'b0;
 				MemWriteO = 1'b0;
@@ -36,7 +35,6 @@ module ALUBuffer #(parameter N=18)(
 				q1 = ALUResult;
 				q2 = memoryDirection2;
 				q3 = memoryDirection3;
-				PCSrcO = PCSrc;
 				RegWriteO = RegWrite;
 				MemtoRegO = MemtoReg;
 				MemWriteO = MemWrite;
