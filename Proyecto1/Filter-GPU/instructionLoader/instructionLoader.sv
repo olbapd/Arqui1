@@ -7,7 +7,7 @@ module instructionLoader(
 	reg [31:0] readed [0:22];
 	
 	initial begin
-		$readmemh("C:/Users/Marco FG/Documents/Taller/Proyecto/HEX.txt", readed);
+		$readmemb("C:/Users/Marco FG/Documents/GitHub/Arqui1/Proyecto1/Compiler/output.dat", readed);
 		
 	end
 	
