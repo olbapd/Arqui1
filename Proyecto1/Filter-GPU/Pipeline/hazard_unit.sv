@@ -15,7 +15,8 @@ module hazard_unit(
     input logic MemtoRegE,
     output logic StallF,
     output logic StallD,
-    output logic FlushE
+    output logic FlushE,
+    output logic FlushD
 );
 
 //Initial Values
@@ -49,6 +50,7 @@ always_comb begin
   StallF = LDRstall;
   StallD = LDRstall;
   FlushE = LDRstall;
+  FlushD = LDRstall
   end
   
 endmodule

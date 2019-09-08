@@ -19,47 +19,118 @@ module hazardUnitTB();
 	 
 
 
-	 hazard_unit  hazardunit(RA1E,RA2E,WA3M,WA3W,RegWriteM,RegWriteW,
+	hazard_unit  hazardunit(RA1E,RA2E,WA3M,WA3W,RegWriteM,RegWriteW,
     ForwardAE,ForwardBE,RA1D,RA2D,WA3E,MemtoRegE,StallF,StallD,FlushE);
 	 
 	initial begin 
 
-    //Fordwarding 
+    //Fordwarding SrcA
 	 
+    //Case 1 
     RA1E = 4'b0;
     RA2E = 4'b0;
     WA3M = 4'b0;
     WA3W = 4'b0;
     RegWriteM = 1;
-    #15; 
+    RegWriteM = 0;
+    #5; 
+
+    if(ForwardAE = 2'b10) begin
+            $display("Fordward succeeded");
+            $display(Result);
+    end 
+    else begin 
+            $display("Fordward failed");
+            $display(Result);
+    end
+
+    //Case 2
+    RA1E = 4'b01;
+    RA2E = 4'b0;
+    WA3M = 4'b0;
+    WA3W = 4'b0;
+    RegWriteM = 0;
+    RegWriteW = 1;
+    #5; 
+
+    if(ForwardAE = 2'b01) begin
+            $display("Fordward succeeded");
+            $display(Result);
+    end 
+    else begin 
+            $display("Fordward failed");
+            $display(Result);
+    end
+
+    //Case 3 
+    RA1E = 4'b0;
+    RA2E = 4'b0;
+    WA3M = 4'b0;
+    WA3W = 4'b0;
+    RegWriteM = 1;
+    RegWriteW = 0;
+    #5; 
+
+    if(ForwardAE = 2'00) begin
+            $display("Fordward succeeded");
+            $display(Result);
+    end 
+    else begin 
+            $display("Test Failed");
+            $display(Result);
+    end
+
+    //Forwarding SrcB
 
     RA1E = 4'b0;
     RA2E = 4'b0;
     WA3M = 4'b0;
     WA3W = 4'b0;
     RegWriteM = 1;
-    #15; 
+    RegWriteW = 0;
+    #5; 
+
+     if(ForwardBE = 2'b10) begin
+            $display("Fordward succeeded");
+            $display(Result);
+    end 
+    else begin 
+            $display("Fordward failed");
+            $display(Result);
+    end
+
+    RA1E = 4'b0;
+    RA2E = 4'b1;
+    WA3M = 4'b1;
+    WA3W = 4'b0;
+    RegWriteM = 1;
+    #5; 
+
+    if(ForwardBE = 2'b01) begin
+            $display("Fordward succeeded");
+            $display(Result);
+    end 
+    else begin 
+            $display("Fordward failed");
+            $display(Result);
+    end
 
     RA1E = 4'b0;
     RA2E = 4'b0;
     WA3M = 4'b0;
     WA3W = 4'b0;
     RegWriteM = 1;
-    #15; 
+    #5; 
 
-    RA1E = 4'b0;
-    RA2E = 4'b0;
-    WA3M = 4'b0;
-    WA3W = 4'b0;
-    RegWriteM = 1;
-    #15; 
+    if(ForwardBE = 2'00) begin
+            $display("Fordward succeeded");
+            $display(Result);
+    end 
+    else begin 
+            $display("Test Failed");
+            $display(Result);
+    end
 
-    RA1E = 4'b0;
-    RA2E = 4'b0;
-    WA3M = 4'b0;
-    WA3W = 4'b0;
-    RegWriteM = 1;
-    #15; 
     
     end 
 
