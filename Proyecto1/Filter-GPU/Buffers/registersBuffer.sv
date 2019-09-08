@@ -4,13 +4,13 @@ module registersBuffer #(parameter N=18)(
 		input logic [3:0] ra1,ra2,
 		input logic [2:0][N-1:0] extend,
 		input logic clk, reset,load,
-		input logic PCSrc, RegWrite, MemtoReg, MemWrite, Branch, ALUSrc, FlagWrite,
+		input logic RegWrite, MemtoReg, MemWrite, Branch, ALUSrc, FlagWrite,
 		input logic [3:0] ALUControl, WA3,
 		output logic [2:0][N-1:0] rd1o,
 		output logic [2:0][N-1:0] rd2o,
 		output logic [3:0] ra1o, ra2o,
 		output logic [2:0][N-1:0] extendO,
-		output logic PCSrcO, RegWriteO, MemtoRegO, MemWriteO, BranchO, ALUSrcO, FlagWriteO,
+		output logic RegWriteO, MemtoRegO, MemWriteO, BranchO, ALUSrcO, FlagWriteO,
 		output logic [3:0] ALUControlO, WA3O
 		);
 	 
@@ -28,7 +28,6 @@ module registersBuffer #(parameter N=18)(
 				extendO[0] = 16'b0;
 				extendO[1] = 16'b0;
 				extendO[2] = 16'b0;
-				PCSrcO = 1'b0;
 				RegWriteO = 1'b0;
 				MemtoRegO = 1'b0;
 				MemWriteO = 1'b0;
@@ -44,7 +43,6 @@ module registersBuffer #(parameter N=18)(
 				rd2o = rd2;
 				ra1o = ra1;
 				ra2o = ra2;
-				PCSrcO = PCSrc;
 				extendO = extend;
 				RegWriteO = RegWrite;
 				MemtoRegO = MemtoReg;
