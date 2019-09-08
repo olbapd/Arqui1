@@ -2,7 +2,7 @@ module control_unit(
 	input logic CLK, RST,
 	input logic [31:12] Instr, 
 	input logic [2:0] ShiftSel,
-	output logic PCS, RegW, MemW, MemToReg,ALUSrc,
+	output logic RegW, MemW, MemToReg,ALUSrc,
  	output logic [1:0] ImmSrc,
 	output logic [2:0] RegSrc,
 	output logic [3:0] ALUControl,

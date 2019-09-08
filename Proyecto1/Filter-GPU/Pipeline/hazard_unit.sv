@@ -15,19 +15,11 @@ module hazard_unit(
     input logic MemtoRegE,
     output logic StallF,
     output logic StallD,
-    output logic FlushE,
-    //Stall input/output B
-    input logic PCSrcD,
-    input logic PCSrcE,
-    input logic PCSrcM,
-    input logic BranchTakenE,
-    input logic PCSrcW,
-    output logic FlushD
+    output logic FlushE
 );
 
 //Initial Values
 logic LDRstall = 0;
-logic PCWrPendingF = 0;
 
 //Forwarding SrcA
 always_comb
@@ -51,16 +43,12 @@ always_comb
   else
     ForwardBE = 2'b00; // SrcBE from regfile
     
-    
 //Stalling
 always_comb begin
   LDRstall = (((RA1D == WA3E) || (RA2D == WA3E)) && MemtoRegE);
-  PCWrPendingF = (PCSrcD || PCSrcE || PCSrcM);
-  StallF = LDRstall || PCWrPendingF;
+  StallF = LDRstall;
   StallD = LDRstall;
-  FlushE = LDRstall || BranchTakenE ;
-  FlushD = PCWrPendingF || PCSrcW || BranchTakenE;
-  
+  FlushE = LDRstall;
   end
   
 endmodule

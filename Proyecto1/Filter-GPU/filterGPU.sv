@@ -10,7 +10,7 @@ module filterGPU (
 );
 logic [3:0] Cond;
 //logic [1:0] FlagW;
-logic RegWrite, MemToReg, PCSrc;
+logic RegWrite, MemToReg,
 logic [2:0] RegSrc;
 logic [3:0] ALUControl;
 logic [1:0] ALUSrc,ImmSrc;	
@@ -33,16 +33,12 @@ logic StallF;
 logic StallD;
 logic FlushE;
 //Stall input/output B
-logic PCSrcD;
-logic PCSrcE;
-logic PCSrcM;
 logic BranchTakenE;
-logic PCSrcW;
 logic FlushD;
 
-control_unit controlUnit (clk, reset,Instr[31:12], Instr[6:4], PCSrc, RegWrite, MemWrite, MemToReg, ALUSrc, ImmSrc, RegSrc, ALUControl, Cond);
+control_unit controlUnit (clk, reset,Instr[31:12], Instr[6:4], RegWrite, MemWrite, MemToReg, ALUSrc, ImmSrc, RegSrc, ALUControl, Cond);
 
-DataPath datapath(CLK, RST, CLR1, CLR2, EN1, EN2, PCSrc, RegWrite, MemtoReg, MemWrite, ALUSrc, ALUControl, Cond, ImmSrc, Instr, ReadData,
+DataPath datapath(CLK, RST, CLR1, CLR2, EN1, EN2, RegWrite, MemtoReg, MemWrite, ALUSrc, ALUControl, Cond, ImmSrc, Instr, ReadData,
 	PC, A1,A2,A3, writeData, MemWrite);
 
 //Hazard Unit va aqui
@@ -66,11 +62,11 @@ module hazard_unit(
 		output logic StallD,
 		output logic FlushE,
 		//Stall input/output B
-		input logic PCSrcD,
-		input logic PCSrcE,
-		input logic PCSrcM,
+		input logic,
+		input logic,
+		input logic,
 		input logic BranchTakenE,
-		input logic PCSrcW,
+		input logic,
 		output logic FlushD
 	);
 
