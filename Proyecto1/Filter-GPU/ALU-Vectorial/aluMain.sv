@@ -8,7 +8,7 @@ module aluMain #(parameter N=18, parameter V=3)
 	logic [V-1:0][N-1:0] temp;
 	logic [V-1:0][N-1:0] resultALU;
 	
-	assign temp[0] = (Operation==3'b101)? A[0]+A[1]+A[2] : 0;
+	assign temp[0] = (Operation==3'b101)? A[0]+A[1]+A[2] : 1'b0;
 	assign temp[1] = 0;
 	assign temp[2] = 0;
 
