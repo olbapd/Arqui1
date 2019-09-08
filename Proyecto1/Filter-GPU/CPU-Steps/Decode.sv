@@ -16,7 +16,7 @@ n_bit_mux #(4, 1) ra2_mux ({Instr[15:12], Instr[3:0]}, RegSrc[1], ra2);
 
 regfileVec registerFile(clk, RegWriteW, ra1, ra2, wa3w, wd3, rd1, rd2);
 
-extendUnit #(18) extend(Instr[23:0], ExtImm);
+extendUnit #(18) extend(Instr[23:0], ExtImm); // le falta ImmSrc
 
 
 

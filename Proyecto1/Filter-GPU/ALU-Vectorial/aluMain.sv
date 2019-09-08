@@ -11,6 +11,7 @@ module aluMain #(parameter N=18, parameter V=3)
 	assign temp[0] = (Operation==3'b101)? A[0]+A[1]+A[2] : 1'b0;
 	assign temp[1] = 0;
 	assign temp[2] = 0;
+	
 
 	aluScalar alu1(A[0], B[0], Operation, resultALU[0], Flags[0]);
 	aluScalar alu2(A[1], B[1], Operation, resultALU[1], Flags[1]);
