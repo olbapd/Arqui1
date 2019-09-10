@@ -10,13 +10,13 @@ module Decode (
     );
 
 
-n_bit_mux #(4, 1) ra1_mux ({4'b1111, Instr[19:16]}, RegSrc[0], ra1);
+n_bit_mux #(4, 1) ra1_mux ({4'b1111, Instr[3:0]}, RegSrc[0], ra1);
 
-n_bit_mux #(4, 1) ra2_mux ({Instr[15:12], Instr[3:0]}, RegSrc[1], ra2);
+n_bit_mux #(4, 1) ra2_mux ({Instr[7:4], Instr[11:8]}, RegSrc[1], ra2);
 
 regfileVec registerFile(clk, RegWriteW, ra1, ra2, wa3w, wd3, rd1, rd2);
 
-extendUnit #(18) extend(Instr[23:0], ExtImm); // le falta ImmSrc
+extendUnit #(18) extend(Instr[27:18], ExtImm); // le falta ImmSrc
 
 
 

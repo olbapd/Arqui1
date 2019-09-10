@@ -1,8 +1,8 @@
 module DataPath (
-    input logic CLK, RST, CLR1, CLR2, EN1, EN2, RegWriteD, MemtoRegD, MemWriteD, ALUSrcD,
+    input logic CLK, RST, CLR1, CLR2, EN1, EN2, RegWriteD, MemtoRegD, MemWriteD,
     input logic [3:0] ALUControlD,
-    input logic [1:0] ImmSrcD,
-    input logic [31:0] InstrF,
+    input logic [1:0] ImmSrcD, ALUSrcD, //ALUSrc cambiar tamano en buffers
+    input logic [27:0] InstrF, //ARREGLAR TAMANO EN  BUFFERS
     input logic [2:0][17:0] RDM,
     input logic [1:0] ForwardAE,
     input logic [1:0] ForwardBE,
@@ -27,20 +27,25 @@ Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, rd1, rd2, 
 
 //Decode-Execute
 logic [2:0] [17:0] rd1E, rd2E;
-logic RegWriteE, MemWriteE, ALUSrcE, MemtoRegM, MemtoRegW,/* WA3W,*/ ALUOutW;
+logic RegWriteE, MemWriteE, ALUSrcE, MemtoRegM, MemtoRegW, ALUOutW;
 logic [3:0] ALUControlE;
-logic [2:0] [17:0] SrcAE, writeDataE, SrcBE;
+logic [2:0] [17:0] SrcA1, SrcAE, writeDataE, SrcBE, Ceros;
 logic [3:0] ALUFlags;
 logic [2:0] [17:0] AluResultE, ALUResultM;
 logic [9:0] A1, A2, A3;
 logic [2:0][17:0] ReadDataW, ResultW;
 
 registersBuffer regbuff(rd1, rd2, ra1D, ra2D, ExtImm, CLK, CLR2, 1'b1, RegWriteD, MemtoRegD, MemWriteD, ALUSrcD, ALUControlD, InstrF[15:12],  
-		                rd1E, rd2E, ra1E, ra2E, ExtImmE, RegWriteE, MemtoRegE, MemWriteE, ALUSrcE, ALUControlE, WA3E);                                                                                                                                                                             
+                        rd1E, rd2E, ra1E, ra2E, ExtImmE, RegWriteE, MemtoRegE, MemWriteE, ALUSrcE, ALUControlE, WA3E);    
+                        
+assign Ceros[0] = 18'b0;
+assign Ceros[1] = 18'b0;
+assign Ceros[2] = 18'b0;
 
-mux_3to1 muxAlu1(rd1E, ResultW, ALUResultM, ForwardAE, SrcAE); 
+mux_3to1 muxAlu1(rd1E, ResultW, ALUResultM, ForwardAE, SrcA1); 
+mux_2to1 mux2to1Alu(SrcA1, Ceros, ALUSrcE[0], SrcAE); 
 mux_3to1 muxAlu2(rd2E, ResultW, ALUResultM, ForwardBE, writeDataE);
-mux_2to1 muxAlu3(writeDataE, ExtImmE, ALUSrcE, SrcBE); 
+mux_2to1 muxAlu3(writeDataE, ExtImmE, ALUSrcE[1], SrcBE); 
 
 aluMain #(18, 3) alu(SrcAE, SrcBE, ALUControlE, AluResultE, ALUFlags);
 
@@ -51,6 +56,6 @@ assign A3 = A1 - 1;
 ALUBuffer alubuff(AluResultE, A1, A2, A3, writeDataE, WA3E, CLK, 1'b0, 1'b1, RegWriteE, MemtoRegE, MemWriteE, ALUResultM, A1M, A2M, A3M, writeDataM, WA3M, RegWriteM, MemtoRegM, MemWriteM); 
 
 writebackBuffer #(18) wrbBuff(RDM, ALUResultM, CLK, 1'b0, 1'b1, WA3M, RegWriteM, MemtoRegM, ReadDataW, RegWriteW, MemtoRegW, WA3W, ALUOutW);
-mux_2to1 mux2to1(ReadDataW, ALUOutW, MemtoRegW,ResultW); 
+mux_2to1 mux2to1WB(ReadDataW, ALUOutW, MemtoRegW,ResultW); 
 
 endmodule

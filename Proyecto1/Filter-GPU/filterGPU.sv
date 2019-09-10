@@ -1,6 +1,6 @@
 module filterGPU (
 	input logic CLK, RST,
-	input logic [31:0] Instr,
+	input logic [27:0] Instr,
 	input  logic [2:0][17:0] ReadData,
 	output logic [31:0] PC,
 	output logic MemWriteM,
@@ -13,7 +13,6 @@ logic [2:0] RegSrc;
 logic [3:0] ALUControl;
 logic [1:0] ALUSrc,ImmSrc;
 logic MemWrite;
-
 logic [3:0] RA1E;
 logic [3:0] RA2E;
 logic [3:0] WA3M;
@@ -30,9 +29,9 @@ logic StallF;
 logic StallD;
 logic FlushE;
 
-control_unit controlUnit (clk, reset,Instr[31:12], Instr[6:4], RegWrite, MemWrite, MemToReg, ALUSrc, ImmSrc, RegSrc, ALUControl);
+control_unit controlUnit (clk, reset,Instr[31:12], Instr[6:4], RegWrite, MemWrite, MemToReg, ImmSrc, ALUSrc, RegSrc, ALUControl);
 
-DataPath datapath(CLK, RST, CLR1, FlushE, StallF, StallD, RegWrite, MemtoReg, MemWrite, ALUSrc, ALUControl, ImmSrc, Instr, ReadData, ForwardAE, ForwardBE, RegSrc,
+DataPath datapath(CLK, RST, CLR1, FlushE, StallF, StallD, RegWrite, MemtoReg, MemWrite, ALUControl, ImmSrc, ALUSrc,Instr, ReadData, ForwardAE, ForwardBE, RegSrc,
 	PC, A1,A2,A3, writeData, MemWriteM, RA1D, RA2D, RA1E, RA2E, WA3E, WA3M, WA3W, RegWriteM, RegWriteW, MemtoRegE);
 
 hazard_unit  hazardunit(RA1E,RA2E,WA3M,WA3W,RegWriteM,RegWriteW, ForwardAE, ForwardBE,RA1D,RA2D,WA3E,MemtoRegE,StallF,StallD,FlushE);

@@ -1,67 +1,34 @@
-module alu_decoder(ALUOp, Funct, ALUControl);
+module alu_decoder(ALUOp, Funct, ALUControl, SrcA);
 
 	// Inputs
 	input logic ALUOp;
-	input logic [5:0] Funct;
+	input logic [3:0] Funct;
 	
 	// Outputs
-	output logic [3:0] ALUControl;
-
-	logic [1:0] FlagW;
-	logic NoWrite;
+	output logic [2:0] ALUControl;
+	output logic SrcA;
 	
-
-	logic [6:0] logicOutputs;
-	assign {ALUControl, FlagW, NoWrite} = logicOutputs;
+	logic [3:0] logicOutputs;
+	assign {ALUControl, SrcA} = logicOutputs;
 	
-	logic [6:0] caseCond;
+	logic [4:0] caseCond;
 	assign caseCond = {ALUOp, Funct};
 	always @(*) begin
 		casex (caseCond)
-		  7'b0Xxxxxx : begin // NOT DP
+		  5'b0Xxxx : begin // NOT DP
 				logicOutputs <= 0;
 		  end
-		  7'b1X01000 : begin // ADD
-				logicOutputs <= 0;
+		  5'b1X001 : begin // SUB
+				logicOutputs <= 4'b0110;
 		  end
-		  7'b1X01001 : begin // ADD
-				logicOutputs <= 7'b0000110;
+		  5'b1X011 : begin // MUL
+				logicOutputs <= 4'b1000;
 		  end
-		  7'b1X00100 : begin // SUB
-				logicOutputs <= 7'b0001000;
+		  5'b1X100 : begin // CONV
+				logicOutputs <= 4'b1010; 
 		  end
-		  7'b1X00101 : begin // SUB
-				logicOutputs <= 7'b0001110;
-		  end
-		  7'b1X00000 : begin // AND
-				logicOutputs <= 7'b0010000;
-		  end
-		  7'b1X00001 : begin // AND
-				logicOutputs <= 7'b0010100;
-		  end
-		  7'b1X11000 : begin // ORR
-				logicOutputs <= 7'b0011000;
-		  end
-		  7'b1X11001 : begin // ORR
-				logicOutputs <= 7'b0011100;
-		  end
-		  7'b1X10101 : begin // CMP
-				logicOutputs <= 7'b0001111;
-		  end
-		  7'b1X00010 : begin // XOR => MUL, CAMBIAR
-				logicOutputs <= 7'b0101000;
-		  end
-		  7'b1011010 : begin // LSR
-				logicOutputs <= 7'b1001000;
-		  end
-		  7'b1111010 : begin // MOV pos
-				logicOutputs <= 01; // cambiar uno xq era de SrcA
-		  end
-		  7'b1111110 : begin // MOV neg
-				logicOutputs <= 7'b0001000;
-		  end
-		  7'b1010010 : begin // B
-				logicOutputs <= 7'b0111000;
+		  5'b11010 : begin // MOV 
+				logicOutputs <= 4'b0001; //ADD alucontrol = 000
 		  end
 		  default : begin
 		  end
