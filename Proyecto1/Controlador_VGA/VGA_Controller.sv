@@ -72,7 +72,7 @@ module VGA_Controller(
 	
 	and(canDraw,inH,inV);
 	
-	assign	mVGA_R	=	(canDraw)?	iRed	:	8'b11111110;
+	assign	mVGA_R	=	(canDraw)?	iRed	:	8'b0;
 	assign	mVGA_G	=	(	canDraw)?	iGreen	:	8'b0;
 	assign	mVGA_B	=	(	canDraw)?	iBlue	:	8'b0;
 	
@@ -135,7 +135,7 @@ module VGA_Controller(
 	begin
 		if (!iRST_N) //If I want to reset
 			begin
-				oVGA_R <= 8'b11111111;
+				oVGA_R <= 8'b0;
 				oVGA_G <= 8'b0;
 				oVGA_B <= 8'b0;
 				oVGA_BLANK <= 1'b0;

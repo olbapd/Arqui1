@@ -28,11 +28,11 @@ module imageDrawer #(parameter Width=640)(input logic clk,
 				3'b001: pixel = memResult2;
 				3'b010: pixel = memResult3;
 				3'b011: pixel = memResult4;
-				default: pixel = 8'b1111110;
+				default: pixel = 8'b0;
 			endcase
 		end
 		else begin 
-			pixel = 8'b1111110;
+			pixel = 8'b0;
 		end
 	end
 	
