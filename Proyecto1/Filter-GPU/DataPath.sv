@@ -27,9 +27,10 @@ Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, rd1, rd2, 
 
 //Decode-Execute
 logic [2:0] [17:0] rd1E, rd2E;
-logic RegWriteE, MemWriteE, ALUSrcE, MemtoRegM, MemtoRegW, ALUOutW;
+logic [1:0] ALUSrcE;
+logic RegWriteE, MemWriteE, MemtoRegM, MemtoRegW, ALUOutW;
 logic [3:0] ALUControlE;
-logic [2:0] [17:0] SrcA1, SrcAE, writeDataE, SrcBE, Ceros;
+logic [2:0] [17:0] SrcA1, SrcAE, writeDataE, SrcBE, Zeros;
 logic [3:0] ALUFlags;
 logic [2:0] [17:0] AluResultE, ALUResultM;
 logic [9:0] A1, A2, A3;
@@ -38,12 +39,12 @@ logic [2:0][17:0] ReadDataW, ResultW;
 registersBuffer regbuff(rd1, rd2, ra1D, ra2D, ExtImm, CLK, CLR2, 1'b1, RegWriteD, MemtoRegD, MemWriteD, ALUSrcD, ALUControlD, InstrF[15:12],  
                         rd1E, rd2E, ra1E, ra2E, ExtImmE, RegWriteE, MemtoRegE, MemWriteE, ALUSrcE, ALUControlE, WA3E);    
                         
-assign Ceros[0] = 18'b0;
-assign Ceros[1] = 18'b0;
-assign Ceros[2] = 18'b0;
+assign Zeros[0] = 18'b0;
+assign Zeros[1] = 18'b0;
+assign Zeros[2] = 18'b0;
 
 mux_3to1 muxAlu1(rd1E, ResultW, ALUResultM, ForwardAE, SrcA1); 
-mux_2to1 mux2to1Alu(SrcA1, Ceros, ALUSrcE[0], SrcAE); 
+mux_2to1 mux2to1Alu(SrcA1, Zeros, ALUSrcE[0], SrcAE); 
 mux_3to1 muxAlu2(rd2E, ResultW, ALUResultM, ForwardBE, writeDataE);
 mux_2to1 muxAlu3(writeDataE, ExtImmE, ALUSrcE[1], SrcBE); 
 
