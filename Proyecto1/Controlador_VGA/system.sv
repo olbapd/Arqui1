@@ -26,10 +26,11 @@ module system(input logic clk,
 		end
 	end
 
-	draw Draw(hcount, vcount, bounds_draw);
+	draw  #(640,480)Draw (hcount, vcount, bounds_draw);
+
 
 	
-	imageDrawer drawer(clk,bounds_draw,hcount,vcount, color);
+	imageDrawer #(640) drawer(clk,bounds_draw,hcount,vcount, color);
 	//imem Imem(hcount,vcount,color);
 	
 	//assign color = 8'b1111111;

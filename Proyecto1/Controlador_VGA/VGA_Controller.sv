@@ -67,8 +67,8 @@ module VGA_Controller(
 							V_Cont>=Y_START 	&& V_Cont<Y_START+V_SYNC_ACT )
 							?	iBlue	:	8'b0;*/
 	
-	assign inH = (H_Cont>=10'b0010001100 && H_Cont<=10'b1100001100 )? 1:0;
-	assign inV = (V_Cont>=10'b0000100010 && V_Cont<10'b001000000010)? 1:0;
+	assign inH = (H_Cont>=10'b0010001100 && H_Cont<=10'b1100001100 )? 1'b1:1'b0;
+	assign inV = (V_Cont>=10'b0000100010 && V_Cont<10'b001000000010)? 1'b1:1'b0;
 	
 	and(canDraw,inH,inV);
 	

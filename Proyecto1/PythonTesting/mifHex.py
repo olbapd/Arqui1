@@ -17,29 +17,29 @@ def main(image_name):
     depth = image.size[1]*image.size[0]/cols
     mif_file.write('DEPTH='+str(int(depth))+';\nWIDTH='+str(bitAmount)+';\nADDRESS_RADIX=HEX;\nDATA_RADIX=HEX;\nCONTENT\nBEGIN\n\n'.format(len(pixels), 8))
     address = 0
-    cont=0
+    #cont=0
     line=''
     for i in range(image.size[1]):
         for j in range(image.size[0]):
-            if(cont==0):
-                hexAddress = hex(((i*image.size[0])+j)//16).split('x')[-1]
-                mif_file.write(hexAddress.upper()  + ": ")
+            #if(cont==0):
+            hexAddress = hex(((i*image.size[0])+j)).split('x')[-1]
+            mif_file.write(hexAddress.upper()  + ": ")
             line ='' + eight_bit_conversion(pixels[address])+line
             #mif_file.write(line)
             address+=1
-            if(cont==cols-1):
-                cont=-1
-                mif_file.write(line)
-                line=''
-                mif_file.write(';\n')
+            #if(cont==cols-1):
+            #   cont=-1
+            mif_file.write(line)
+            line=''
+            mif_file.write(';\n')
                 
-            cont+=1
-    print(cont)
+            #cont+=1
+    '''print(cont)
     if(cont !=0):
         while(cont<cols-1):
             mif_file.write('00')
             cont+=1
-        mif_file.write(';\n')
+        mif_file.write(';\n')'''
 
     mif_file.write('END;')
 
