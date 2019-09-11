@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Controlador_VGA
-Wed Sep 11 00:42:20 2019
+Wed Sep 11 00:52:17 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Sep 11 00:42:20 2019       ;
+; Analysis & Synthesis Status     ; Successful - Wed Sep 11 00:52:17 2019       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; Controlador_VGA                             ;
 ; Top-level Entity Name           ; system                                      ;
@@ -213,16 +213,16 @@ refer to the applicable agreement for further details.
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altram.inc                      ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altdpram.inc                    ;         ;
 ; db/altsyncram_a3o1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/db/altsyncram_a3o1.tdf ;         ;
-; pandita1.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/pandita1.mif           ;         ;
+; ./pandita1.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/pandita1.mif           ;         ;
 ; db/decode_dla.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/db/decode_dla.tdf      ;         ;
 ; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/db/decode_61a.tdf      ;         ;
 ; db/mux_tfb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/db/mux_tfb.tdf         ;         ;
 ; db/altsyncram_b3o1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/db/altsyncram_b3o1.tdf ;         ;
-; pandita2.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/pandita2.mif           ;         ;
+; ./pandita2.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/pandita2.mif           ;         ;
 ; db/altsyncram_c3o1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/db/altsyncram_c3o1.tdf ;         ;
-; pandita3.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/pandita3.mif           ;         ;
+; ./pandita3.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/pandita3.mif           ;         ;
 ; db/altsyncram_d3o1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/db/altsyncram_d3o1.tdf ;         ;
-; pandita4.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/pandita4.mif           ;         ;
+; ./pandita4.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/pandita4.mif           ;         ;
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------+---------+
 
 
@@ -839,7 +839,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed Sep 11 00:42:08 2019
+    Info: Processing started: Wed Sep 11 00:52:02 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Controlador_VGA -c Controlador_VGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -983,10 +983,10 @@ Info (21057): Implemented 516 device resources after synthesis - the final resou
     Info (21061): Implemented 229 logic cells
     Info (21064): Implemented 256 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4873 megabytes
-    Info: Processing ended: Wed Sep 11 00:42:20 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 4955 megabytes
+    Info: Processing ended: Wed Sep 11 00:52:17 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+
