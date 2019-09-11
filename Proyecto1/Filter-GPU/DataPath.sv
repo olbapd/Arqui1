@@ -6,7 +6,7 @@ module DataPath (
     input logic [2:0][17:0] RDM,
     input logic [1:0] ForwardAE,
     input logic [1:0] ForwardBE,
-	input logic [2:0] RegSrc,
+	input logic [1:0] RegSrc,
     output logic [31:0] PC,
     output logic [9:0] A1M,A2M,A3M,
     output logic [2:0][17:0] writeDataM,

@@ -3,7 +3,7 @@ module Decode (
     input logic [31:0] Instr,
     input logic [2:0][17:0] wd3,
     input logic [3:0] wa3w,
-    input logic [2:0] RegSrc,
+    input logic [1:0] RegSrc,
     output logic [2:0][17:0] rd1, rd2,
     output logic [2:0][17:0] ExtImm,
     output logic [3:0] ra1, ra2

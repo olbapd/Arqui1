@@ -18,6 +18,9 @@ module alu_decoder(ALUOp, Funct, ALUControl, SrcA);
 		  5'b0Xxxx : begin // NOT DP
 				logicOutputs <= 0;
 		  end
+		  5'b1X000 : begin // ADD
+			logicOutputs <= 4'b0000;
+	  	  end
 		  5'b1X001 : begin // SUB
 				logicOutputs <= 4'b0110;
 		  end
