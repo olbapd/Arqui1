@@ -15,7 +15,7 @@ module n_bit_register #(parameter N = 4) (CLK, RST, WD, WE, RD);
 	
 	// Write Data
 	always_ff @(posedge CLK) begin
-		if(RST == 0)begin
+		if(RST)begin
 			register <= 0;
 		end
 		else if (WE == 0) begin

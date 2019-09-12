@@ -13,9 +13,9 @@ logic [2:0] ALUControl;
 logic [3:0] RA1E, RA2E, WA3M, WA3W, RA1D, RA2D, WA3E;
 logic [1:0] ALUSrc, ImmSrc, ForwardAE, ForwardBE;
 
-control_unit controlUnit (clk, RST,Instr[17:0], RegWrite, MemWrite, MemToReg, ImmSrc, ALUSrc, RegSrc, ALUControl);
+control_unit controlUnit (CLK,Instr[17:0], RegWrite, MemWrite, MemToReg, ImmSrc, ALUSrc, RegSrc, ALUControl);
 
-DataPath datapath(CLK, RST, CLR1, FlushE, StallF, StallD, RegWrite, MemtoReg, MemWrite, ALUControl, ImmSrc, ALUSrc,Instr, ReadData, ForwardAE, ForwardBE, RegSrc,
+DataPath datapath(CLK, RST, FlushE, StallF, StallD, RegWrite, MemToReg, MemWrite, ALUControl, ImmSrc, ALUSrc,Instr, ReadData, ForwardAE, ForwardBE, RegSrc,
 	PC, A1,A2,A3, writeData, MemWriteM, RA1D, RA2D, RA1E, RA2E, WA3E, WA3M, WA3W, RegWriteM, RegWriteW, MemtoRegE);
 
 hazard_unit  hazardunit(RA1E,RA2E,WA3M,WA3W,RegWriteM,RegWriteW, ForwardAE, ForwardBE,RA1D,RA2D,WA3E,MemtoRegE,StallF,StallD,FlushE);

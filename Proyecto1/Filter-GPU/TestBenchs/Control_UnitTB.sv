@@ -12,7 +12,7 @@ always
     #10 Clock = 0;
   end
   
-control_unit controlUnitTB (Clock, reset,Instr[17:0], RegWrite, MemWrite, MemToReg, ImmSrc, ALUSrc, RegSrc, ALUControl);
+control_unit controlUnitTB (Clock,Instr[17:0], RegWrite, MemWrite, MemToReg, ImmSrc, ALUSrc, RegSrc, ALUControl);
 
 initial begin 
 	reset=0;
@@ -22,10 +22,6 @@ initial begin
 	//Instr= 28'b0000000110001010000000110000; //MOV
 	Instr= 28'b0000000000010001000000110101; //LDR
 	//Instr= 28'b0000000000010000000010000010; //STR
-	
-	
-	
-
 end
 
 endmodule

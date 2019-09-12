@@ -1,0 +1,16 @@
+module imemTB():
+
+logic [31:0] PC;
+logic [1:0] kernel;
+logic [27:0] Instr;
+
+imem imemtb(PC, kernel,Instr);
+
+initial begin
+	RST = 1'b0;
+	kernel = 2'b11;
+	PC = 32'b0;
+	
+end
+
+endmodule
