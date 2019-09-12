@@ -1,6 +1,6 @@
 module DataPath (
     input logic CLK, RST, CLR1, CLR2, EN1, EN2, RegWriteD, MemtoRegD, MemWriteD,
-    input logic [3:0] ALUControlD,
+    input logic [2:0] ALUControlD,
     input logic [1:0] ImmSrcD, ALUSrcD, //ALUSrc cambiar tamano en buffers
     input logic [27:0] InstrF, //ARREGLAR TAMANO EN  BUFFERS
     input logic [2:0][17:0] RDM,
@@ -29,7 +29,7 @@ Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, rd1, rd2, 
 logic [2:0] [17:0] rd1E, rd2E;
 logic [1:0] ALUSrcE;
 logic RegWriteE, MemWriteE, MemtoRegM, MemtoRegW, ALUOutW;
-logic [3:0] ALUControlE;
+logic [2:0] ALUControlE;
 logic [2:0] [17:0] SrcA1, SrcAE, writeDataE, SrcBE, Zeros;
 logic [3:0] ALUFlags;
 logic [2:0] [17:0] AluResultE, ALUResultM;

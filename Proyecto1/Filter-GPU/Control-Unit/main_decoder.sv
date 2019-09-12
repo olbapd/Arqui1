@@ -18,7 +18,7 @@ module main_decoder(Op, Funct_FO, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc, 
 		casex (caseCond)
 		  4'b000x : logicOutputs <= 9'b000111001; // Data-processing register
 		  4'b001x : logicOutputs <= 9'b001001001; // Data-processing immediate
-		  4'b01x0 : logicOutputs <= 9'b011010100; //STRV
+		  4'b01x0 : logicOutputs <= 9'b010010100; //STRV
 		  4'b01x1 : logicOutputs <= 9'b100011000; //LDRV
 		  default : logicOutputs <= 0;
 		endcase

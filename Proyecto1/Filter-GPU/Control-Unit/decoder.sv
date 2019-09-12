@@ -8,7 +8,7 @@ module decoder(Rd, Op, Funct, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc, ALUC
 	// Outputs
 	output logic RegW, MemW, MemToReg;
 	output logic [1:0] ImmSrc, RegSrc, ALUSrc;
-	output logic [3:0] ALUControl;
+	output logic [2:0] ALUControl;
 	
 	// Wires
 	logic ALUOp;
