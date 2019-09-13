@@ -24,22 +24,26 @@ logic [2:0] ALUControlE;
 logic [9:0] A1, A2, A3;
 logic [2:0] [17:0] rd1, rd2, ExtImm, ExtImmE, ResultW, rd1E, rd2E, writeDataE, AluResultE, ALUResultM, ReadDataW, ALUOutW; 
 
+//Fetch-Step
 Fetch fetch(CLK, RST, EN1, PC);
 //Fetch-Decode-Buffer
 instructionBuffer instbuff(InstrF, CLK, 1'b0, EN2, InstrD);
-
+//Decode-Step
 Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, rd1, rd2, ExtImm, ra1D, ra2D); 
 
 //Decode-Execute-Buffer
 registersBuffer regbuff(rd1, rd2, ra1D, ra2D, ExtImm, CLK, CLR2, 1'b1, RegWriteD, MemtoRegD, MemWriteD, ALUSrcD, ALUControlD, InstrD[7:4],  
                         rd1E, rd2E, ra1E, ra2E, ExtImmE, RegWriteE, MemtoRegE, MemWriteE, ALUSrcE, ALUControlE, WA3E); 
-                          
+//Execute-Step                      
 Execute execute(rd1E, rd2E, ResultW, ALUResultM, ExtImmE, ForwardAE, ForwardBE, ALUSrcE, ALUControlE, A1, A2, A3, writeDataE, AluResultE);               
 
 //Execute-Mem-Buffer
 ALUBuffer alubuff(AluResultE, A1, A2, A3, writeDataE, WA3E, CLK, 1'b0, 1'b1, RegWriteE, MemtoRegE, MemWriteE, ALUResultM, A1M, A2M, A3M, writeDataM, WA3M, RegWriteM, MemtoRegM, MemWriteM); 
 
+//Memory-WriteBack-Buffer
 writebackBuffer #(18) wrbBuff(RDM, ALUResultM, CLK, 1'b0, 1'b1, WA3M, RegWriteM, MemtoRegM, ReadDataW, RegWriteW, MemtoRegW, WA3W, ALUOutW);
-mux_2to1 mux2to1WB(ALUOutW, ReadDataW, MemtoRegW,ResultW); 
+
+//WriteBack-Step
+WriteBack writeback(ALUOutW, ReadDataW, MemtoRegW, ResultW);
 
 endmodule
