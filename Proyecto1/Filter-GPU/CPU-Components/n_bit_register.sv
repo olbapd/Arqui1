@@ -18,7 +18,7 @@ module n_bit_register #(parameter N = 4) (CLK, RST, WD, WE, RD);
 		if(RST)begin
 			register <= 0;
 		end
-		else if (WE == 0) begin
+		else if (~WE) begin
 			register <= WD;
 		end
 	end

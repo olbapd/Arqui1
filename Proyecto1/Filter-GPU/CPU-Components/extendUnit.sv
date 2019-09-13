@@ -6,6 +6,5 @@ module extendUnit #(parameter N=18)(
 	assign extended[0] = {8'b0,immediate};
 	assign extended[1] = 18'b0;
 	assign extended[2] = 18'b0;
-
-
+	
 endmodule 

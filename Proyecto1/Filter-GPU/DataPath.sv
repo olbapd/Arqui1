@@ -1,8 +1,8 @@
 module DataPath (
     input logic CLK, RST, CLR2, EN1, EN2, RegWriteD, MemtoRegD, MemWriteD,
     input logic [2:0] ALUControlD,
-    input logic [1:0] ImmSrcD, ALUSrcD, //ALUSrc cambiar tamano en buffers
-    input logic [27:0] InstrF, //ARREGLAR TAMANO EN  BUFFERS
+    input logic [1:0] ImmSrcD, ALUSrcD, 
+    input logic [27:0] InstrF,
     input logic [2:0][17:0] RDM,
     input logic [1:0] ForwardAE,
     input logic [1:0] ForwardBE,
@@ -14,14 +14,16 @@ module DataPath (
     output logic [3:0] ra1D, ra2D, ra1E, ra2E,
     output logic [3:0] WA3E, WA3M, WA3W,
     output logic RegWriteM, RegWriteW,
-    output logic MemtoRegE
+    output logic MemtoRegE,
+    output logic [27:0] InstrD
 );
 logic [2:0] [17:0] wd3, rd1, rd2;
-logic [27:0] InstrD;
+//logic [27:0] InstrD;
 logic [2:0][17:0] ExtImm, ExtImmE;
+logic [2:0][17:0] ResultW;
 
 //Fetch-Decode
-Fetch fetch(CLK, RST, ~EN1, PC);
+Fetch fetch(CLK, RST, EN1, PC);
 instructionBuffer instbuff(InstrF, CLK, 1'b0, EN2, InstrD);
 Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, rd1, rd2, ExtImm, ra1D, ra2D); 
 
