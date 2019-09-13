@@ -19,6 +19,7 @@ module VGA_Controller(
 							output logic	[9:0] H_Cont,
 							output logic	[9:0] V_Cont);
 
+
 	// Horizontal Parameter
 	parameter	H_SYNC_CYC	=	10'b0000101101;//45;         
 	parameter	H_SYNC_BACK	=	10'b0001011111;//95;
