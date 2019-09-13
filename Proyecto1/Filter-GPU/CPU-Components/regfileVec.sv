@@ -16,7 +16,7 @@ assign full_register_table = { register_table};
 assign rd1 = full_register_table[ra1];
 assign rd2 = full_register_table[ra2];
 
-always_ff @(posedge clk) begin
+always_ff @(negedge clk) begin
 
 	if(we3) register_table[ra3] <= wd3;
 end
