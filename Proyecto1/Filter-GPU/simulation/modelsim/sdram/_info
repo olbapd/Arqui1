@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/simulation/modelsim
+vsdram_sram_0
+!s110 1567292128
+!i10b 1
+!s100 ?AY`iVh?1dzTlJ;Gf]==@2
+IP7bfzHJb]N?8EgIf6=hSk2
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1567291698
+8C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules/sdram_sram_0.v
+FC:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules/sdram_sram_0.v
+L0 30
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1567292128.000000
+!s107 C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules/sdram_sram_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|sdram|+incdir+C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules|C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules/sdram_sram_0.v|
+!i113 1
+o-vlog01compat -work sdram
+!s92 -vlog01compat -work sdram +incdir+C:/Users/and-h/Documents/GitHub/Arqui1/Proyecto1/Filter-GPU/sdram/synthesis/submodules
+tCvgOpt 0
