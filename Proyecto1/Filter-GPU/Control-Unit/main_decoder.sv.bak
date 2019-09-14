@@ -8,6 +8,9 @@ module main_decoder(Op, Funct_FO, RegW, MemW, MemToReg, ALUSrc, ImmSrc, RegSrc, 
 	output logic [1:0] ImmSrc, RegSrc;
 	
 	// For ease of assigment
+	initial begin
+		MemtoReg = 0;
+	end
 
 	logic [8:0] logicOutputs;
 	assign {MemToReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc, ALUOp} = logicOutputs;
