@@ -11,7 +11,7 @@ module aluScalar #(parameter N=18)(input logic [N-1:0] A, B,
 	
 	always_comb
 		case (F[2:0])
-			3'b000: Result <= A & Bout; 
+			3'b000: Result <= A + B; //add
 			3'b001: Result <= A | Bout;
 			3'b010: Result <= S;
 			3'b011: Result <= A-B; //sub

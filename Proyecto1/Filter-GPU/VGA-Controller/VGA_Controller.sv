@@ -19,19 +19,19 @@ module VGA_Controller(
 							output logic	[9:0] H_Cont,
 							output logic	[9:0] V_Cont);
 
-
 	// Horizontal Parameter
-	parameter	H_SYNC_CYC	=	10'b0000101101;//45;         
-	parameter	H_SYNC_BACK	=	10'b0001011111;//95;
-	parameter	H_SYNC_ACT	=	10'b1010000000;//640;
-	parameter	H_SYNC_FRONT=	10'b0000010100;//20;
-	parameter	H_SYNC_TOTAL=	10'b1100100000; //800;
+
+	parameter	H_SYNC_CYC	=	45;         
+	parameter	H_SYNC_BACK	=	95;
+	parameter	H_SYNC_ACT	=	640;
+	parameter	H_SYNC_FRONT=	20;
+	parameter	H_SYNC_TOTAL=	800;
 	//	Virtical Parameter	
-	parameter	V_SYNC_CYC	=	10'b0000100000;//32;
-	parameter	V_SYNC_BACK	=	10'b0000000010;// 2;
-	parameter	V_SYNC_ACT	=	10'b0111100000;// 480;
-	parameter	V_SYNC_FRONT=	10'b0000001110;//14;
-	parameter	V_SYNC_TOTAL=	10'b1000010000;// 528;
+	parameter	V_SYNC_CYC	=	32;
+	parameter	V_SYNC_BACK	=	2;
+	parameter	V_SYNC_ACT	=	480;
+	parameter	V_SYNC_FRONT=	14;
+	parameter	V_SYNC_TOTAL=	528;
 	//	Start Offset
 	parameter	X_START		=	H_SYNC_CYC+H_SYNC_BACK;
 	parameter	Y_START		=	V_SYNC_CYC+V_SYNC_BACK;
@@ -46,9 +46,7 @@ module VGA_Controller(
 	logic	mVGA_V_SYNC;
 	logic	mVGA_SYNC;
 	logic	mVGA_BLANK;
-	logic canDraw;
-	logic inH;
-	logic inV;
+
 	//	Internal Registers and Wires
 	assign oVGA_CLK = iCLK;
 
@@ -56,27 +54,28 @@ module VGA_Controller(
 
 	assign	mVGA_BLANK =	mVGA_H_SYNC & mVGA_V_SYNC;
 	assign	mVGA_SYNC	=	1'b0;
-	
 
 	/*assign	mVGA_R	=	(	H_Cont>=X_START 	&& H_Cont<X_START+H_SYNC_ACT &&
 							V_Cont>=Y_START 	&& V_Cont<Y_START+V_SYNC_ACT )
-							?	iRed	:	8'b0;
+							?	iRed	:	0;
 	assign	mVGA_G	=	(	H_Cont>=X_START 	&& H_Cont<X_START+H_SYNC_ACT &&
 							V_Cont>=Y_START 	&& V_Cont<Y_START+V_SYNC_ACT )
-							?	iGreen	:	8'b0;
+							?	iGreen	:	0;
 	assign	mVGA_B	=	(	H_Cont>=X_START 	&& H_Cont<X_START+H_SYNC_ACT &&
 							V_Cont>=Y_START 	&& V_Cont<Y_START+V_SYNC_ACT )
-							?	iBlue	:	8'b0;*/
-	
-	assign inH = (H_Cont>=10'b0010001100 && H_Cont<=10'b1100001100 )? 1'b1:1'b0;
-	assign inV = (V_Cont>=10'b0000100010 && V_Cont<10'b001000000010)? 1'b1:1'b0;
-	
-	and(canDraw,inH,inV);
-	
-	assign	mVGA_R	=	(canDraw)?	iRed	:	8'b0;
-	assign	mVGA_G	=	(	canDraw)?	iGreen	:	8'b0;
-	assign	mVGA_B	=	(	canDraw)?	iBlue	:	8'b0;
-	
+							?	iBlue	:	0;*/
+								
+	assign	mVGA_R	=	(	H_Cont>=150 	&& H_Cont<=662 &&
+							V_Cont>=Y_START 	&& V_Cont<Y_START+V_SYNC_ACT )
+							?	iRed	:	0;
+							
+	assign	mVGA_G	=	(	H_Cont>150 	&& H_Cont<662 &&
+							V_Cont>=Y_START 	&& V_Cont<Y_START+V_SYNC_ACT )
+							?	iGreen	:	0;
+	assign	mVGA_B	=	(	H_Cont>150 	&& H_Cont<662 &&
+							V_Cont>=Y_START 	&& V_Cont<Y_START+V_SYNC_ACT )
+							?	iBlue	:	0;
+							
 	
 	
 
@@ -85,21 +84,21 @@ module VGA_Controller(
 	begin	
 		if(!iRST_N) //If reset
 		begin
-			H_Cont		<=	10'b0;
-			mVGA_H_SYNC	<=	1'b0;
+			H_Cont		<=	0;
+			mVGA_H_SYNC	<=	0;
 		end
 		else begin
 			//	H_Sync Counter
 			if( H_Cont < H_SYNC_TOTAL )
-				H_Cont<=	H_Cont+10'b1;
+				H_Cont<=	H_Cont+1;
 			else
-				H_Cont<=	10'b0;
+				H_Cont<=	0;
 			
 			//	H_Sync Generator
 			if( H_Cont < H_SYNC_CYC )
-				mVGA_H_SYNC	<=	1'b0;
+				mVGA_H_SYNC	<=	0;
 			else
-				mVGA_H_SYNC	<=	1'b1;
+				mVGA_H_SYNC	<=	1;
 		end
 	end
 	
@@ -109,24 +108,24 @@ module VGA_Controller(
 	always@(posedge iCLK or negedge iRST_N) begin
 		if(!iRST_N) //If reset
 		begin
-			V_Cont		<=	10'b0;
-			mVGA_V_SYNC	<=	1'b0;
+			V_Cont		<=	0;
+			mVGA_V_SYNC	<=	0;
 		end
 		else
 		begin
 			//	When H_Sync Re-start
-			if(H_Cont==10'b0)
+			if(H_Cont==0)
 			begin
 				//	V_Sync Counter
 				if( V_Cont < V_SYNC_TOTAL )
-					V_Cont	<=	V_Cont+10'b1;
+					V_Cont	<=	V_Cont+1;
 				else
-					V_Cont	<=	10'b0;
+					V_Cont	<=	0;
 				//	V_Sync Generator
 				if(	V_Cont < V_SYNC_CYC )
-					mVGA_V_SYNC	<=	1'b0;
+					mVGA_V_SYNC	<=	0;
 				else
-					mVGA_V_SYNC	<=	1'b1;
+					mVGA_V_SYNC	<=	1;
 			end
 		end
 	end
@@ -136,13 +135,13 @@ module VGA_Controller(
 	begin
 		if (!iRST_N) //If I want to reset
 			begin
-				oVGA_R <= 8'b0;
-				oVGA_G <= 8'b0;
-				oVGA_B <= 8'b0;
-				oVGA_BLANK <= 1'b0;
-				oVGA_SYNC <= 1'b0;
-				oVGA_H_SYNC <= 1'b0;
-				oVGA_V_SYNC <= 1'b0;
+				oVGA_R <= 0;
+				oVGA_G <= 0;
+				oVGA_B <= 0;
+				oVGA_BLANK <= 0;
+				oVGA_SYNC <= 0;
+				oVGA_H_SYNC <= 0;
+				oVGA_V_SYNC <= 0;
 			end
 		else
 			begin
