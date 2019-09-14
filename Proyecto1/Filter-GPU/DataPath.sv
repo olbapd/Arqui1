@@ -8,7 +8,7 @@ module DataPath (
     input logic [1:0] ForwardBE,
 	input logic [1:0] RegSrc,
     output logic [31:0] PC,
-    output logic [9:0] A1M,A2M,A3M,
+    output logic [18:0] A1M,A2M,A3M,
     output logic [2:0][17:0] writeDataM,
     output logic MemWriteM,
     output logic [3:0] ra1D, ra2D, ra1E, ra2E,
@@ -21,7 +21,7 @@ module DataPath (
 logic RegWriteE, MemWriteE, MemtoRegM, MemtoRegW;
 logic [1:0] ALUSrcE;
 logic [2:0] ALUControlE;
-logic [9:0] A1, A2, A3;
+logic [18:0] A1, A2, A3;
 logic [2:0] [17:0] rd1, rd2, ExtImm, ExtImmE, ResultW, rd1E, rd2E, writeDataE, AluResultE, ALUResultM, ReadDataW, ALUOutW; 
 
 //Fetch-Step
