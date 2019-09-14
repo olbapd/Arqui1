@@ -23,18 +23,22 @@ module system(input logic clk,
 		if(clk == 1'b1)
 		begin
 			clk25 = ~clk25;
+
 		end
 	end
 
 	draw  #(640,480)Draw (hcount, vcount, bounds_draw);
 
-
+	
 	
 	imageDrawer #(640) drawer(clk,bounds_draw,hcount,vcount, color);
 	//imem Imem(hcount,vcount,color);
 	
 	//assign color = 8'b1111111;
-	VGA_Controller vga (color,color,color,r,g,b,hsync,vsync,sync,blank,vga_clk,clk25,reset,hcount,vcount);
+	//VGA_Controller vga (color,color,color,r,g,b,hsync,vsync,sync,blank,vga_clk,clk25,reset,hcount,vcount);
+	assign blank = 1;
+	assign sync = 0;
+	vga_contollerTest vgaTest (clk25,color,color,color,hcount,vcount,vsync,hsync,r,g,b,vga_clk);
 	
 
 
