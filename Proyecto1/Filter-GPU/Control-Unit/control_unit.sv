@@ -1,5 +1,5 @@
 module control_unit(
-	input logic CLK, RST,
+	input logic CLK,
 	input logic [17:0] Instr, 
 	output logic RegW, MemW, MemToReg,
  	output logic [1:0] ImmSrc,ALUSrc,

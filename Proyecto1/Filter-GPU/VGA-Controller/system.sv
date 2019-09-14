@@ -1,4 +1,3 @@
-//`timescale 1 ps / 1 ns
 module system(input logic clk,
               input logic reset,
               output logic vsync,
@@ -8,38 +7,37 @@ module system(input logic clk,
 				  output logic [7:0] r,
 				  output logic [7:0] g,
 				  output logic [7:0] b,
-				  output logic vga_clk);
+				  output logic vga_clk,
+				  input logic in1);
 
 		
 	logic clk25 = 0;
-	logic bounds_draw;
-
+	logic [7:0] ir,ig,ib;
 	logic [9:0] hcount,vcount;
-	logic [9:0] X,Y;
-	
-	logic [7:0]color;
-	
+	logic [32:0] timer;
+
 	always @(posedge clk) begin
 		if(clk == 1'b1)
 		begin
 			clk25 = ~clk25;
-
 		end
 	end
 
-	draw  #(640,480)Draw (hcount, vcount, bounds_draw);
+	logic clkcolor = 0;
+
+	always @(posedge clk25) begin
+		if(clk25 == 1'b1)
+		begin
+			clkcolor = ~clkcolor;
+		end
+	end
+
 
 	
+	counter Counter(clk,reset,timer);
 	
-	imageDrawer #(640) drawer(clk,bounds_draw,hcount,vcount, color);
-	//imem Imem(hcount,vcount,color);
-	
-	//assign color = 8'b1111111;
-	//VGA_Controller vga (color,color,color,r,g,b,hsync,vsync,sync,blank,vga_clk,clk25,reset,hcount,vcount);
-	assign blank = 1;
-	assign sync = 0;
-	vga_contollerTest vgaTest (clk25,color,color,color,hcount,vcount,vsync,hsync,r,g,b,vga_clk);
-	
+
+	VGA_Controller vga (ir,ig,ib,r,g,b,hsync,vsync,sync,blank,vga_clk,clk25,reset,hcount,vcount);
 
 
 endmodule

@@ -26,8 +26,8 @@ module writebackBuffer #(parameter N=18)(
 			else if(load)
 				begin
 				q1 = register1;
-				RegWriteO = RegWriteO;
-				MemtoRegO = MemtoRegO;
+				RegWriteO = RegWrite;
+				MemtoRegO = MemtoReg;
 				WA3O = WA3;
 				ALUOutO = ALUOut;
 				end
