@@ -1,13 +1,12 @@
 INSTRUCTIONS = {
-	"addv":{"code":"0100", "type":1},
-	"subv":{"code":"0010", "type":1},
-	"andv":{"code":"0000", "type":1},
-	"orrv":{"code":"1100", "type":1},
-	"movv":{"code":"1101", "type":1},
-    "mulv":{"code":"0001", "type":1},
-    "conv":{"code":"0011", "type":1},
-	"ldrv":{"code":"011001", "type":2},
-	"movv":{"code":"000000", "type":2}
+	"addv":{"code":"0000000000010000", "type":1},
+	"subv":{"code":"0000000000010001", "type":1},
+        "mulv":{"code":"0000000000010011", "type":1},
+	"conv":{"code":"0000000000010100", "type":1},
+
+	"ldrv":{"code":"00000000000100010000", "type":2},
+	"strv":{"code":"00000000000100000000", "type":2},
+        "movv":{"code":"0010100000", "type":3},
 }
 
 OUTPUT=[]
@@ -30,7 +29,7 @@ def read_file():
         linea=format_instruc(line)
         verify_instr(linea)
         compile_reg(linea) #le indico cual es el label
-        if len(OUTPUT[-1]) != 32:
+        if len(OUTPUT[-1]) != 28:
             raise Exception("Error 04: La instruccion no tiene formato adecuado. Por favor revisar el reference sheet.")
     file.close()
     write_file()
@@ -83,8 +82,8 @@ def compile_reg(lista):
         else: 
             contains_imm=True
             num=num_to_bin(lista[i])
-            if CURRENT_TYPE ==1:
-                num=add_padding(int(num),12)
+            if CURRENT_TYPE ==3:
+                num=add_padding(int(num),10)
             '''elif CURRENT_TYPE ==6:
                 num=add_padding(int(num),20)
             else:
@@ -152,6 +151,11 @@ def add_padding(num,pad):
         offset = "{:012}".format(num)
         offset = "{:.12}".format(offset)
         return offset
+    elif pad==10:
+        #offset = "{:010b}".format(num)
+        offset = "{:010}".format(num)
+        offset = "{:.10}".format(offset)
+        return offset
     elif pad==4:
         offset = "{:04b}".format(num)
         offset = "{:.4}".format(offset)
@@ -160,10 +164,10 @@ def add_padding(num,pad):
 
 
 def fill_empty(opcode,hasImm,instr):
-    if CURRENT_TYPE ==1 and (not hasImm):
-        opcode= ['1110000',opcode[0],'0',opcode[2],opcode[1],'00000000',opcode[3]]
-    elif CURRENT_TYPE ==1 and hasImm:
-        opcode= ['1110001',opcode[0],'0',opcode[2], opcode[1],opcode[3]]
+    if CURRENT_TYPE ==1 or CURRENT_TYPE ==2 :
+        pass
+    elif CURRENT_TYPE==3 and hasImm:
+        opcode= [opcode[2],opcode[0], opcode[1],'0000']
     '''elif CURRENT_TYPE ==2 or CURRENT_TYPE ==7:
         opcode.append('000000000000')
         opcode =add_cond(opcode,hasImm,instr)
