@@ -1,6 +1,6 @@
 module Decode (
     input logic clk, RegWriteW, ImmSrcD,
-    input logic [27:0] Instr,
+    input logic [31:0] Instr,
     input logic [2:0][17:0] wd3,
     input logic [3:0] wa3w,
     input logic [1:0] RegSrc,

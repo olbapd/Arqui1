@@ -21,6 +21,7 @@ module hazard_unit(
 
 //Initial Values
 logic LDRstall = 0;
+
 //Forwarding SrcA
 always_comb
   if((RA1E == WA3M) && RegWriteM) 

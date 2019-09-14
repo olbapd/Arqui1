@@ -6,16 +6,14 @@ module registersBuffer #(parameter N=18)(
 		input logic clk, reset,load,
 		input logic RegWrite, MemtoReg, MemWrite, 
 		input logic [1:0] ALUSrc,
-		input logic [2:0] ALUControl,
-		input logic [3:0] WA3,
+		input logic [3:0] ALUControl, WA3,
 		output logic [2:0][N-1:0] rd1o,
 		output logic [2:0][N-1:0] rd2o,
 		output logic [3:0] ra1o, ra2o,
 		output logic [2:0][N-1:0] extendO,
 		output logic RegWriteO, MemtoRegO, MemWriteO,
 		output logic [1:0] ALUSrcO,
-		output logic [2:0] ALUControlO,
-		output logic [3:0] WA3O
+		output logic [3:0] ALUControlO, WA3O
 		);
 	 
 		always_ff@(posedge clk)
@@ -36,7 +34,7 @@ module registersBuffer #(parameter N=18)(
 				MemtoRegO = 1'b0;
 				MemWriteO = 1'b0;
 				ALUSrcO = 2'b0;
-				ALUControlO = 3'b0;
+				ALUControlO = 4'b0;
 				WA3O = 4'b0;
 				end
 			else if(load)
