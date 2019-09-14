@@ -2,7 +2,7 @@ module Execute(
     input logic [2:0] [17:0] rd1E, rd2E, ResultW, ALUResultM, ExtImmE,
     input logic [1:0] ForwardAE, ForwardBE, ALUSrcE,
     input logic [2:0] ALUControlE,
-    output logic [9:0] A1, A2, A3,
+    output logic [18:0] A1, A2, A3,
     output logic [2:0] [17:0] writeDataE, AluResultE
 );
     logic [2:0] [17:0] Zeros, SrcA1, SrcAE, SrcBE;
@@ -18,7 +18,7 @@ module Execute(
 
     aluMain #(18, 3) alu(SrcAE, SrcBE, ALUControlE, AluResultE, ALUFlags);
 
-    assign A1 = AluResultE[0][9:0];
+    assign A1 = {AluResultE[1][0], AluResultE[0][17:0]};
     assign A2 = A1 + 1; 
     assign A3 = A1 - 1;
 
