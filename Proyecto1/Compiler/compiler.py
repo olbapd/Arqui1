@@ -1,17 +1,20 @@
 INSTRUCTIONS = {
 	"addv":{"code":"0000000000010000", "type":1},
 	"subv":{"code":"0000000000010001", "type":1},
-        "mulv":{"code":"0000000000010011", "type":1},
+    "mulv":{"code":"0000000000010011", "type":1},
 	"conv":{"code":"0000000000010100", "type":1},
 
 	"ldrv":{"code":"00000000000100010000", "type":2},
 	"strv":{"code":"00000000000100000000", "type":2},
-        "movv":{"code":"0010100000", "type":3},
+    "movv":{"code":"0010100000", "type":3},
+    "repeat":{"code":"", "type":4},
 }
 
 OUTPUT=[]
 CURRENT_TYPE=""
 CURRENT_CODE=""
+REPEAT_LINES=[]
+REPEAT_FLAG=False
 
 def write_file():
     file = open("output.dat","w")
@@ -24,13 +27,33 @@ def write_file():
     file.close()
 
 def read_file():
+    global REPEAT_FLAG,OUTPUT,REPEAT_LINES
+    repeat_cont=0
+    amount=0
     file = open("file.dat","r")
+    first=False
     for line in file:
         linea=format_instruc(line)
         verify_instr(linea)
-        compile_reg(linea) #le indico cual es el label
+        if(linea[0]=='repeat'):
+            repeat_cont=int(linea[1])
+            amount=int(linea[2])
+            first=True
+        else:
+            compile_reg(linea) #le indico cual es el label
         if len(OUTPUT[-1]) != 28:
             raise Exception("Error 04: La instruccion no tiene formato adecuado. Por favor revisar el reference sheet.")
+        if(REPEAT_FLAG and amount>0 and not first):
+            REPEAT_LINES.append(OUTPUT[-1])
+            amount-=1
+        elif(REPEAT_FLAG and amount>0):
+            first=False
+        elif(REPEAT_FLAG and amount==0):
+            for i in range(repeat_cont - 1):
+                for j in range(0,len(REPEAT_LINES)):
+                    OUTPUT.append(REPEAT_LINES[j])
+        
+            REPEAT_LINES=[]
     file.close()
     write_file()
 #--------------- Validation -------------------#
@@ -55,10 +78,13 @@ def format_instruc(line):
 
 #Input: la instruccion
 def verify_instr(linea):
+    global REPEAT_FLAG
     global CURRENT_TYPE, CURRENT_CODE
     instr=linea[0]
     instr = instr.lower()
     if instr in INSTRUCTIONS:
+        if(instr =='repeat'):
+            REPEAT_FLAG=True
         CURRENT_TYPE = INSTRUCTIONS.get(instr).get("type")
         CURRENT_CODE = INSTRUCTIONS.get(instr).get("code")
     else:
