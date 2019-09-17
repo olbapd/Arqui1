@@ -16,7 +16,7 @@ module aluScalar #(parameter N=18)(input logic [N-1:0] A, B,
 			3'b010: Result <= S;
 			3'b011: Result <= A-B; //sub
 			3'b100: Result <= A*B;
-			3'b111: Result <= A+0;
+			3'b111: Result <= A+18'b0;
 			default: Result <= A*B; 
 		endcase
 

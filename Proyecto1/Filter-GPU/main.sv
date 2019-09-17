@@ -1,7 +1,8 @@
-module main (input logic clk, reset,
-			input logic kernel1, kernel2,kernel3, 
-			output logic MemWrite,
-			output logic [31:0] DataAdr, WriteData,
+module main (input logic CLK, reset,
+			input logic kernel1, kernel2,kernel3,
+			input logic identity, 
+			//output logic MemWrite,
+			//output logic [31:0] DataAdr, WriteData,
 			
 			//VGA
 			output logic vsync,
@@ -11,64 +12,71 @@ module main (input logic clk, reset,
 			output logic [7:0] r,
 			output logic [7:0] g,
 			output logic [7:0] b,
-			output logic vga_clk);
+			output logic VGA_CLK);
 	//VGA 
-	logic clk25 = 0;
-	logic [7:0] ir,ig,ib;
+	logic clkProc;
 	logic [9:0] hcount,vcount;
-	logic [32:0] timer;
+	logic bounds_draw;
 	
-	logic [31:0] PC, Instr, ReadData;
-	logic  MemWrite1;
+	logic [31:0] PC;
+	logic [27:0] Instr;
+	logic [2:0][17:0] ReadData;
+	logic  MemWrite;
 	logic [1:0] kernel;
+	logic [18:0] A1,A2,A3;
+	logic [2:0][17:0] writeData;
+	logic [7:0] color;
+
+	assign blank = 1;
+	assign sync = 0;
 	
-	always @(posedge clk) begin
-		if(clk == 1'b1)
-		begin
-			clk25 = ~clk25;
-		end
-	end
+	clkDivide vgaclk(CLK,~reset,VGA_CLK,clkProc);
+	
+	vga_contollerTest vgaTest (VGA_CLK,color,color,color,hcount,vcount,vsync,hsync,r,g,b);
 
-	logic clkcolor = 0;
-
-	always @(posedge clk25) begin
-		if(clk25 == 1'b1)
-		begin
-			clkcolor = ~clkcolor;
-		end
-	end
-
-
-	always_ff @(posedge clk) begin
+	draw  Draw (VGA_CLK,hcount, vcount, bounds_draw);
+	
+	//Verifica el tipo de kernel a utlizar
+	/*always_ff @(posedge clk) begin
 		if(~kernel1) begin
 			kernel = 2'b00;
-			PC = 0;
+			//PC = 0;
 		end
 		else if (~kernel2) begin
 			kernel = 2'b01;
-			PC = 0;
+			//PC = 0;
 		end
 		else if (~kernel3) begin
 			kernel = 2'b10;
-			PC = 0;
+			//PC = 0;
+		end
+		else if (kernel==1'bx) begin
+			kernel = 2'b00;
+			//PC = 0;
 		end
 		else begin 
 			kernel = kernel;
 		end
-	end
-
-	filtergpu FILTERGPU();
-
-
+	end*/
+	
+	
 	imem imem(PC,kernel, Instr);
 
-	dmem vectorMemory(clk, MemWrite, DataAdr, WriteData, ReadData);
+	filterGPU FILTERGPU(clkProc,~reset,Instr,ReadData,PC,MemWrite,writeData,A1,A2,A3);
+
+	//VGA
+	
+	//this is actually a DataMem
+	//imageDrawer  drawer(clk,bounds_draw,hcount,vcount,color,ReadData,MemWrite,writeData,A2);
+	//vectorMemory #(640) dmem(clkProc,bounds_draw,hcount,vcount,color,ReadData,MemWrite,writeData,A1,A2,A3);
+	
+	
+	
+	vectorMemory dmem (CLK,VGA_CLK,bounds_draw,hcount,vcount,color,ReadData, MemWrite, WriteData, A1,A2,A3);
 	
 	//Se debe leer de la memoria las posiciones
-	
-	counter Counter(clk,reset,timer);
 
-	VGA_Controller vga (ir,ig,ib,r,g,b,hsync,vsync,sync,blank,vga_clk,clk25,reset,hcount,vcount);
+	//VGA_Controller vga (color,color,color,r,g,b,hsync,vsync,sync,blank,VGA_CLK,clk25,reset,hcount,vcount);
 	
 
 endmodule 

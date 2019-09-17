@@ -19,7 +19,7 @@ module Execute(
     aluMain #(18, 3) alu(SrcAE, SrcBE, ALUControlE, AluResultE, ALUFlags);
 
     assign A1 = {AluResultE[1][0], AluResultE[0][17:0]};
-    assign A2 = A1 + 1; 
-    assign A3 = A1 - 1;
+    assign A2 = A1 + 19'b1; 
+    assign A3 = A1 - 19'b1;
 
 endmodule

@@ -16,19 +16,26 @@ def main(image_name):
 
     mif_file = open(mif_name, 'w+')
 
-    mif_file.write('DEPTH='+str(int(depth))+';\nWIDTH='+str(bitAmount)+';\nADDRESS_RADIX=HEX;\nDATA_RADIX=HEX;\nCONTENT\n CONTENT BEGIN\n\n')
+    mif_file.write('DEPTH='+str(int(depth))+';\nWIDTH='+str(bitAmount)+';\nADDRESS_RADIX=HEX;\nDATA_RADIX=HEX;\nCONTENT BEGIN\n')
     address = 0
-    typeConv = int(input("1.Hex 2.Decimal"))
+    typeConv = int(input("1.Hex 2.Decimal\n"))
     line=''
     if(typeConv==1):
+        cont=0
         for i in range(image.size[1]):
             for j in range(image.size[0]):
-                hexAddress = ((i*image.size[0])+j).split('x')[-1]
-                mif_file.write(str(hexAddress) + ": ")
-                line = '' +eight_bit_conversion(pixels[address])
-                mif_file.write(line)
-                address+=1
-                mif_file.write(';\n')
+                if(cont==0):
+                    hexAddress = hexFormat(((i*image.size[0])+j)//4)
+                    mif_file.write(str(hexAddress) + ": ")
+                line = '' +hex_conversion(pixels[address])+line
+                if(cont>=3):
+                    mif_file.write(line)
+                    mif_file.write(';\n')
+                    line=''
+                    cont=-1
+                    address+=1
+                cont+=1
+                #mif_file.write(';\n')
     elif(typeConv==2):
         cont=0
         for i in range(image.size[1]):
@@ -52,7 +59,12 @@ def main(image_name):
 
 
 
-
+def hexFormat(number):
+    if(isinstance(number,str)):
+        num=hex(int(number)).split('x')[-1]
+    else:
+        num=hex(number).split('x')[-1]
+    return num.lower()
 
 def eight_bit_conversion(rgb):
     num="{0:b}".format(int(str(rgb)))
@@ -62,6 +74,11 @@ def eight_bit_conversion(rgb):
         print(rgb, num)
     return num
 
+def hex_conversion(rgb):
+    num = hexFormat(rgb)
+    if(len(num)<2):
+        num ='0'+num
+    return num
 
 
 def add_padding(num,pad):
