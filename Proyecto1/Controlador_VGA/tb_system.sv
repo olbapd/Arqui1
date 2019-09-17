@@ -15,13 +15,13 @@ logic vga_clk;
 system dut (clk,reset,vsync,hsync,blank,sync,r,g,b,vga_clk);
 
 initial begin
-	clk=0; reset=0;
-	#1;
-	reset=1;
+	clk=0; reset=1;
+	#5;
+	reset=0;
 end
 always begin 
 	#2 clk=~clk; // Codigo para la senal de reloj que cambia cada 5
 end
 	initial
-	#160000000 $stop; // Despues de 150 el testbench se detiene para que no corra infinitamente
+	#160000 $stop; // Despues de 150 el testbench se detiene para que no corra infinitamente
 endmodule

@@ -8,156 +8,115 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/simulation/modelsim
-vdatamem1
-Z1 !s110 1568183904
+vclkDivide
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1568630124
 !i10b 1
-!s100 XPW6F0_V>I6[IjA:SlBTF2
-IC:dIB`1f8]Dk5Q:gj3fCd1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 Rb6W8a1kdc3^R?Mn_ghmH0
+ID?EncY0z;ER1QBePUN59H3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 clkDivide_sv_unit
+S1
 R0
-w1568183834
-8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem1.v
-FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem1.v
-Z3 L0 39
+w1568625922
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/clkDivide.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/clkDivide.sv
+L0 1
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1568183904.000000
-!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem1.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem1.v|
+Z5 !s108 1568630124.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/clkDivide.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/clkDivide.sv|
 !i113 1
-Z6 o-vlog01compat -work work
-Z7 !s92 -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA
 Z8 tCvgOpt 0
-vdatamem2
+nclk@divide
+vdmem
 R1
+Z9 !s110 1568630125
 !i10b 1
-!s100 XP3Egz8<P<`Pi<X9kj]I:3
-I`18[X7J81B0lio;=o]9:n3
-R2
-R0
-w1568183841
-8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem2.v
-FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem2.v
+!s100 RV<POSe0Vb7>WM3NOzQO92
+I=0XbaECM@M^T3fQfn;_9Q2
 R3
-R4
-r1
-!s85 0
-31
-R5
-!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem2.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem2.v|
-!i113 1
-R6
-R7
-R8
-vdatamem3
-R1
-!i10b 1
-!s100 o1DQaeMXk:gHOah;6gGNG2
-IMToHGGCBB:GF5AMVb?4FZ2
-R2
-R0
-w1568183858
-8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem3.v
-FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem3.v
-R3
-R4
-r1
-!s85 0
-31
-R5
-!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem3.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem3.v|
-!i113 1
-R6
-R7
-R8
-vdatamem4
-R1
-!i10b 1
-!s100 o_k@n@Ooh[3C<GfLJ3i:03
-I_G_knJZ7CGAJU>F=bbYF52
-R2
-R0
-w1568183866
-8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem4.v
-FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem4.v
-R3
-R4
-r1
-!s85 0
-31
-R5
-!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem4.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem4.v|
-!i113 1
-R6
-R7
-R8
-vdraw
-Z9 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z10 !s110 1568183905
-!i10b 1
-!s100 YaA?<1^[9Xk:[^ZWB>7^10
-I1YH7QJJehYE[^ASMf<zbg2
-R2
-!s105 draw_sv_unit
+!s105 dmem_sv_unit
 S1
 R0
-w1568058998
-8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw.sv
-FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw.sv
-L0 1
-R4
-r1
-!s85 0
-31
-Z11 !s108 1568183905.000000
-!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw.sv|
-!i113 1
-Z12 o-sv -work work
-Z13 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA
-R8
-vimageDrawer
-R9
-R1
-!i10b 1
-!s100 _f6UUZ7[=RU_8iZNF;j5d3
-I0[]FEFm_^c>UX92ld9bGN0
-R2
-!s105 imageDrawer_sv_unit
-S1
-R0
-w1568174831
-8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/imageDrawer.sv
-FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/imageDrawer.sv
+w1568627457
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv
 L0 1
 R4
 r1
 !s85 0
 31
 R5
-!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/imageDrawer.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/imageDrawer.sv|
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv|
 !i113 1
-R12
-R13
+R6
+R7
 R8
-nimage@drawer
+vdraw_pixel
+R1
+R2
+!i10b 1
+!s100 QOPI689W_^HhjS0XQYAAz0
+Iog@^8CXlEh0?bGaTSGV8E0
+R3
+!s105 draw_pixel_sv_unit
+S1
+R0
+w1568627181
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw_pixel.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw_pixel.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw_pixel.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw_pixel.sv|
+!i113 1
+R6
+R7
+R8
+vsdramtest
+R2
+!i10b 1
+!s100 <5<AK=KhZG>[o?KQE6;m_0
+IB=bINY^3_0lifDo3<7Lf[1
+R3
+R0
+w1568625098
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v
+L0 39
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA
+R8
 vsystem
-R9
 R1
-!i10b 1
-!s100 jIeUiI3oPm:f^;19nYa`k2
-I@ln66D?b_Qijhj_Gmg2`B2
 R2
+!i10b 1
+!s100 Fd1;0@ijEF:abR_Zl=daB0
+I8eZSC>SKP0z>jlYG8@F0n2
+R3
 !s105 system_sv_unit
 S1
 R0
-w1568181841
+w1568629487
 8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/system.sv
 FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/system.sv
 L0 2
@@ -169,20 +128,20 @@ R5
 !s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/system.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/system.sv|
 !i113 1
-R12
-R13
+R6
+R7
 R8
 vtb_system
+R1
 R9
-R10
 !i10b 1
-!s100 f_z89cOH<mIb>;3T4<[;X2
-IaP0EKd3C_WlgB<3h<FX8l1
-R2
+!s100 <;1b963oSYfcm?PECHc7R0
+IiPi^W`0?eKdU86DP^_7?63
+R3
 !s105 tb_system_sv_unit
 S1
 R0
-w1568053578
+w1568628950
 8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv
 FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv
 L0 2
@@ -190,36 +149,36 @@ R4
 r1
 !s85 0
 31
-R11
+!s108 1568630125.000000
 !s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv|
 !i113 1
-R12
-R13
+R6
+R7
 R8
-vVGA_Controller
-R9
+vvga_contollerTest
 R1
-!i10b 1
-!s100 oZDF2kQ6RdYVhE_YLLDf93
-I<nQTF8zQP46NS]=5<L52c2
 R2
-!s105 VGA_Controller_sv_unit
+!i10b 1
+!s100 MDTN05SL9;XjnPQTK:HWd3
+InKAMLn@ik`Ghh84Rf<GLH1
+R3
+!s105 vga_contollerTest_sv_unit
 S1
 R0
-w1568178365
-8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/VGA_Controller.sv
-FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/VGA_Controller.sv
+w1568629480
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/vga_contollerTest.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/vga_contollerTest.sv
 L0 1
 R4
 r1
 !s85 0
 31
 R5
-!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/VGA_Controller.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/VGA_Controller.sv|
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/vga_contollerTest.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/vga_contollerTest.sv|
 !i113 1
-R12
-R13
+R6
+R7
 R8
-n@v@g@a_@controller
+nvga_contoller@test

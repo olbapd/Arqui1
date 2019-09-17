@@ -5,15 +5,13 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem1.v}
-vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem2.v}
-vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem3.v}
-vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem4.v}
-vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/VGA_Controller.sv}
+vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v}
 vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv}
 vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/system.sv}
-vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/imageDrawer.sv}
-vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw.sv}
+vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/vga_contollerTest.sv}
+vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw_pixel.sv}
+vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/clkDivide.sv}
+vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv}
 
 vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv}
 

@@ -1,38 +1,19 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /tb_system/SYSTEM/clk
-add wave -noupdate /tb_system/SYSTEM/reset
-add wave -noupdate /tb_system/SYSTEM/hcount
-add wave -noupdate /tb_system/SYSTEM/vcount
-add wave -noupdate /tb_system/SYSTEM/r
-add wave -noupdate /tb_system/SYSTEM/g
-add wave -noupdate /tb_system/SYSTEM/b
-add wave -noupdate /tb_system/SYSTEM/ir
-add wave -noupdate /tb_system/SYSTEM/ig
-add wave -noupdate /tb_system/SYSTEM/ib
-add wave -noupdate /tb_system/SYSTEM/bounds_draw
-add wave -noupdate /tb_system/SYSTEM/tile_draw
-add wave -noupdate /tb_system/SYSTEM/Draw/hcount
-add wave -noupdate /tb_system/SYSTEM/Draw/vcount
-add wave -noupdate /tb_system/SYSTEM/Draw/draw
-add wave -noupdate /tb_system/SYSTEM/Map/clk
-add wave -noupdate /tb_system/SYSTEM/Map/hcount
-add wave -noupdate /tb_system/SYSTEM/Map/vcount
-add wave -noupdate /tb_system/SYSTEM/Map/bounds_draw
-add wave -noupdate /tb_system/SYSTEM/Map/tile_draw
-add wave -noupdate /tb_system/SYSTEM/Map/is_tileV
-add wave -noupdate /tb_system/SYSTEM/Map/x
-add wave -noupdate /tb_system/SYSTEM/Map/y
-add wave -noupdate /tb_system/SYSTEM/Map/temp_value
-add wave -noupdate /tb_system/SYSTEM/mc/bounds_draw
-add wave -noupdate /tb_system/SYSTEM/mc/tile_draw
-add wave -noupdate /tb_system/SYSTEM/mc/r
-add wave -noupdate /tb_system/SYSTEM/mc/g
-add wave -noupdate /tb_system/SYSTEM/mc/b
+add wave -noupdate /tb_system/clk
+add wave -noupdate /tb_system/reset
+add wave -noupdate /tb_system/vsync
+add wave -noupdate /tb_system/hsync
+add wave -noupdate /tb_system/blank
+add wave -noupdate /tb_system/sync
+add wave -noupdate -radix hexadecimal /tb_system/r
+add wave -noupdate -radix hexadecimal /tb_system/g
+add wave -noupdate -radix hexadecimal /tb_system/b
+add wave -noupdate /tb_system/vga_clk
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {68 ps} 0}
-quietly wave cursor active 1
-configure wave -namecolwidth 233
+WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+quietly wave cursor active 0
+configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -46,4 +27,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {848 ps}
+WaveRestoreZoom {0 ps} {1 ns}

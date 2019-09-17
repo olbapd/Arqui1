@@ -10,157 +10,229 @@
 # Copying C:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem1.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:24 on Sep 11,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem1.v 
-# -- Compiling module datamem1
+# Start time: 04:35:24 on Sep 16,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v 
+# -- Compiling module sdramtest
 # 
 # Top level modules:
-# 	datamem1
-# End time: 00:38:24 on Sep 11,2019, Elapsed time: 0:00:00
+# 	sdramtest
+# End time: 04:35:24 on Sep 16,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem2.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:24 on Sep 11,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem2.v 
-# -- Compiling module datamem2
-# 
-# Top level modules:
-# 	datamem2
-# End time: 00:38:24 on Sep 11,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem3.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:24 on Sep 11,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem3.v 
-# -- Compiling module datamem3
-# 
-# Top level modules:
-# 	datamem3
-# End time: 00:38:24 on Sep 11,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem4.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:24 on Sep 11,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/memory/datamem4.v 
-# -- Compiling module datamem4
-# 
-# Top level modules:
-# 	datamem4
-# End time: 00:38:24 on Sep 11,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/VGA_Controller.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:24 on Sep 11,2019
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/VGA_Controller.sv 
-# -- Compiling module VGA_Controller
-# ** Warning: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/VGA_Controller.sv(71): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	VGA_Controller
-# End time: 00:38:24 on Sep 11,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
 # vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:24 on Sep 11,2019
+# Start time: 04:35:24 on Sep 16,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv 
 # -- Compiling module tb_system
 # 
 # Top level modules:
 # 	tb_system
-# End time: 00:38:24 on Sep 11,2019, Elapsed time: 0:00:00
+# End time: 04:35:24 on Sep 16,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/system.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:24 on Sep 11,2019
+# Start time: 04:35:24 on Sep 16,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/system.sv 
 # -- Compiling module system
 # 
 # Top level modules:
 # 	system
-# End time: 00:38:24 on Sep 11,2019, Elapsed time: 0:00:00
+# End time: 04:35:24 on Sep 16,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/imageDrawer.sv}
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/vga_contollerTest.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:24 on Sep 11,2019
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/imageDrawer.sv 
-# -- Compiling module imageDrawer
+# Start time: 04:35:24 on Sep 16,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/vga_contollerTest.sv 
+# -- Compiling module vga_contollerTest
 # 
 # Top level modules:
-# 	imageDrawer
-# End time: 00:38:24 on Sep 11,2019, Elapsed time: 0:00:00
+# 	vga_contollerTest
+# End time: 04:35:24 on Sep 16,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw.sv}
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw_pixel.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:25 on Sep 11,2019
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw.sv 
-# -- Compiling module draw
+# Start time: 04:35:24 on Sep 16,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/draw_pixel.sv 
+# -- Compiling module draw_pixel
 # 
 # Top level modules:
-# 	draw
-# End time: 00:38:25 on Sep 11,2019, Elapsed time: 0:00:00
+# 	draw_pixel
+# End time: 04:35:24 on Sep 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/clkDivide.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 04:35:24 on Sep 16,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/clkDivide.sv 
+# -- Compiling module clkDivide
+# 
+# Top level modules:
+# 	clkDivide
+# End time: 04:35:24 on Sep 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 04:35:24 on Sep 16,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv 
+# -- Compiling module dmem
+# 
+# Top level modules:
+# 	dmem
+# End time: 04:35:25 on Sep 16,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:25 on Sep 11,2019
+# Start time: 04:35:25 on Sep 16,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA" C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv 
 # -- Compiling module tb_system
 # 
 # Top level modules:
 # 	tb_system
-# End time: 00:38:25 on Sep 11,2019, Elapsed time: 0:00:00
+# End time: 04:35:25 on Sep 16,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_system
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_system 
-# Start time: 00:38:25 on Sep 11,2019
+# Start time: 04:35:25 on Sep 16,2019
 # Loading sv_std.std
 # Loading work.tb_system
 # Loading work.system
-# Loading work.draw
-# Loading work.imageDrawer
-# Loading work.datamem1
+# Loading work.clkDivide
+# Loading work.vga_contollerTest
+# Loading work.draw_pixel
+# Loading work.dmem
+# Loading work.sdramtest
 # Loading altera_mf_ver.altsyncram
-# Loading work.datamem2
-# Loading work.datamem3
-# Loading work.datamem4
-# Loading work.VGA_Controller
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv(7): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren_a'. The port definition is at: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_system/dut/DataMem/data_mem File: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v
+# ** Warning: (vsim-3015) C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv(7): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren_b'. The port definition is at: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v(47).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_system/dut/DataMem/data_mem File: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: user  Hostname: DESKTOP-TR37EKV  ProcessID: 11664
-#           Attempting to use alternate WLF file "./wlftwnxcrj".
+#           Attempting to use alternate WLF file "./wlfthr4cbd".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftwnxcrj
+#           Using alternate file: ./wlfthr4cbd
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Break key hit
-# Break in Task convert_mif2ver at /build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v line 292
-# Error opening C:/build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v
-# Path name 'C:/build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v' doesn't exist.
+# ** Warning: (vsim-PLI-3412) Memory address read on line 131073 of file "pandita.ver" is out of bounds specified for readmem command.  (Current address [65536], address range [0:65535])    : /build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v(48976)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_system/dut/DataMem/data_mem/altsyncram_component/m_default/altsyncram_inst
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv(26)
+#    Time: 160 ns  Iteration: 0  Instance: /tb_system
+# Break in Module tb_system at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv line 26
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/simulation/modelsim/wave.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 restart -f
-do C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/simulation/modelsim/main.do
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/simulation/modelsim/main.do
+# ** Warning: (vsim-3015) C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv(7): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren_a'. The port definition is at: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_system/dut/DataMem/data_mem File: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v
+# ** Warning: (vsim-3015) C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/dmem.sv(7): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren_b'. The port definition is at: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v(47).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_system/dut/DataMem/data_mem File: C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/sdramtest.v
+add wave -position end sim:/tb_system/dut/Draw/*
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: (vsim-PLI-3412) Memory address read on line 131073 of file "pandita.ver" is out of bounds specified for readmem command.  (Current address [65536], address range [0:65535])    : /build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v(48976)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_system/dut/DataMem/data_mem/altsyncram_component/m_default/altsyncram_inst
+# ** Note: $stop    : C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv(26)
+#    Time: 160 ns  Iteration: 0  Instance: /tb_system
+# Break in Module tb_system at C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Controlador_VGA/tb_system.sv line 26
 run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# End time: 00:40:43 on Sep 11,2019, Elapsed time: 0:02:18
-# Errors: 1, Warnings: 2
+# End time: 05:06:19 on Sep 16,2019, Elapsed time: 0:30:54
+# Errors: 0, Warnings: 8

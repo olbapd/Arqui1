@@ -11,34 +11,36 @@ module system(input logic clk,
 				  output logic vga_clk);
 
 		
-	logic clk25 = 0;
-	logic bounds_draw;
-
-	logic [9:0] hcount,vcount;
-	logic [9:0] X,Y;
+	//logic bounds_draw;
+	//logic [9:0] X,Y;
 	
-	logic [7:0]color;
-	
-	always @(posedge clk) begin
-		if(clk == 1'b1)
-		begin
-			clk25 = ~clk25;
-
-		end
-	end
-
-	draw  #(640,480)Draw (hcount, vcount, bounds_draw);
-
+	logic [7:0] temp_r,temp_g,temp_b;
+	logic [31:0] pixel, vga_addr;
+	logic clk_proc;
 	
 	
-	imageDrawer #(640) drawer(clk,bounds_draw,hcount,vcount, color);
+	reg t_blank = 1;
+	reg t_sync = 0;
+	
+	
+	assign blank=t_blank;
+	assign sync = t_sync;
+	
+	clkDivide clkDivision(clk,reset,vga_clk,clk_proc);
+	vga_contollerTest vgaTest (vga_clk,temp_r,temp_g,temp_b,hcount,vcount,vsync,hsync,r,g,b);
+	
+	draw_pixel Draw(hcount,vcount,vga_clk,pixel,temp_r,temp_g,temp_b,vga_addr);
+
+	//draw  #(640,480)Draw (hcount, vcount, bounds_draw);
+
+	dmem DataMem(~clk_proc,vga_addr,pixel);
+	
+	//imageDrawer #(640) drawer(clk,bounds_draw,hcount,vcount, color);
 	//imem Imem(hcount,vcount,color);
 	
 	//assign color = 8'b1111111;
 	//VGA_Controller vga (color,color,color,r,g,b,hsync,vsync,sync,blank,vga_clk,clk25,reset,hcount,vcount);
-	assign blank = 1;
-	assign sync = 0;
-	vga_contollerTest vgaTest (clk25,color,color,color,hcount,vcount,vsync,hsync,r,g,b,vga_clk);
+	
 	
 
 
