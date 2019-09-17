@@ -32,8 +32,6 @@ module main (input logic CLK, reset,
 	
 	clkDivide vgaclk(CLK,~reset,VGA_CLK,clkProc);
 	
-	vga_contollerTest vgaTest (VGA_CLK,color,color,color,hcount,vcount,vsync,hsync,r,g,b);
-
 	draw  Draw (VGA_CLK,hcount, vcount, bounds_draw);
 	
 	//Verifica el tipo de kernel a utlizar
@@ -73,6 +71,9 @@ module main (input logic CLK, reset,
 	
 	
 	vectorMemory dmem (CLK,VGA_CLK,bounds_draw,hcount,vcount,color,ReadData, MemWrite, WriteData, A1,A2,A3);
+	
+	vga_contollerTest vgaTest (VGA_CLK,color,color,color,hcount,vcount,vsync,hsync,r,g,b);
+
 	
 	//Se debe leer de la memoria las posiciones
 
