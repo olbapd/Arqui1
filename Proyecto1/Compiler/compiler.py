@@ -1,8 +1,8 @@
 INSTRUCTIONS = {
 	"addv":{"code":"0000000000000000", "type":1},
-	"subv":{"code":"0000000000000001", "type":1},
+	"subv":{"code":"0000000000000001", "type":5},
     "mulv":{"code":"0000000000000011", "type":1},
-	"conv":{"code":"0000000000000100", "type":1},
+	"conv":{"code":"0000000000000100", "type":5},
 
 	"ldrv":{"code":"00000000000100010000", "type":2},
 	"strv":{"code":"00000000000100000000", "type":2},
@@ -187,7 +187,9 @@ def add_padding(num,pad):
 
 
 def fill_empty(opcode,hasImm,instr):
-    if CURRENT_TYPE ==1 or CURRENT_TYPE ==2 :
+    if CURRENT_TYPE ==5 :
+        opcode= [opcode[0],opcode[1], opcode[3],opcode[2]]
+    elif CURRENT_TYPE==2 or CURRENT_TYPE ==1:
         pass
     elif CURRENT_TYPE==3 and hasImm:
         opcode= [opcode[2],opcode[0], opcode[1],'0000']
