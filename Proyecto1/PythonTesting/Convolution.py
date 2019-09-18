@@ -10,7 +10,7 @@ def load_img(name): #Para subir imagnenes
     #img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 
     #sharping
-    kernel = np.array(([0,-1,0],[-1,5,-1],[0,-1,0]),np.float32)
+    kernel = np.array(([1,2,3],[0,0,0],[-1,-2,-3]),np.float32)
 
     #gaussian blur 3x3
     kernel2 = np.array(([0.0625, 0.125, 0.0625], [0.125, 0.25, 0.125], [0.0625, 0.125, 0.0625]),np.float32)

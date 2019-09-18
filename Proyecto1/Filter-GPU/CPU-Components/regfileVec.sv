@@ -8,8 +8,16 @@ module regfileVec (
     );
 
 // Register Table
-logic [15:0][2:0][17:0] register_table;
+logic [2:0][17:0] K1 = '{18'b1,18'b1,18'b1};
+logic [2:0][17:0] K2 = '{-1,-1,-1};
+logic [2:0][17:0] K3 = '{18'b1,18'b1,18'b1};
+logic [2:0][17:0] K4 = '{18'b1,-1,18'b1};
+logic [11:0][2:0][17:0] register_table;
+logic [15:0][2:0][17:0] fullregister_table;
 
+
+assign fullregister_table = {K4,K3,K2,K1,register_table};
+/*
 always_ff @(posedge clk ) begin 
 	if(reset) begin
 		  register_table[0] <= '{18'b0,18'b0,18'b0};
@@ -32,15 +40,15 @@ always_ff @(posedge clk ) begin
 	else begin 
 		if(we3) register_table[ra3] <= wd3;
 	end
-end
+end*/
 
 assign rd1 = register_table[ra1];
 assign rd2 = register_table[ra2];
 
-/*always_ff @(negedge clk) begin
+always_ff @(negedge clk) begin
 
 	if(we3) register_table[ra3] <= wd3;
-end*/
+end
 
 endmodule
 

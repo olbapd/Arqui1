@@ -1,8 +1,8 @@
 INSTRUCTIONS = {
-	"addv":{"code":"0000000000010000", "type":1},
-	"subv":{"code":"0000000000010001", "type":1},
-    "mulv":{"code":"0000000000010011", "type":1},
-	"conv":{"code":"0000000000010100", "type":1},
+	"addv":{"code":"0000000000000000", "type":1},
+	"subv":{"code":"0000000000000001", "type":1},
+    "mulv":{"code":"0000000000000011", "type":1},
+	"conv":{"code":"0000000000000100", "type":1},
 
 	"ldrv":{"code":"00000000000100010000", "type":2},
 	"strv":{"code":"00000000000100000000", "type":2},
@@ -20,10 +20,7 @@ def write_file():
     file = open("output.dat","w")
     text = ""
     for instruc in OUTPUT:
-        text+=instruc+"\n"
-    length = len(text)
-    text = text[:length-1]
-    file.write(text)
+        file.write(instruc+"\n")
     file.close()
 
 def read_file():
@@ -48,7 +45,7 @@ def read_file():
             amount-=1
         elif(REPEAT_FLAG and amount>0):
             first=False
-        elif(REPEAT_FLAG and amount==0):
+        if(REPEAT_FLAG and amount==0):
             for i in range(repeat_cont - 1):
                 for j in range(0,len(REPEAT_LINES)):
                     OUTPUT.append(REPEAT_LINES[j])

@@ -26,7 +26,8 @@ module main (input logic CLK, reset,
 	logic [18:0] A1,A2,A3;
 	logic [2:0][17:0] writeData;
 	logic [7:0] color;
-
+	logic [31:0]finalPC;
+	
 	assign blank = 1;
 	assign sync = 0;
 	//initial kernel = 2'b0;
@@ -39,35 +40,37 @@ module main (input logic CLK, reset,
 	always_ff @(posedge CLK) begin
 		if(reset )begin 
 			kernel = 2'b00;
+			finalPC=PC;
 		end
 		if(~identity) begin
 			kernel = 2'b00;
-			//PC = 0;
+			finalPC = 0;
 		end
 		if(~kernel1) begin
 			kernel = 2'b01;
-			//PC = 0;
+			finalPC = 0;
 		end
 		else if (~kernel2) begin
 			kernel = 2'b10;
-			//PC = 0;
+			finalPC = 0;
 		end
 		else if (~kernel3) begin
 			kernel = 2'b11;
-			//PC = 0;
+			finalPC = 0;
 		end
 		else if (kernel==1'bx) begin
 			kernel = 2'b00;
-			//PC = 0;
+			finalPC = 0;
 		end
 
 		else begin 
 			kernel = kernel;
+			finalPC=PC;
 		end
 	end
 	
 	
-	imem imem(PC,kernel, Instr);
+	imem imem(finalPC,kernel, Instr);
 
 	filterGPU FILTERGPU(clkProc,~reset,kernel,Instr,ReadData,PC,MemWrite,writeData,A1,A2,A3);
 
