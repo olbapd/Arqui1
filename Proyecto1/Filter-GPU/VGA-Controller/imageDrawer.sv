@@ -11,7 +11,7 @@ module imageDrawer #(parameter Width=640)(input logic clk,VGA_CLK,
 	logic [15:0] addrPixel,addrData;
 	//logic [9:0] horz,vert;
 	logic [7:0] memPixel1,memPixel2,memPixel3,memPixel4,memPixel5;
-	logic [19:0] position;
+	logic [18:0] position;
 	logic writeEn1,writeEn2,writeEn3,writeEn4,writeEn5;
 	logic [7:0] memData1,memData2, memData3, memData4, memData5;
 	
@@ -21,7 +21,7 @@ module imageDrawer #(parameter Width=640)(input logic clk,VGA_CLK,
 
 	//assign address = (vert*10'b1000000000) + horz;
 	assign {addrY, addrPixel}= (bounds_draw)? position: 19'b0;
-	assign {addrYData, addrData}= (WriteEnable)? adreesMem: 19'b0;
+	assign {addrYData, addrData}= adreesMem;
  
 	//assign addrY = (horz*10'b111111111) + vert;
 	always_ff @(posedge clk ) begin
