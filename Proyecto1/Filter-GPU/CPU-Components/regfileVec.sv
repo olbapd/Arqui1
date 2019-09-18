@@ -1,7 +1,8 @@
 
 module regfileVec (
-    input logic clk, 
-    input logic we3,
+	input logic clk, rst,
+	input logic [1:0] kernel,
+	input logic we3,
 	input logic [3:0] ra1, ra2, ra3,
 	input logic [2:0][17:0]wd3,
 	output logic [2:0][17:0] rd1, rd2

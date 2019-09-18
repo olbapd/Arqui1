@@ -1,7 +1,7 @@
 module DataPath (
     input logic CLK, RST, CLR2, EN1, EN2, RegWriteD, MemtoRegD, MemWriteD,
     input logic [2:0] ALUControlD,
-    input logic [1:0] ImmSrcD, ALUSrcD, 
+    input logic [1:0] ImmSrcD, ALUSrcD, kernel,
     input logic [27:0] InstrF,
     input logic [2:0][17:0] RDM,
     input logic [1:0] ForwardAE,
@@ -29,7 +29,7 @@ module DataPath (
     //Fetch-Decode-Buffer
     instructionBuffer instbuff(InstrF, CLK, 1'b0, EN2, InstrD);
     //Decode-Step
-    Decode decode(CLK, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, rd1, rd2, ExtImm, ra1D, ra2D); 
+    Decode decode(CLK, RST, RegWriteW, ImmSrcD, InstrD, ResultW, WA3W, RegSrc, kernel, rd1, rd2, ExtImm, ra1D, ra2D); 
 
     //Decode-Execute-Buffer
     registersBuffer regbuff(rd1, rd2, ra1D, ra2D, ExtImm, CLK, CLR2, 1'b1, RegWriteD, MemtoRegD, MemWriteD, ALUSrcD, ALUControlD, InstrD[7:4],  
