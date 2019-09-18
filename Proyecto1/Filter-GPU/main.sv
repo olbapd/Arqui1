@@ -29,38 +29,47 @@ module main (input logic CLK, reset,
 
 	assign blank = 1;
 	assign sync = 0;
+	//initial kernel = 2'b0;
 	
 	clkDivide vgaclk(CLK,~reset,VGA_CLK,clkProc);
 	
 	draw  Draw (VGA_CLK,hcount, vcount, bounds_draw);
 	
 	//Verifica el tipo de kernel a utlizar
-	/*always_ff @(posedge clk) begin
-		if(~kernel1) begin
+	always_ff @(posedge CLK) begin
+		if(reset )begin 
+			kernel = 2'b00;
+		end
+		if(~identity) begin
 			kernel = 2'b00;
 			//PC = 0;
 		end
-		else if (~kernel2) begin
+		if(~kernel1) begin
 			kernel = 2'b01;
 			//PC = 0;
 		end
-		else if (~kernel3) begin
+		else if (~kernel2) begin
 			kernel = 2'b10;
+			//PC = 0;
+		end
+		else if (~kernel3) begin
+			kernel = 2'b11;
 			//PC = 0;
 		end
 		else if (kernel==1'bx) begin
 			kernel = 2'b00;
 			//PC = 0;
 		end
+
 		else begin 
 			kernel = kernel;
 		end
-	end*/
+	end
 	
 	
 	imem imem(PC,kernel, Instr);
 
-	filterGPU FILTERGPU(clkProc,~reset,Instr,ReadData,PC,MemWrite,writeData,A1,A2,A3);
+	filterGPU FILTERGPU(clkProc,~reset,kernel,Instr,ReadData,PC,MemWrite,writeData,A1,A2,A3);
 
 	//VGA
 	
@@ -70,7 +79,7 @@ module main (input logic CLK, reset,
 	
 	
 	
-	vectorMemory dmem (CLK,VGA_CLK,bounds_draw,hcount,vcount,color,ReadData, MemWrite, writeData, A1,A2,A3);
+	vectorMemory dmem (CLK,VGA_CLK,kernel,bounds_draw,hcount,vcount,color,ReadData, MemWrite, writeData, A1,A2,A3);
 	
 	vga_contollerTest vgaTest (VGA_CLK,color,color,color,hcount,vcount,vsync,hsync,r,g,b);
 

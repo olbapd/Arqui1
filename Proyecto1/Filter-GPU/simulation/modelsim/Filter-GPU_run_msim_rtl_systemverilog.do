@@ -10,6 +10,11 @@ vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proy
 vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam3.v}
 vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam4.v}
 vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam5.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam6.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam7.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam8.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam9.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam10.v}
 vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/main.sv}
 vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv}
 vlog -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU {C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/DataPath.sv}

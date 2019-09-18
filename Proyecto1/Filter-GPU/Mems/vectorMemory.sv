@@ -1,6 +1,7 @@
 module vectorMemory #(parameter Width=640)(
 			input logic CLK, 
-			input logic VGA_CLK, 
+			input logic VGA_CLK,
+			input logic [1:0] kernel,
 			input logic bounds_draw,
 			input logic [9:0] hcount, vcount,
 			output logic [7:0] pixel,
@@ -63,7 +64,7 @@ module vectorMemory #(parameter Width=640)(
 		end
 	end
 
-	imageDrawer  drawer(CLK,VGA_CLK,bounds_draw,hcount,vcount,color,readData,WriteEnable,writeData[0],addressMem);
+	imageDrawer  drawer(CLK,VGA_CLK,kernel,bounds_draw,hcount,vcount,color,readData,WriteEnable,writeData[0],addressMem);
 
 	/*logic [17:0] read1,read2,read3;
 	logic [7:0] color;
