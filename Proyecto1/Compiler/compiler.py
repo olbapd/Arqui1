@@ -187,9 +187,9 @@ def add_padding(num,pad):
 
 
 def fill_empty(opcode,hasImm,instr):
-    if CURRENT_TYPE ==5 :
-        opcode= [opcode[0],opcode[1], opcode[3],opcode[2]]
-    elif CURRENT_TYPE==2 or CURRENT_TYPE ==1:
+    if CURRENT_TYPE ==5  or CURRENT_TYPE ==1:
+        opcode= [opcode[0],opcode[3], opcode[1],opcode[2]]
+    elif CURRENT_TYPE==2:
         pass
     elif CURRENT_TYPE==3 and hasImm:
         opcode= [opcode[2],opcode[0], opcode[1],'0000']
