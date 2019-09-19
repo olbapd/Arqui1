@@ -136,12 +136,12 @@ set_global_assignment -name QIP_FILE SDRam5.qip
 set_global_assignment -name QIP_FILE microSD/synthesis/microSD.qip
 set_location_assignment PIN_AF14 -to CLK
 set_location_assignment PIN_A11 -to VGA_CLK
+set_global_assignment -name SYSTEMVERILOG_FILE preImem.sv
 set_global_assignment -name QIP_FILE SDRam6.qip
 set_global_assignment -name QIP_FILE SDRam7.qip
 set_global_assignment -name QIP_FILE SDRam8.qip
 set_global_assignment -name QIP_FILE SDRam9.qip
 set_global_assignment -name QIP_FILE SDRam10.qip
-set_global_assignment -name SYSTEMVERILOG_FILE preImem.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

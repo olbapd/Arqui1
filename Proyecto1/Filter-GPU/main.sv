@@ -26,13 +26,13 @@ module main (input logic CLK, reset,
 	logic [18:0] A1,A2,A3;
 	logic [2:0][17:0] writeData;
 	logic [7:0] color;
-	logic [31:0]finalPC;
+	//logic [31:0]finalPC;
 	
 	assign blank = 1;
 	assign sync = 0;
 	//initial kernel = 2'b0;
 	
-	clkDivide vgaclk(CLK,~reset,VGA_CLK,clkProc);
+	clkDivide vgaclk(CLK,reset,VGA_CLK,clkProc);
 	
 	draw  Draw (VGA_CLK,hcount, vcount, bounds_draw);
 	
