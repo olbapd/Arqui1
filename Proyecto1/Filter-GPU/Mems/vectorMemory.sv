@@ -1,5 +1,5 @@
 module vectorMemory #(parameter Width=640)(
-			input logic CLK, 
+			input logic  clkProc,CLK, 
 			input logic VGA_CLK,
 			input logic [1:0] kernel,
 			input logic bounds_draw,
@@ -15,7 +15,7 @@ module vectorMemory #(parameter Width=640)(
 	logic [17:0] readData;
 	logic [7:0] color;
 
-	always_ff @(negedge VGA_CLK) begin 
+	always_ff @(posedge clkProc) begin 
 		case(cont)
 			2'b00: begin
 				cont<= cont + 2'b1;
