@@ -38,10 +38,10 @@ module main (input logic CLK, reset,
 	
 	//Verifica el tipo de kernel a utlizar
 	always_ff @(posedge CLK) begin
-		/*if(reset )begin 
+		if(reset)begin 
 			kernel = 2'b00;
 			//finalPC=PC;
-		end*/
+		end
 		if(identity) begin
 			kernel = 2'b00;
 			//finalPC = 0;

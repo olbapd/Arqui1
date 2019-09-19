@@ -8,16 +8,16 @@ module preImem #(parameter N=18) (
 	logic [31:0] temp;
 	logic useCont;
 	
-	assign temp = (PC[27:2]-4)%N;
+	assign temp = (PC[27:2]-4)%(N);
 	assign useCont=(PC[27:2] >N+4)? 1:0;
 	assign cont =
 			(reset)? 0:
-			(cont==32'b0000000000000000000000000000000x)? 32'b0 :
-			(cont==32'bx)? 32'b0 :
+			(cont===32'bx)? 32'b0 :
 			(temp!=0)? cont : cont+1;
 			
 	
-	assign finalPC=(~useCont)? PC: (cont<640*480)?(temp<<2):32'bx;
+	assign finalPC=(~useCont)? PC:
+						(cont<640*480)?((temp+4)<<2):32'bx;
 	
 	//logic [29:0] tempPC;
 	
