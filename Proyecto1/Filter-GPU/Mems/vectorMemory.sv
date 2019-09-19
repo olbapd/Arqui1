@@ -15,7 +15,7 @@ module vectorMemory #(parameter Width=640)(
 	logic [17:0] readData;
 	logic [7:0] color;
 
-	always_ff @(posedge clkProc) begin 
+	always_ff @(negedge VGA_CLK) begin 
 		case(cont)
 			2'b00: begin
 				cont<= cont + 2'b1;

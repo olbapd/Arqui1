@@ -83,7 +83,7 @@ module main (input logic CLK, reset,
 	
 	
 	
-	vectorMemory dmem (clkProc,CLK,VGA_CLK,kernel,bounds_draw,hcount,vcount,color,ReadData, MemWrite, writeData, A1,A2,A3);
+	vectorMemory dmem (CLK,VGA_CLK,kernel,bounds_draw,hcount,vcount,color,ReadData, MemWrite, writeData, A1,A2,A3);
 	
 	vga_contollerTest vgaTest (VGA_CLK,color,color,color,hcount,vcount,vsync,hsync,r,g,b);
 
