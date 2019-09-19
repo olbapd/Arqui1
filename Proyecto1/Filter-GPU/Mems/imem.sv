@@ -9,9 +9,9 @@ module imem #(parameter N=18) (
 	assign cont=(reset)? 0 : (temp==0)? cont : cont+1;*/
 
 initial 
-	$readmemb("C://Users//Pablo//Documents//1-TEC//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
+	//$readmemb("C://Users//Pablo//Documents//1-TEC//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
 
-		/*2'b00: $readmemh("C://Users//Jose Rivera//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);*/
+	$readmemb("C://Users//Jose Rivera//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
 		
 	assign Instr = RAM[PC[27:2]]; 
 
