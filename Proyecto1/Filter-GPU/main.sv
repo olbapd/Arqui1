@@ -38,41 +38,42 @@ module main (input logic CLK, reset,
 	
 	//Verifica el tipo de kernel a utlizar
 	always_ff @(posedge CLK) begin
-		if(reset )begin 
+		/*if(reset )begin 
 			kernel = 2'b00;
-			finalPC=PC;
-		end
-		if(~identity) begin
+			//finalPC=PC;
+		end*/
+		if(identity) begin
 			kernel = 2'b00;
-			finalPC = 0;
+			//finalPC = 0;
 		end
-		if(~kernel1) begin
+		if(kernel1) begin
 			kernel = 2'b01;
-			finalPC = 0;
+			//finalPC = 0;
 		end
-		else if (~kernel2) begin
+		else if (kernel2) begin
 			kernel = 2'b10;
-			finalPC = 0;
+			//finalPC = 0;
 		end
-		else if (~kernel3) begin
+		else if (kernel3) begin
 			kernel = 2'b11;
-			finalPC = 0;
+			//finalPC = 0;
 		end
-		else if (kernel==1'bx) begin
+		else if (kernel==2'bx) begin
 			kernel = 2'b00;
-			finalPC = 0;
+			//finalPC = 0;
 		end
 
 		else begin 
 			kernel = kernel;
-			finalPC=PC;
+			//finalPC=PC;
 		end
 	end
 	
 	
-	imem imem(finalPC,kernel, Instr);
+	
+	preImem imem(reset,PC, Instr);
 
-	filterGPU FILTERGPU(clkProc,~reset,kernel,Instr,ReadData,PC,MemWrite,writeData,A1,A2,A3);
+	filterGPU FILTERGPU(clkProc,reset,kernel,Instr,ReadData,PC,MemWrite,writeData,A1,A2,A3);
 
 	//VGA
 	

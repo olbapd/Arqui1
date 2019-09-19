@@ -1,0 +1,967 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/simulation/modelsim
+valu_decoder
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1568851402
+!i10b 1
+!s100 bllk^aa5dAK4G7FTAIg?m2
+IQ<SHg^nZl61Udd=m9ndO40
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 alu_decoder_sv_unit
+S1
+R0
+Z4 w1568400558
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/alu_decoder.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/alu_decoder.sv
+L0 1
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1568851401.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/alu_decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/alu_decoder.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit
+Z9 tCvgOpt 0
+vALUBuffer
+R1
+R2
+!i10b 1
+!s100 k8=l?ll0]FRz7bYlHZ=T83
+I[G`Y`F?2AF>7_]a^LD<=V1
+R3
+!s105 ALUBuffer_sv_unit
+S1
+R0
+Z10 w1568447160
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/ALUBuffer.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/ALUBuffer.sv
+L0 1
+R5
+r1
+!s85 0
+31
+Z11 !s108 1568851402.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/ALUBuffer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/ALUBuffer.sv|
+!i113 1
+R7
+Z12 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers
+R9
+n@a@l@u@buffer
+valuMain
+R1
+R2
+!i10b 1
+!s100 ;lbIWOC5[XSzaTDIo5d@R0
+IYje6hRSBPjT5aMgU>kNEl1
+R3
+!s105 aluMain_sv_unit
+S1
+R0
+Z13 w1568430776
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluMain.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluMain.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluMain.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluMain.sv|
+!i113 1
+R7
+Z14 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial
+R9
+nalu@main
+valuScalar
+R1
+R2
+!i10b 1
+!s100 Udj:NP=S30cfQRB28kDaR0
+Ib:X5niX;P8`hEU0UJUNb82
+R3
+!s105 aluScalar_sv_unit
+S1
+R0
+w1568480450
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluScalar.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluScalar.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluScalar.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/ALU-Vectorial/aluScalar.sv|
+!i113 1
+R7
+R14
+R9
+nalu@scalar
+vclkDivide
+R1
+R2
+!i10b 1
+!s100 ZD6WKHNIkZ=RhYkOaooY22
+I6;n;=XXPa2K@0S71E6jbD3
+R3
+!s105 clkDivide_sv_unit
+S1
+R0
+w1568710929
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/clkDivide.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/clkDivide.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/clkDivide.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/clkDivide.sv|
+!i113 1
+R7
+Z15 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU
+R9
+nclk@divide
+vcontrol_unit
+R1
+Z16 !s110 1568851401
+!i10b 1
+!s100 mYSj<iZk?0bFJmJX@ZXDl1
+IoQg^GHSO3]6`X9=?AB>]81
+R3
+!s105 control_unit_sv_unit
+S1
+R0
+R13
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/control_unit.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/control_unit.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/control_unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/control_unit.sv|
+!i113 1
+R7
+R8
+R9
+vDataPath
+R1
+Z17 !s110 1568851399
+!i10b 1
+!s100 56ORieoMe^YSZB=7h3RDG0
+IQV?YokXZ:_R9eak8M^<4l0
+R3
+!s105 DataPath_sv_unit
+S1
+R0
+Z18 w1568787072
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/DataPath.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/DataPath.sv
+L0 1
+R5
+r1
+!s85 0
+31
+Z19 !s108 1568851399.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/DataPath.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/DataPath.sv|
+!i113 1
+R7
+R15
+R9
+n@data@path
+vDecode
+R1
+Z20 !s110 1568851400
+!i10b 1
+!s100 @E7B3^hnBfCW;P[PO46QF0
+IYzM@R5Qi>JHB^1Z6X^S<f0
+R3
+!s105 Decode_sv_unit
+S1
+R0
+R18
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Decode.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Decode.sv
+L0 1
+R5
+r1
+!s85 0
+31
+Z21 !s108 1568851400.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Decode.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Decode.sv|
+!i113 1
+R7
+Z22 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps
+R9
+n@decode
+vdecoder
+R1
+R16
+!i10b 1
+!s100 6IjMeD=;PP3gM^L2LM^a31
+IhD_l048U<NLQz3@k1]TTo0
+R3
+!s105 decoder_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/decoder.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/decoder.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/decoder.sv|
+!i113 1
+R7
+R8
+R9
+vdraw
+R1
+R20
+!i10b 1
+!s100 >zjWKz^;<S@UBZzfVo<I90
+ISmOahdDNBjH;FVNnlh38M2
+R3
+!s105 draw_sv_unit
+S1
+R0
+w1568711701
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/draw.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/draw.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/draw.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/draw.sv|
+!i113 1
+R7
+Z23 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller
+R9
+vExecute
+R1
+R20
+!i10b 1
+!s100 6aS6K4dhCADJHGEdRC8DI0
+IHQeS3bHZS;NB;Ocf[nmNH2
+R3
+!s105 Execute_sv_unit
+S1
+R0
+w1568480448
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Execute.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Execute.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Execute.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Execute.sv|
+!i113 1
+R7
+R22
+R9
+n@execute
+vextendUnit
+R1
+R16
+!i10b 1
+!s100 G_RZ4Z4a3JENNiJ26OY]K2
+IF?z>cYk1_3YT7a<hdz;<m1
+R3
+!s105 extendUnit_sv_unit
+S1
+R0
+R13
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/extendUnit.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/extendUnit.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/extendUnit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/extendUnit.sv|
+!i113 1
+R7
+Z24 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components
+R9
+nextend@unit
+vFetch
+R1
+R20
+!i10b 1
+!s100 Feh@K`:e7zB__ChbO702^0
+I1K9h5=MVnMfMI>oBkSlYM0
+R3
+!s105 Fetch_sv_unit
+S1
+R0
+w1568496938
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Fetch.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Fetch.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Fetch.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/Fetch.sv|
+!i113 1
+R7
+R22
+R9
+n@fetch
+vfilterGPU
+R1
+R17
+!i10b 1
+!s100 C<1Di8[80kb<U5JebLQkI1
+I9NJTh7nX7;_`J;?3W^_cR2
+R3
+!s105 filterGPU_sv_unit
+S1
+R0
+R18
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/filterGPU.sv|
+!i113 1
+R7
+R15
+R9
+nfilter@g@p@u
+vhazard_unit
+R1
+R20
+!i10b 1
+!s100 lVhB0:bDLL`795ia9=>e80
+If9BGK[10dJcD^6CW0z_VH2
+R3
+!s105 hazard_unit_sv_unit
+S1
+R0
+R13
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Pipeline/hazard_unit.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Pipeline/hazard_unit.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Pipeline/hazard_unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Pipeline|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Pipeline/hazard_unit.sv|
+!i113 1
+R7
+!s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Pipeline
+R9
+vimageDrawer
+R1
+R17
+!i10b 1
+!s100 IS``C0z<XSYkIU@C<6X:g1
+Ib[b51<zA^P<QGKBz>d1GG1
+R3
+!s105 imageDrawer_sv_unit
+S1
+R0
+w1568830461
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/imageDrawer.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/imageDrawer.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/imageDrawer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/imageDrawer.sv|
+!i113 1
+R7
+R23
+R9
+nimage@drawer
+vimem
+R1
+Z25 !s110 1568851403
+!i10b 1
+!s100 kJYadGhh1E9EU`nQanc>A0
+IEF0n`Dz1YdMiK[f_iKDXk3
+R3
+!s105 imem_sv_unit
+S1
+R0
+w1568846250
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems/imem.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems/imem.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1568851403.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems/imem.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems/imem.sv|
+!i113 1
+R7
+Z26 !s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems
+R9
+vinstructionBuffer
+R1
+R2
+!i10b 1
+!s100 ngZ0AgY;<YL>D@0iilbG41
+Idn^UC;e9UP12BFX3=k@TK2
+R3
+!s105 instructionBuffer_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/instructionBuffer.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/instructionBuffer.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/instructionBuffer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/instructionBuffer.sv|
+!i113 1
+R7
+R12
+R9
+ninstruction@buffer
+vmain
+R1
+R17
+!i10b 1
+!s100 3co0zZoOQ<g5MTBmJZLd21
+I;4m^Ve_8?KPFli18iOf:H1
+R3
+!s105 main_sv_unit
+S1
+R0
+w1568846344
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/main.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/main.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/main.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/main.sv|
+!i113 1
+R7
+R15
+R9
+vmain_decoder
+R1
+R16
+!i10b 1
+!s100 Kfm75e39k5<e_8[UbOJCF0
+I_>jW1W1X6zLl>8=?e`bWm2
+R3
+!s105 main_decoder_sv_unit
+S1
+R0
+R10
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/main_decoder.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/main_decoder.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/main_decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Control-Unit/main_decoder.sv|
+!i113 1
+R7
+R8
+R9
+vmain_tb
+R1
+R2
+!i10b 1
+!s100 EdHWF72Y`;NM>N[;?nRkL3
+IoMdB:nIY[i;J72Zl`1JTS3
+R3
+!s105 main_tb_sv_unit
+S1
+R0
+w1568846070
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/TestBenchs/main_tb.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/TestBenchs/main_tb.sv
+L0 3
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/TestBenchs/main_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/TestBenchs|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/TestBenchs/main_tb.sv|
+!i113 1
+R7
+!s92 -sv -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/TestBenchs
+R9
+vmux_2to1
+R1
+R16
+!i10b 1
+!s100 ^1NU<`@05UMNQKiofJK=C2
+ICoS=_O_hBT2Ez:dVZ4aSK0
+R3
+!s105 mux_2to1_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_2to1.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_2to1.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_2to1.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_2to1.sv|
+!i113 1
+R7
+R24
+R9
+vmux_3to1
+R1
+R16
+!i10b 1
+!s100 =;8WKzYYPHT5]nLik[`5l3
+IY;?Q[Y9dI1JhUHlkmL>z^0
+R3
+!s105 mux_3to1_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_3to1.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_3to1.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_3to1.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/mux_3to1.sv|
+!i113 1
+R7
+R24
+R9
+vn_bit_mux
+R1
+R16
+!i10b 1
+!s100 ORN]=BYiIb3>70DPn?[F53
+IW:5U1I>C3;;ilcBKo]9Y^3
+R3
+!s105 n_bit_mux_sv_unit
+S1
+R0
+R4
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_mux.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_mux.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_mux.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_mux.sv|
+!i113 1
+R7
+R24
+R9
+vn_bit_register
+R1
+R16
+!i10b 1
+!s100 n>aeTGWnHomkLL3f2IEGi2
+IYQLc_8;==WJLP0OG1=ig03
+R3
+!s105 n_bit_register_sv_unit
+S1
+R0
+R13
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_register.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_register.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_register.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/n_bit_register.sv|
+!i113 1
+R7
+R24
+R9
+vpreImem
+R1
+R25
+!i10b 1
+!s100 4][X[Le;BX^VNAhNF;Q6z0
+IgWeQLTSeXCN?3d7J_]<YJ1
+R3
+!s105 preImem_sv_unit
+S1
+R0
+w1568851377
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/preImem.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/preImem.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/preImem.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/preImem.sv|
+!i113 1
+R7
+R15
+R9
+npre@imem
+vregfileVec
+R1
+R16
+!i10b 1
+!s100 ?>D<VFN]nFgUOdV9LzSkQ0
+I[NO^W``c0J2?KF4=EGZQl3
+R3
+!s105 regfileVec_sv_unit
+S1
+R0
+w1568800834
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/regfileVec.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/regfileVec.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/regfileVec.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Components/regfileVec.sv|
+!i113 1
+R7
+R24
+R9
+nregfile@vec
+vregistersBuffer
+R1
+R2
+!i10b 1
+!s100 7?;TdIm_VCPoDk6]]M;:20
+I29QPHZ@>KPPeeL2:6FdY63
+R3
+!s105 registersBuffer_sv_unit
+S1
+R0
+R13
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/registersBuffer.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/registersBuffer.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/registersBuffer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/registersBuffer.sv|
+!i113 1
+R7
+R12
+R9
+nregisters@buffer
+vSDRam1
+Z27 !s110 1568851398
+!i10b 1
+!s100 <c2iSoN3NXzg;V98DzJZe1
+I]aj560Xk]MQ2TQ0`Rn^K]2
+R3
+R0
+w1568713075
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam1.v
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam1.v
+Z28 L0 39
+R5
+r1
+!s85 0
+31
+Z29 !s108 1568851398.000000
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam1.v|
+!i113 1
+Z30 o-vlog01compat -work work
+Z31 !s92 -vlog01compat -work work +incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU
+R9
+n@s@d@ram1
+vSDRam2
+R27
+!i10b 1
+!s100 [lEDGjMV;h0X_cGNBY?QD0
+IOE3g`A@mghon;;KL;jc_K3
+R3
+R0
+w1568713276
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam2.v
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam2.v
+R28
+R5
+r1
+!s85 0
+31
+R29
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam2.v|
+!i113 1
+R30
+R31
+R9
+n@s@d@ram2
+vSDRam3
+R17
+!i10b 1
+!s100 Dkk=NK]`mgdHJ]SC0UFWg0
+I^DXGGNN7IeMDi=Jh]8m?=2
+R3
+R0
+w1568713323
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam3.v
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam3.v
+R28
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam3.v|
+!i113 1
+R30
+R31
+R9
+n@s@d@ram3
+vSDRam6
+R17
+!i10b 1
+!s100 UP8KGk>fcZ=zWB3eY=5hj1
+IV>Y:nXXVVdV3_V>F[6QXS3
+R3
+R0
+w1568787586
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam6.v
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam6.v
+R28
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam6.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam6.v|
+!i113 1
+R30
+R31
+R9
+n@s@d@ram6
+vSDRam7
+R17
+!i10b 1
+!s100 4HZ9JUfbL5nJ_Q7Z9Qf841
+IoiYhLT@Z:[ED2<^zgV`on0
+R3
+R0
+w1568787618
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam7.v
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam7.v
+R28
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam7.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam7.v|
+!i113 1
+R30
+R31
+R9
+n@s@d@ram7
+vSDRam8
+R17
+!i10b 1
+!s100 aEX50^nGk0CSA:jPk0zei3
+I3d0X:HfN8Wfmd95YXiljI0
+R3
+R0
+w1568787645
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam8.v
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam8.v
+R28
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/SDRam8.v|
+!i113 1
+R30
+R31
+R9
+n@s@d@ram8
+vvectorMemory
+R1
+R20
+!i10b 1
+!s100 T3EFXBjazK__Zjcl`<;eh1
+I]O6QZk7MMXJW95IaES5MU3
+R3
+!s105 vectorMemory_sv_unit
+S1
+R0
+w1568788058
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems/vectorMemory.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems/vectorMemory.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems/vectorMemory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Mems/vectorMemory.sv|
+!i113 1
+R7
+R26
+R9
+nvector@memory
+vvga_contollerTest
+R1
+R17
+!i10b 1
+!s100 AgbMk070U23Pmc`C@KniP2
+I4f5nfj>F>1ECdYS:fB0TD0
+R3
+!s105 vga_contollerTest_sv_unit
+S1
+R0
+w1568718426
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/vga_contollerTest.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/vga_contollerTest.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/vga_contollerTest.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/VGA-Controller/vga_contollerTest.sv|
+!i113 1
+R7
+R23
+R9
+nvga_contoller@test
+vWriteBack
+R1
+R20
+!i10b 1
+!s100 P^mLM>gF<AUDdB8Ygm5Ea3
+Io08^M^PUY]a0Ti;?^^j`U0
+R3
+!s105 WriteBack_sv_unit
+S1
+R0
+R13
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/WriteBack.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/WriteBack.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/WriteBack.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/CPU-Steps/WriteBack.sv|
+!i113 1
+R7
+R22
+R9
+n@write@back
+vwritebackBuffer
+R1
+R2
+!i10b 1
+!s100 ZSA0@_9boWlNfUV`E>7VQ2
+IMRnC1efb:ZXnL;:ncAGg`0
+R3
+!s105 writebackBuffer_sv_unit
+S1
+R0
+R13
+8C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/writebackBuffer.sv
+FC:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/writebackBuffer.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/writebackBuffer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers|C:/Users/Pablo/Documents/1-TEC/Arqui1/Proyecto1/Filter-GPU/Buffers/writebackBuffer.sv|
+!i113 1
+R7
+R12
+R9
+nwriteback@buffer

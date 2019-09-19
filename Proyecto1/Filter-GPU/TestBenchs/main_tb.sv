@@ -19,13 +19,18 @@ logic identity;
 main dut (clk,reset,kernel1, kernel2,kernel3,identity,vsync,hsync,blank,sync,r,g,b,vga_clk);
 
 initial begin
-	clk=0; reset=0;
+	clk=0; reset=1;
 	#15;
-	reset=1;
+	reset=0;
+	kernel1=0;
+	kernel2=0;
+	kernel3=0;
+	identity=0;
+	#20;
 	kernel1=1;
-	kernel2=1;
-	kernel3=1;
-	identity=1;
+	reset=1;
+	#35;
+	reset=0;
 end
 always begin 
 	#2 clk=~clk; // Codigo para la senal de reloj que cambia cada 5

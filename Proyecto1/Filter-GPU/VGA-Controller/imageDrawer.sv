@@ -174,16 +174,19 @@ module imageDrawer #(parameter Width=640)(input logic clk,VGA_CLK,
 	always_ff@(posedge clk) begin		
 		case(addrYData)
 			3'b000: begin
-			 if(kernel== 2'b00) ReadData = memData1;
-			 else ReadData = memData1_K;
+			 /*if(kernel== 2'b00) ReadData = memData1;
+			 else ReadData = memData1_K;*/
+			 ReadData = memData1;
 			end
 			3'b001: begin
-			 if(kernel== 2'b00) ReadData = memData2;
-			 else ReadData = memData2_K;
+			 /*if(kernel== 2'b00) ReadData = memData2;
+			 else ReadData = memData2_K;*/
+			 ReadData = memData2;
 			end
 			3'b010: begin
-			 if(kernel== 2'b00) ReadData = memData3;
-			 else ReadData = memData3_K;
+			 /*if(kernel== 2'b00) ReadData = memData3;
+			 else ReadData = memData3_K;*/
+			 ReadData = memData3;
 			end
 			/*3'b011: begin
 			 if(kernel== 2'b00) ReadData = memData4;

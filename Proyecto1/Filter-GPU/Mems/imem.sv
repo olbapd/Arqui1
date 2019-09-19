@@ -1,24 +1,18 @@
-module imem (input logic [31:0] PC,
-			input logic [1:0] kernel,
+module imem #(parameter N=18) (
+			input logic [31:0] PC,
     		output logic [27:0] Instr );
-
-	logic [31:0] RAM[100:0];
-
-initial
-	case(kernel)
-		 
-		2'b00: $readmemb("C://Users//Pablo//Documents//1-TEC//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
-		2'b01: $readmemb("C://Users//Pablo//Documents//1-TEC//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
-		2'b10: $readmemb("C://Users//Pablo//Documents//1-TEC//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
-		default: $readmemb("C://Users//Pablo//Documents//1-TEC//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
-
-		/*2'b00: $readmemh("C://Users//Jose Rivera//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
-		2'b01: $readmemh("C://Users//Jose Rivera//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
-		2'b10: $readmemh("C://Users//Jose Rivera//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM); 
-		default: $readmemh("C://Users//Jose Rivera//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);*/
 	
-	//$readmemh("C://",RAM);
-	endcase
+	logic [31:0] RAM[100:0];
+	
+	/*assign temp =(temp==32'bx)? 0 :(PC-4)%(cont*N);
+	assign finalPC= (PC>22)? (temp<<2):PC;
+	assign cont=(reset)? 0 : (temp==0)? cont : cont+1;*/
+
+initial 
+	$readmemb("C://Users//Pablo//Documents//1-TEC//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);
+
+		/*2'b00: $readmemh("C://Users//Jose Rivera//Arqui1//Proyecto1//Filter-GPU//Mems//memfile.dat",RAM);*/
+		
 	assign Instr = RAM[PC[27:2]]; 
 
 
