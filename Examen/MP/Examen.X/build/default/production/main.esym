@@ -1,7 +1,7 @@
 D G "__PCM__" 0 0 ""5.088d""
 D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""10-Nov-19""
-D G "__TIME__" 0 0 ""21:53:30""
+D G "__DATE__" 0 0 ""11-Nov-19""
+D G "__TIME__" 0 0 ""12:47:25""
 D G "_UNICODE" 0 0 ""?""
 D G "__EVAL" 0 0 ""?""
 D G "__16F877" 0 0 "1" "Standard Header file for the PIC16F877 device ////////////////"
@@ -1089,6 +1089,9 @@ d G "INT_PSP" 1 654 "0x008C80"
 d G "INT_BUSCOL" 1 655 "0x008D08"
 d G "INT_EEPROM" 1 656 "0x008D10"
 d G "INT_TIMER0" 1 657 "0x000B20"
+D G "use_portb_kbd" 0 6 "TRUE"
+D G "use_portd_lcd" 0 7 "TRUE"
+C L "jump_to_isr" 0 8 1 "FUNCTION"
 D G "__LCD_C__" 2 76 ""
 C L "jump_to_isr" 2 2 2 "FUNCTION"
 C L "jump_to_isr" 2 2 1 "FUNCTION"
@@ -1157,7 +1160,6 @@ V L "on" 2 443 "int8" `693
 F G "lcd_cursor_on" 2 444 "void(int8 on)" `692 
 C L "lcd_cursor_on" 2 2 1 "FUNCTION"
 C L "lcd_cursor_on" 2 2 1 "FUNCTION"
-D G "use_portb_kbd" 0 9 "TRUE"
 D G "set_tris_kbd" 3 36 "(x) set_tris_b(x)"
 D G "COL0" 3 55 " (1 << 5)"
 D G "COL1" 3 56 " (1 << 6)"
@@ -1181,42 +1183,184 @@ V L "last_key" 3 86 "int8" `703
 V L "col" 3 87 "int8" `704 
 V L "kchar" 3 89 "int8" `705 
 V L "row" 3 90 "int8" `706 
-V G "temperatura" 0 16 "float" `710  "declaramos una variable de tipo flotante,"
-F N "checkTemp" 0 18 ""
-F G "checkTemp" 0 18 "void()" `711 
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-C L "checkTemp" 0 11 1 "FUNCTION"
-F N "MAIN" 0 56 ""
-V L "argc" 0 56 "int8" `724 
-V L "argv" 0 56 "??0 *" `725 
-F G "MAIN" 0 56 "int8(int8 argc,??0 * argv)" `723 
-V L "keypad" 0 57 "int8" `727 
-V L "i" 0 58 "int8" `728 
-V L "keys_pressed" 0 59 "int8[5]" `729 
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
-C L "MAIN" 0 11 5 "FUNCTION"
-C L "MAIN" 0 11 1 "FUNCTION"
+D G "_STDIO" 4 12 ""
+D G "_STRING" 5 12 ""
+D G "_STDDEF" 6 13 ""
+D G "ptrdiff_t" 6 18 "unsigned int16"
+D G "size_t" 6 22 "unsigned int8"
+D G "wchar_t" 6 26 "unsigned char"
+D G "NULL" 6 27 "0"
+D G "offsetof" 6 29 "(s,f) (offsetofbit(s,f)/8)"
+D G "_CTYPE" 7 12 ""
+D G "islower" 7 14 "(x)  isamong(x,"abcdefghijklmnopqrstuvwxyz")"
+D G "isupper" 7 15 "(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZ")"
+D G "isalnum" 7 16 "(x)  isamong(x,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")"
+D G "isalpha" 7 17 "(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")"
+D G "isdigit" 7 18 "(x)  isamong(x,"0123456789")"
+D G "isspace" 7 19 "(x)  ((x)==' ')"
+D G "isxdigit" 7 20 "(x) isamong(x,"0123456789ABCDEFabcdef")"
+D G "iscntrl" 7 21 "(x)  ((x)<' ')"
+D G "isprint" 7 22 "(x)  ((x)>=' ')"
+D G "isgraph" 7 23 "(x)  ((x)>' ')"
+D G "ispunct" 7 24 "(x)  (((x)>' ')&&!isalnum(x))"
+F N "memmove" 5 34 ""
+V L "s1" 5 34 "*void" `711 
+V L "s2" 5 34 "*void" `712 
+V L "n" 5 34 "int8" `713 
+F G "memmove" 5 35 "*int8(*void s1,*void s2,int8 n)" `710 
+V L "sc1" 5 36 "*int8" `714 
+V L "sc2" 5 37 "*int8" `715 
+D G "strcopy" 5 54 "strcpy"
+C L "strncpy" 5 19 4 "FUNCTION"
+F N "strncpy" 5 61 ""
+V L "s1" 5 61 "*int8" `717 
+V L "s2" 5 61 "*int8" `718 
+V L "n" 5 61 "int8" `719 
+F G "strncpy" 5 62 "*int8(*int8 s1,*int8 s2,int8 n)" `716 
+V L "s" 5 63 "*int8" `720 
+C L "strcat" 5 19 3 "FUNCTION"
+F N "strcat" 5 78 ""
+V L "s1" 5 78 "*int8" `722 
+V L "s2" 5 78 "*int8" `723 
+F G "strcat" 5 79 "*int8(*int8 s1,*int8 s2)" `721 
+V L "s" 5 80 "*int8" `724 
+C L "strncat" 5 19 2 "FUNCTION"
+F N "strncat" 5 96 ""
+V L "s1" 5 96 "*int8" `726 
+V L "s2" 5 96 "*int8" `727 
+V L "n" 5 96 "int8" `728 
+F G "strncat" 5 97 "*int8(*int8 s1,*int8 s2,int8 n)" `725 
+V L "s" 5 98 "*int8" `729 
+C L "memcmp" 5 19 3 "FUNCTION"
+F N "memcmp" 5 120 ""
+V L "s1" 5 120 "*void" `731 
+V L "s2" 5 120 "*void" `732 
+V L "n" 5 120 "int8" `733 
+F G "memcmp" 5 121 "sint8(*void s1,*void s2,int8 n)" `730 
+V L "su1" 5 122 "*int8" `734 
+V L "su2" 5 122 "*int8" `735 
+C L "strcmp" 5 19 2 "FUNCTION"
+F N "strcmp" 5 134 ""
+V L "s1" 5 134 "*int8" `737 
+V L "s2" 5 134 "*int8" `738 
+F G "strcmp" 5 135 "sint8(*int8 s1,*int8 s2)" `736 
+C L "strcoll" 5 19 2 "FUNCTION"
+F N "strcoll" 5 144 ""
+V L "s1" 5 144 "*int8" `740 
+V L "s2" 5 144 "*int8" `741 
+F G "strcoll" 5 145 "sint8(*int8 s1,*int8 s2)" `739 
+C L "strncmp" 5 19 4 "FUNCTION"
+F N "strncmp" 5 157 ""
+V L "s1" 5 157 "*int8" `743 
+V L "s2" 5 157 "*int8" `744 
+V L "n" 5 157 "int8" `745 
+F G "strncmp" 5 158 "sint8(*int8 s1,*int8 s2,int8 n)" `742 
+C L "strxfrm" 5 19 4 "FUNCTION"
+F N "strxfrm" 5 170 ""
+V L "s1" 5 170 "*int8" `747 
+V L "s2" 5 170 "*int8" `748 
+V L "n" 5 170 "int8" `749 
+F G "strxfrm" 5 171 "int8(*int8 s1,*int8 s2,int8 n)" `746 
+V L "c" 5 172 "int8" `750 
+V L "n1" 5 173 "int8" `751 
+C L "strxfrm" 5 19 1 "FUNCTION"
+C L "memchr" 5 19 3 "FUNCTION"
+F N "memchr" 5 201 ""
+V L "s" 5 201 "*void" `753 
+V L "c" 5 201 "int8" `754 
+V L "n" 5 201 "int8" `755 
+F G "memchr" 5 202 "*int8(*void s,int8 c,int8 n)" `752 
+V L "uc" 5 203 "int8" `756 
+V L "su" 5 204 "*int8" `757 
+C L "strchr" 5 19 2 "FUNCTION"
+F N "strchr" 5 215 ""
+V L "s" 5 215 "*int8" `759 
+V L "c" 5 215 "int8" `760 
+F G "strchr" 5 216 "*int8(*int8 s,int8 c)" `758 
+C L "strcspn" 5 19 4 "FUNCTION"
+F N "strcspn" 5 227 ""
+V L "s1" 5 227 "*int8" `762 
+V L "s2" 5 227 "*int8" `763 
+F G "strcspn" 5 228 "int8(*int8 s1,*int8 s2)" `761 
+V L "sc1" 5 229 "*int8" `764 
+V L "sc2" 5 229 "*int8" `765 
+C L "strpbrk" 5 19 4 "FUNCTION"
+F N "strpbrk" 5 242 ""
+V L "s1" 5 242 "*int8" `767 
+V L "s2" 5 242 "*int8" `768 
+F G "strpbrk" 5 243 "*int8(*int8 s1,*int8 s2)" `766 
+V L "sc1" 5 244 "*int8" `769 
+V L "sc2" 5 244 "*int8" `770 
+C L "strrchr" 5 19 2 "FUNCTION"
+F N "strrchr" 5 257 ""
+V L "s" 5 257 "*int8" `772 
+V L "c" 5 257 "int8" `773 
+F G "strrchr" 5 258 "*int8(*int8 s,int8 c)" `771 
+V L "p" 5 259 "*int8" `774 
+C L "strspn" 5 19 2 "FUNCTION"
+F N "strspn" 5 272 ""
+V L "s1" 5 272 "*int8" `776 
+V L "s2" 5 272 "*int8" `777 
+F G "strspn" 5 273 "int8(*int8 s1,*int8 s2)" `775 
+V L "sc1" 5 274 "*int8" `778 
+V L "sc2" 5 274 "*int8" `779 
+C L "strstr" 5 19 6 "FUNCTION"
+F N "strstr" 5 291 ""
+V L "s1" 5 291 "*int8" `781 
+V L "s2" 5 291 "*int8" `782 
+F G "strstr" 5 292 "*int8(*int8 s1,*int8 s2)" `780 
+V L "s" 5 293 "*int8" `783 
+V L "t" 5 293 "*int8" `784 
+C L "strlen" 5 19 2 "FUNCTION"
+F N "strlen" 5 318 ""
+V L "s" 5 318 "*int8" `786 
+F G "strlen" 5 319 "int8(*int8 s)" `785 
+V L "sc" 5 320 "*int8" `787 
+C L "strtok" 5 19 13 "FUNCTION"
+F N "strtok" 5 341 ""
+V L "s1" 5 341 "*int8" `789 
+V L "s2" 5 341 "*int8" `790 
+F G "strtok" 5 342 "*int8(*int8 s1,*int8 s2)" `788 
+V L "beg" 5 343 "*int8" `791 
+V L "end" 5 343 "*int8" `792 
+V L "save" 5 344 "*int8" `793 
+C L "stricmp" 5 19 6 "FUNCTION"
+F N "stricmp" 5 392 ""
+V L "s1" 5 392 "*int8" `795 
+V L "s2" 5 392 "*int8" `796 
+F G "stricmp" 5 393 "sint8(*int8 s1,*int8 s2)" `794 
+C L "strlwr" 5 19 3 "FUNCTION"
+F N "strlwr" 5 406 ""
+V L "s" 5 406 "*int8" `800 
+F G "strlwr" 5 407 "*int8(*int8 s)" `799 
+V L "p" 5 408 "*int8" `801 
+C L "strupr" 5 19 3 "FUNCTION"
+F N "strupr" 5 420 ""
+V L "s" 5 420 "*int8" `803 
+F G "strupr" 5 421 "*int8(*int8 s)" `802 
+V L "p" 5 422 "*int8" `804 
+V G "temperatura" 0 14 "float" `805 
+V G "keypad" 0 15 "int8" `806 
+V G "i" 0 16 "int8" `807 
+V G "keys_pressed" 0 17 "int8[5]" `808 
+V G "password" 0 18 "int8[10]" `809 
+F N "checkTemp" 0 20 ""
+F G "checkTemp" 0 20 "void()" `810 
+C L "checkTemp" 0 12 1 "FUNCTION"
+C L "checkTemp" 0 12 1 "FUNCTION"
+C L "checkTemp" 0 12 1 "FUNCTION"
+C L "checkTemp" 0 12 1 "FUNCTION"
+C L "checkTemp" 0 12 1 "FUNCTION"
+F N "MAIN" 0 68 ""
+F G "MAIN" 0 68 "void()" `823 
+V L "checkPassword" 0 69 "int8" `824 
+V L "valid" 0 70 "int8" `825 
+C L "MAIN" 0 12 1 "FUNCTION"
+C L "MAIN" 0 12 4 "FUNCTION"
+C L "MAIN" 0 12 1 "FUNCTION"
+C L "MAIN" 0 12 1 "FUNCTION"
+C L "MAIN" 0 12 6 "FUNCTION"
+C L "MAIN" 0 12 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0
