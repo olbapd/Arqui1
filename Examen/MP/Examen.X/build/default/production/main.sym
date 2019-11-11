@@ -21,56 +21,57 @@
 02C-030 keys_pressed
 031-03A password
 03B-03C @sprintf_string
-03D     MAIN.checkPassword
-03E     MAIN.valid
-03F-042 @FLT.P1
-03F     lcd_init.i
-03F-040 @ITOF.P1
-03F     @PSTRINGCN7_682.P2
-03F     kbd_getc.kchar
-03F     checkTemp.@SCRATCH1
-03F     @PSTRINGC7_682.@SCRATCH1
-03F     MAIN.@SCRATCH1
-040     kbd_getc.row
-040-043 lcd_init.LCD_INIT_STRING
-040     @PSTRINGC7_682.@SCRATCH2
-040     MAIN.@SCRATCH2
-040     @PSTRINGCN7_682.@SCRATCH1
-041     @MUL88.P1
-041     kbd_getc.@SCRATCH1
-041     @PSTRINGC7_682.@SCRATCH3
-041     MAIN.@SCRATCH3
-041     @PSTRINGCN7_682.@SCRATCH2
+03D     @TRIS_C
+03E     MAIN.checkPassword
+03F     MAIN.valid
+040-043 @FLT.P1
+040     lcd_init.i
+040     @PSTRINGCN7_682.P1
+040-041 @ITOF.P2
+040     kbd_getc.kchar
+040     checkTemp.@SCRATCH1
+040     @PSTRINGC7_682.@SCRATCH1
+040     MAIN.@SCRATCH1
+041     kbd_getc.row
+041-044 lcd_init.LCD_INIT_STRING
+041     @PSTRINGC7_682.@SCRATCH2
+041     MAIN.@SCRATCH2
+041     @PSTRINGCN7_682.@SCRATCH1
 042     @MUL88.P1
-042     @PSTRINGC7_682.@SCRATCH4
-042     MAIN.@SCRATCH4
-042     @PSTRINGCN7_682.@SCRATCH3
-043-046 @FLT.P1
-043     lcd_putc.c
-043-046 @DIVFF.P1
-043     @PSTRINGCN7_682.@SCRATCH4
-044     @delay_ms1.P1
-044     lcd_gotoxy.x
-044     lcd_init.@SCRATCH1
-045     lcd_gotoxy.y
-046     lcd_gotoxy.address
-047-04A @DIVFF.P1
-047     lcd_gotoxy.@SCRATCH1
-047     @FLT.@SCRATCH1
-048     lcd_send_byte.address
-048     @FLT.@SCRATCH2
-049     lcd_send_byte.n
-04A     lcd_read_byte.low
-04A     lcd_send_byte.@SCRATCH1
-04B     lcd_read_byte.high
-04B     lcd_send_nibble.n
-04B     @DIVFF.@SCRATCH1
-04C     lcd_read_byte.@SCRATCH1
-04C     @DIVFF.@SCRATCH2
-04D     @DIVFF.@SCRATCH3
-04E     @DIVFF.@SCRATCH4
-04F     @DIVFF.@SCRATCH5
-050     @DIVFF.@SCRATCH6
+042     kbd_getc.@SCRATCH1
+042     @PSTRINGC7_682.@SCRATCH3
+042     MAIN.@SCRATCH3
+042     @PSTRINGCN7_682.@SCRATCH2
+043     @MUL88.P1
+043     @PSTRINGC7_682.@SCRATCH4
+043     MAIN.@SCRATCH4
+043     @PSTRINGCN7_682.@SCRATCH3
+044-047 @FLT.P1
+044     lcd_putc.c
+044-047 @DIVFF.P1
+044     @PSTRINGCN7_682.@SCRATCH4
+045     @delay_ms1.P1
+045     lcd_gotoxy.x
+045     lcd_init.@SCRATCH1
+046     lcd_gotoxy.y
+047     lcd_gotoxy.address
+048-04B @DIVFF.P1
+048     lcd_gotoxy.@SCRATCH1
+048     @FLT.@SCRATCH1
+049     lcd_send_byte.address
+049     @FLT.@SCRATCH2
+04A     lcd_send_byte.n
+04B     lcd_read_byte.low
+04B     lcd_send_byte.@SCRATCH1
+04C     lcd_send_nibble.n
+04C     lcd_read_byte.high
+04C     @DIVFF.@SCRATCH1
+04D     lcd_read_byte.@SCRATCH1
+04D     @DIVFF.@SCRATCH2
+04E     @DIVFF.@SCRATCH3
+04F     @DIVFF.@SCRATCH4
+050     @DIVFF.@SCRATCH5
+051     @DIVFF.@SCRATCH6
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -88,10 +89,10 @@ ROM Allocation:
 000024  @const820.call
 00002C  @const821.call
 000034  @const822.call
-00003C  @const833.call
-000044  @const836.call
-00004B  @const837.call
-000052  @const838.call
+00003C  @const834.call
+000044  @const837.call
+00004B  @const838.call
+000052  @const839.call
 00005A  kbd_init
 00005D  @delay_ms1
 000072  lcd_send_nibble
@@ -109,15 +110,15 @@ ROM Allocation:
 00030E  @PSTRINGC7_682
 000364  @FLT
 0003A3  checkTemp
-00047D  @cinit1
-00047D  MAIN
-000487  @cinit2
+000473  @cinit1
+000473  MAIN
+00047F  @cinit2
 
 Project Directory:
     C:\Users\pablo\Documents\1-TEC\Arqui1\Examen\MP\Examen.X\
 
 Project Files:
-    main.c                                                  [11-Nov-19 12:47  CRC=C62683D5]
+    main.c                                                  [11-Nov-19 13:28  CRC=1E78E083]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f877.h [05-Sep-19 15:24  CRC=4992BB2A]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\lcd.c [22-Feb-16 10:05  CRC=D1A6378A]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\kbd.c [25-May-15 22:33  CRC=7C81F56B]
@@ -126,9 +127,9 @@ Project Files:
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h [30-Jan-19 12:26  CRC=897CEC6C]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h [03-Jan-08 15:55  CRC=2D1F019F]
 
-Source signature=D26D7E5D
+Source signature=2ABFDB0B
 Program memory checksum=0000
-Hex file CRC=66FE
+Hex file CRC=AB95
 
 Units:
     C:\Users\pablo\Documents\1-TEC\Arqui1\Examen\MP\Examen.X\main (main)

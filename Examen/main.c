@@ -36,17 +36,17 @@ void checkTemp(){
     else if(temperatura>=20&&temperatura<=35)  {         
         //Abre
         lcd_gotoxy(1,2);
+        set_pwm1_duty(100);
         printf(lcd_putc,"\fpuerta abierta");
-        output_high(PIN_B3);
         delay_ms(5000);
-        output_low(PIN_B3);
-        
+        set_pwm1_duty(0);
+
         //Cierra
         lcd_gotoxy (1,2);
+        set_pwm2_duty(100);
         printf(lcd_putc,"\fpuerta cerrada");
-        output_high(PIN_D3);
         delay_ms(5000);
-        output_low(PIN_D3);
+        set_pwm2_duty(0);
     }
     else if(temperatura>35)  {
         printf(lcd_putc,"\fpuerta cerrada");
@@ -72,7 +72,10 @@ void main() {
     setup_adc_ports (RA0_ANALOG); 
     setup_adc(ADC_CLOCK_INTERNAL);
     //set_adc_channel(0);
-    
+    setup_ccp1(CCP_PWN);
+    setup_ccp2(CCP_PWN);
+    setup_timer_2(T2_DIV_BY_16,255,1);
+
     kbd_init();
     lcd_init();                                  
     port_b_pullups(TRUE);   //habilitan las resistencias pull up para evitar resistencias en el teclado

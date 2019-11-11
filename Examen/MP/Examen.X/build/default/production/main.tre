@@ -1,5 +1,5 @@
 ÀÄExamen
-   ÀÄMAIN  0/248  Ram=6
+   ÀÄMAIN  0/274  Ram=6
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@cinit2  (Inline)  Ram=0
       ÃÄkbd_init  0/3  Ram=0
@@ -45,7 +45,7 @@
       ³  ÀÄlcd_putc  0/44  Ram=1
       ³     ÀÄ*
       ÃÄ@delay_ms1  0/21  Ram=1
-      ÃÄcheckTemp  0/218  Ram=1
+      ÃÄcheckTemp  0/208  Ram=1
       ³  ÃÄ@FLT  0/63  Ram=10
       ³  ÃÄlcd_gotoxy  0/18  Ram=4
       ³  ³  ÀÄ*
@@ -77,7 +77,7 @@
       ÃÄ@PSTRINGC7_682  0/86  Ram=4
       ³  ÀÄ*
       ÃÄ@delay_ms1  0/21  Ram=1
-      ÃÄcheckTemp  0/218  Ram=1
+      ÃÄcheckTemp  0/208  Ram=1
       ³  ÀÄ*
       ÃÄ@PSTRINGC7_682  0/86  Ram=4
       ³  ÀÄ*
