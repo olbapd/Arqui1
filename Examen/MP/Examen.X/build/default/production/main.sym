@@ -1,0 +1,176 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+006     kbd
+008     lcdlat
+008     PSP_DATA
+008     lcd
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     kbd_getc.kbd_call_count
+021.0   kbd_getc.kbd_down
+022     kbd_getc.last_key
+023     kbd_getc.col
+024-027 temperatura
+028-029 @sprintf_string
+02A     @TRIS_C
+02B     MAIN.argc
+02C-02D MAIN.argv
+02E     MAIN.keypad
+02F     MAIN.i
+030-034 MAIN.keys_pressed
+035-038 @FLT.P1
+035     lcd_init.i
+035-038 @PRINTF_L32D_682FPFPF.P1
+035-036 @ITOF.P2
+035     kbd_getc.kchar
+035     checkTemp.@SCRATCH1
+035     @PSTRINGC7_682.@SCRATCH1
+035     MAIN.@SCRATCH1
+036     kbd_getc.row
+036-039 lcd_init.LCD_INIT_STRING
+036     @PSTRINGC7_682.@SCRATCH2
+036     MAIN.@SCRATCH2
+037     @MUL88.P1
+037     kbd_getc.@SCRATCH1
+037     @PSTRINGC7_682.@SCRATCH3
+037     MAIN.@SCRATCH3
+038     @MUL88.P1
+038     @PSTRINGC7_682.@SCRATCH4
+038     MAIN.@SCRATCH4
+039-03C @DIVFF.P1
+039-03C @FLT.P2
+039     @PRINTF_L32D_682FPFPF.P3
+03A     lcd_init.@SCRATCH1
+03A     @PRINTF_L32D_682FPFPF.@SCRATCH1
+03B     @PRINTF_L32D_682FPFPF.@SCRATCH2
+03C     @PRINTF_L32D_682FPFPF.@SCRATCH3
+03D-040 @DIVFF.P1
+03D     @FLT.@SCRATCH1
+03D     @PRINTF_L32D_682FPFPF.@SCRATCH4
+03E     @FLT.@SCRATCH2
+03E     @PRINTF_L32D_682FPFPF.@SCRATCH5
+03F     @PRINTF_L32D_682FPFPF.@SCRATCH6
+040     @PRINTF_L32D_682FPFPF.@SCRATCH7
+041     @DIVFF.@SCRATCH1
+041     @PRINTF_L32D_682FPFPF.@SCRATCH8
+042-045 @DIV3232.P1
+042-045 @FTOSD.P2
+042-045 @MULFF.P3
+042     lcd_putc.c
+042     @DIVFF.@SCRATCH2
+043     @delay_ms1.P1
+043     lcd_gotoxy.x
+043     @DIVFF.@SCRATCH3
+044     lcd_gotoxy.y
+044     @DIVFF.@SCRATCH4
+045     lcd_gotoxy.address
+045     @DIVFF.@SCRATCH5
+046-049 @MULFF.P1
+046-049 @DIV3232.P2
+046     lcd_gotoxy.@SCRATCH1
+046     @DIVFF.@SCRATCH6
+046     @FTOSD.@SCRATCH1
+047     lcd_send_byte.address
+048     lcd_send_byte.n
+049     lcd_read_byte.low
+049     lcd_send_byte.@SCRATCH1
+04A     lcd_read_byte.high
+04A     lcd_send_nibble.n
+04A     @MULFF.@SCRATCH1
+04A     @DIV3232.@SCRATCH1
+04B     lcd_read_byte.@SCRATCH1
+04B     @MULFF.@SCRATCH2
+04B     @DIV3232.@SCRATCH2
+04C     @MULFF.@SCRATCH3
+04C     @DIV3232.@SCRATCH3
+04D     @MULFF.@SCRATCH4
+04D     @DIV3232.@SCRATCH4
+04E     @MULFF.@SCRATCH5
+04E     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  KEYS.call
+000008  KEYS.data
+000014  @const715.call
+00001C  @const720.call
+000024  @const721.call
+00002C  @const722.call
+000034  @const733.call
+000038  @const752.call
+000040  kbd_init
+000043  @delay_ms1
+000058  lcd_send_nibble
+000064  lcd_read_nibble
+00006A  lcd_send_byte
+000070  lcd_read_byte
+0000AA  lcd_init
+0000E6  lcd_gotoxy
+0000F8  lcd_putc
+000124  @PSTRINGC7_682
+00017A  @ITOF
+000199  @DIVFF
+000265  @DIV3232
+0002B4  @PRINTF_L32D_682FPFPF
+0002C8  @MULFF
+00034E  @FTOSD
+000409  kbd_getc
+000459  @MUL88
+000493  @FLT
+0004D2  checkTemp
+0005A9  MAIN
+0005A9  @cinit1
+0005B5  @cinit2
+
+Project Directory:
+    C:\Users\pablo\Documents\1-TEC\Arqui1\Examen\MP\Examen.X\
+
+Project Files:
+    main.c                                                  [10-Nov-19 21:53  CRC=95CDFA17]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16f877.h [05-Sep-19 15:24  CRC=4992BB2A]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\lcd.c [22-Feb-16 10:05  CRC=D1A6378A]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\kbd.c [25-May-15 22:33  CRC=7C81F56B]
+
+Source signature=AA0AD7A1
+Program memory checksum=0000
+Hex file CRC=AE62
+
+Units:
+    C:\Users\pablo\Documents\1-TEC\Arqui1\Examen\MP\Examen.X\main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+    Predefined symbols:
+       #define __16F877 1
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   build\default\production\main.xsym
+    Errors:      build\default\production\main.err
+    Ext Symbols: build\default\production\main.esym
+    INHX8:       build\default\production\main.hex
+    Symbols:     build\default\production\main.sym
+    List:        build\default\production\main.lst
+    Debug/COFF:  build\default\production\main.cof
+    Project:     main.ccspjt
+    Call Tree:   build\default\production\main.tre
+    Statistics:  build\default\production\main.STA
