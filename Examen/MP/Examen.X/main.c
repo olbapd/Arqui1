@@ -21,14 +21,14 @@ void checkTemp(int value){
         output_low(PIN_D3);
         lcd_gotoxy(1,2);
         set_pwm1_duty(150);
-        printf(lcd_putc,"\fpuerta abierta");
+        printf(lcd_putc,"\fPuerta abierta");
         delay_ms(10000);
         set_pwm1_duty(0);
         
         //Cierra
         lcd_gotoxy (1,2);
         set_pwm2_duty(150);
-        printf(lcd_putc,"\fpuerta cerrada");
+        printf(lcd_putc,"\fPuerta cerrada");
         delay_ms(10000);
         output_high(PIN_D3);
         set_pwm2_duty(0);
@@ -38,14 +38,14 @@ void checkTemp(int value){
         output_low(PIN_D3);
         lcd_gotoxy(1,2);
         set_pwm1_duty(150);
-        printf(lcd_putc,"\fpuerta abierta");
+        printf(lcd_putc,"\fPuerta abierta");
         delay_ms(5000);
         set_pwm1_duty(0);
 
         //Cierra
         lcd_gotoxy (1,2);
         set_pwm2_duty(150);
-        printf(lcd_putc,"\fpuerta cerrada");
+        printf(lcd_putc,"\fPuerta cerrada");
         delay_ms(5000);
         set_pwm2_duty(0);
         output_high(PIN_D3);
@@ -111,7 +111,7 @@ void main() {
     while (TRUE)   {
         //Muestra Temperatura
         temperatura=(float)read_adc()/2;
-        temperatura=temperatura-1;
+        temperatura=temperatura-(float)1;
         buttonState=input_state(PIN_C5);
         if(buttonState==0){
             if(maintinaing==0){
@@ -141,7 +141,7 @@ void main() {
             //lee teclado
             keypad=kbd_getc();           
             if(keypad!=0){
-                printf(lcd_putc,"\f tecla No= %c",keypad);
+                printf(lcd_putc,"\f Tecla: %c",keypad);
                 if(keypad=='#'){
                     checkPassword=1;
                 }

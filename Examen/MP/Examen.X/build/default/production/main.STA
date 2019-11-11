@@ -1,5 +1,5 @@
 
-ROM used:   3184/8192 (39%)
+ROM used:   3182/8192 (39%)
             3300/8192 (40%) including unused fragments
 
             1.6 Average locations per line
@@ -57,7 +57,7 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0     89   3    5             @PSTRINGCN7_9600_62_63
 1    207   7   13             @PRINTF_L32D_9600_62_63FPFPF
 0     11   0    0             @const848
-1    655  21   12   3765  8.5  MAIN
+1    655  21   12   3781  8.6  MAIN
 0     28   1    0             @const858
 0     90   3    4             @PSTRINGC7_9600_62_63
 0     31   1    2             @ITOF
@@ -65,7 +65,7 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0    321  10   16             @ADDFF
 0      6   0    0             @const868
 0      6   0    0             @const870
-0      8   0    0             @const872
+0      6   0    0             @const872
 0      7   0    0             @const873
 0      7   0    0             @const874
 0      8   0    0             @const875
@@ -76,10 +76,10 @@ Program metrics:
     Functions               11
     Statements              392
     Comments                443
-    Volume (V)              17811
-    Difficulty (D)          58.0
-    Effort to implement (E) 1033702
-    Time to implement (T)   15 hours, 57 minutes
+    Volume (V)              17831
+    Difficulty (D)          58.1
+    Effort to implement (E) 1036146
+    Time to implement (T)   15 hours, 59 minutes
     Est Delivered Bugs (B)  3
     Cyclomatic Complexity   38
     Maintainability (MI)    54
@@ -87,7 +87,7 @@ Program metrics:
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF  1928  116  
+00004-007FF  1926  118  
 00800-00FFF  1252  796  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  
