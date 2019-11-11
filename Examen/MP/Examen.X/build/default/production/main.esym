@@ -1,7 +1,7 @@
 D G "__PCM__" 0 0 ""5.088d""
 D G "__DEVICE__" 0 0 ""
 D G "__DATE__" 0 0 ""11-Nov-19""
-D G "__TIME__" 0 0 ""16:29:18""
+D G "__TIME__" 0 0 ""17:23:33""
 D G "_UNICODE" 0 0 ""?""
 D G "__EVAL" 0 0 ""?""
 D G "__16F877" 0 0 "1" "Standard Header file for the PIC16F877 device ////////////////"
@@ -1338,28 +1338,32 @@ F N "strupr" 5 420 ""
 V L "s" 5 420 "*int8" `803 
 F G "strupr" 5 421 "*int8(*int8 s)" `802 
 V L "p" 5 422 "*int8" `804 
-V G "temperatura" 0 12 "float" `805 
-V G "keypad" 0 13 "int8" `806 
-V G "i" 0 14 "int8" `807 
-V G "keys_pressed" 0 15 "int8[5]" `808 
-F N "checkTemp" 0 17 ""
-F G "checkTemp" 0 17 "void()" `809 
-C L "checkTemp" 0 19 1 "FUNCTION"
-C L "checkTemp" 0 19 1 "FUNCTION"
-C L "checkTemp" 0 19 1 "FUNCTION"
-C L "checkTemp" 0 19 1 "FUNCTION"
-F N "MAIN" 0 71 ""
-F G "MAIN" 0 71 "void()" `838 
-V L "checkPassword" 0 72 "int8" `839 
-V L "valid" 0 73 "int8" `840 
-V L "maintinaing" 0 74 "int8" `841 
-V L "buttonState" 0 75 "int8" `842 
-V L "previousTemp" 0 81 "float" `845 
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
+V G "temperatura" 0 13 "float" `808 
+V G "keypad" 0 14 "int8" `809 
+V G "i" 0 15 "int8" `810 
+V G "keys_pressed" 0 16 "int8[5]" `811 
+F N "checkTemp" 0 18 ""
+V L "value" 0 18 "int8" `813 
+F G "checkTemp" 0 18 "void(int8 value)" `812 
+C L "checkTemp" 0 20 1 "FUNCTION"
+C L "checkTemp" 0 20 1 "FUNCTION"
+C L "checkTemp" 0 20 1 "FUNCTION"
+C L "checkTemp" 0 20 1 "FUNCTION"
+C L "checkTemp" 0 20 1 "FUNCTION"
+C L "checkTemp" 0 20 1 "FUNCTION"
+F N "MAIN" 0 81 ""
+F G "MAIN" 0 81 "void()" `849 
+V L "checkPassword" 0 83 "int8" `850 
+V L "valid" 0 84 "int8" `851 
+V L "maintinaing" 0 85 "int8" `852 
+V L "buttonState" 0 86 "int8" `853 
+V L "previousTemp" 0 92 "float" `856 
+C L "MAIN" 0 20 1 "FUNCTION"
+C L "MAIN" 0 20 1 "FUNCTION"
+C L "MAIN" 0 20 1 "FUNCTION"
+C L "MAIN" 0 20 1 "FUNCTION"
+C L "MAIN" 0 20 1 "FUNCTION"
+C L "MAIN" 0 20 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0
@@ -1490,3 +1494,10 @@ F B "spi_write2" 1 2
 F B "spi_data_is_in2" 0 0
 F B "delay_ms" 1 0
 F B "delay_us" 1 0
+F B "putchar" 1 2
+F B "puts" 1 2
+F B "getch" 0 1
+F B "gets" 1 3
+F B "kbhit" 0 1
+F B "set_uart_speed" 1 3
+F B "setup_uart" 1 3
