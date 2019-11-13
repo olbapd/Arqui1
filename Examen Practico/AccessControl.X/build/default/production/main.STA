@@ -1,0 +1,97 @@
+
+ROM used:   2645/8192 (32%)
+            2861/8192 (35%) including unused fragments
+
+            1.3 Average locations per line
+            11.1 Average locations per statement
+
+RAM used:   37/368 (10%) at main() level
+            59/368 (16%) worst case
+
+Stack used: 5 worst case (5 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  195   115  48  main.c
+  660     0   0  ..\..\..\..\Program Files (x86)\PICC\devices\16f877.h
+  456    84  35  ..\..\..\..\Program Files (x86)\PICC\drivers\lcd.c
+  135    40  17  ..\..\..\..\Program Files (x86)\PICC\drivers\kbd.c
+   37     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h
+  435     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+   32     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+   28     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+----- -----
+ 1978   239 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     21   1    1             @delay_ms1
+ Inline         3    596  5.9  lcd_read_byte
+0      6   0    0     59  4.2  lcd_read_nibble
+0     12   0    1    179  3.3  lcd_send_nibble
+0     64   2    3    460  4.7  lcd_send_byte
+0     62   2    6    814  7.2  lcd_init
+0     18   1    4    208  6.3  lcd_gotoxy
+0     44   2    1    354  4.7  lcd_putc
+0     16   1    0             @const696
+0      3   0    0      3  0.0  kbd_init
+0    136   5    3   4540 10.2  kbd_getc
+ Inline         2             @MUL88
+0     67   3   10    351  7.0  strncat
+0     68   3    5    231  6.6  strcmp
+1    813  31   11   3981  8.4  MAIN
+0      7   0    0             @const819
+0     86   3    4             @PSTRINGC7_682
+0      6   0    0             @const824
+0      8   0    0             @const826
+0     87   3    5             @PSTRINGCN7_682
+0     31   1    2             @ITOF
+0    204   8   14             @DIVFF
+0      6   0    0             @const834
+0    117   4   13             @MULFF
+0     31   1    5             @FTOSD
+0     79   3   13             @DIV3232
+0    197   7   13             @PRINTF_L32D_682FPFPF
+0      5   0    0             @const846
+0      5   0    0             @const847
+0      6   0    0             @const850
+0      5   0    0             @const854
+0      5   0    0             @const855
+0      5   0    0             @const856
+0      9   0    0             @const857
+0      9   0    0             @const858
+0     89   3    5             @PSTRINGCN7_9600_62_63
+0     25   1    2             @PSTRINGR_9600_62_63
+0    201   8   13             @PRINTF_L32D_9600_62_63FPFPF
+0      5   0    0             @const865
+0     63   2   10             @FLT
+0      1   0    0             @const869
+0      8   0    0             @const870
+0      1   0    0             @const871
+0      9   0    0             @const872
+0      1   0    0             @const873
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               12
+    Statements              239
+    Comments                514
+    Volume (V)              16363
+    Difficulty (D)          64.5
+    Effort to implement (E) 1055654
+    Time to implement (T)   16 hours, 17 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   34
+    Maintainability (MI)    52
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1828  216  
+00800-00FFF   813  1235  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

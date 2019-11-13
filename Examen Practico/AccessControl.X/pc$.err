@@ -1,0 +1,5 @@
+Compiling C:\Users\and-h\MPLABXProjects\AccessControl.X\main on 12-Nov-19 at 10:24
+C:\Users\and-h\MPLABXProjects\AccessControl.X\main.c:0:0:  Info#300  More info:   *3* I/O error 32
+C:\Users\and-h\MPLABXProjects\AccessControl.X\main.c:0:0:  Error#44  Internal Error - Contact CCS  OUTPUT FILE
+      1 Errors,  0 Warnings.
+Build Failed.

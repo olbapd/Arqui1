@@ -1,0 +1,24 @@
+[PROJECT]
+Target=build\default\production\main.hex
+Processor_Text=PIC16F877
+CCSVersion=5.088d
+Compiler=PCM
+[Target Data]
+FileList=main.c
+[build\default\production\main.c]
+Type=4
+[mru-list]
+1=build\default\production\main.c
+[Units]
+Count=1
+1=main (main)
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=12-11-2019
+D1_L=2
+D1_L1=[71516]Project Opened.
+D1_L2=[71530]Project Closed.
