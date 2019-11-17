@@ -59,7 +59,7 @@ export class HomeComponent implements AfterViewInit {
   constructor(
     private updateService: UpdateService,
     private firebaseService: FirebaseService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
   ) {}
 
   ngAfterViewInit() {
@@ -72,13 +72,24 @@ export class HomeComponent implements AfterViewInit {
   }
 
   updateHumidity() {
-    console.log("here");
-    console.log(this.humidity);
     this.updateService.led().subscribe(result => {
       console.log(result);
     });
   }
   updateFlow() {
     console.log(this.flow);
+  }
+
+  addToGraph(dateCreated, value ){
+    this.multi.series.push({name: dateCreated, value: value});
+  }
+
+  //Funcion que llama el boton. Node debe devolver lo siguiente  { date: "XX/XX/XX", value: xxx}
+  //Los services estan en update.services si ocupa cambiar el endpoint
+  clicked(){
+    this.updateService.getHumidity()
+      .subscribe(result =>{
+        this.addToGraph(result.date, result.vallue);
+      })
   }
 }
