@@ -19,23 +19,6 @@ export class HomeComponent implements AfterViewInit {
   single: any[];
   multi: any[] = [
     {
-      name: "Luminosity",
-      series: [
-        {
-          name: "2009",
-          value: 7300000
-        },
-        {
-          name: "2010",
-          value: 7300000
-        },
-        {
-          name: "2011",
-          value: 8940000
-        }
-      ]
-    },
-    {
       name: "Humidity",
       series: [
         {
