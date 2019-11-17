@@ -17,7 +17,7 @@ export class HomeComponent implements AfterViewInit {
   options: any;
 
   single: any[];
-  multi: any[] = [
+  multi: any = [
     {
       name: "Humidity",
       series: [
