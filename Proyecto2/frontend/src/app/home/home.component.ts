@@ -2,6 +2,7 @@ import { Component, AfterViewInit, ElementRef } from "@angular/core";
 import { UpdateService } from "../services/update.service";
 import { FirebaseService } from "../services/firebase.service";
 import { AngularFireDatabase } from "angularfire2/database";
+import { ChartDataModel} from '../interfaces/charmodel'
 
 @Component({
   selector: "app-home",
@@ -13,13 +14,15 @@ export class HomeComponent implements AfterViewInit {
   humidity = 0;
   hour = "";
   flow = 0;
-  data: {};
   options: any;
 
   single: any[];
-  series: any = []
-  multi: any = [];
-
+  multi: any =  [
+      {
+        name: 'Humidity',
+        series: []
+      }
+  ];
   view: any[] = [700, 400];
 
   // options
@@ -68,24 +71,25 @@ export class HomeComponent implements AfterViewInit {
     });
   }
 
-  addToGraph(dateCreated, value ){
-    console.log(this.series);
-    this.series.push({name: dateCreated, value: value});
-    this.multi[0] =  {
-        name: "Humidity",
-        series: this.series
-      }
-      console.log(this.multi);
-  }
+  // addToGraph(dateCreated, value ){
+  //   console.log(this.series);
+  //   this.series.push({name: dateCreated, value: value});
+  //   this.multi[0] =  {
+  //       name: "Humidity",
+  //       series: this.series
+  //     }
+  //     console.log(this.multi);
+  // }
 
   //Funcion que llama el boton. Node debe devolver lo siguiente  { date: "XX/XX/XX", value: xxx}
   //Los services estan en update.services si ocupa cambiar el endpoint
   clicked(){
     this.updateService.getHumidity()
       .subscribe(result =>{
-        this.addToGraph(result.date.toString(), Number(result.value));
-        console.log(result.date);
-        console.log(result.value);
-      })
+        //this.addToGraph(result.date.toString(), Number(result.value));
+        this.multi[0].series.push({name: result.date.toString(), value:  Number(result.value)});
+        console.log(this.multi);
+        this.multi = [...this.multi]
+      });
   }
 }

@@ -21,9 +21,9 @@
           <h4>LIGHTING HOURS</h4>
           <label>Select time to light the plants: </label>
           <input [(ngModel)]="hour" [ngxTimepicker]="picker">
-          <ngx-material-timepicker #picker></ngx-material-timepicker>
+          <ngx-material-timepicker (click)="updateHour()" #picker></ngx-material-timepicker>
         </div>
-        <button type="button" (click)="updateHour()" class="btn-primary" style= "margin-right: 330px; margin-bottom: 590px">Send</button>
+        
         
       </div>
     </div>

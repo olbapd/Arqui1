@@ -24,7 +24,7 @@ exports.stream = function (req, res) {
             client.on('message', function(topic, message, packet) {
             console.log("Received '" + message + "' on '" + topic + "'");
             res.json({
-                date: fecha.getFullYear(),
+                date: fecha.getMinutes(),
                 value: message.toString()
             });
             client.end();
