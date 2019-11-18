@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, ElementRef } from "@angular/core";
 import { UpdateService } from "../services/update.service";
+import { FirebaseService } from "../services/firebase.service";
 import { AngularFireDatabase } from "angularfire2/database";
 
 @Component({
@@ -10,9 +11,7 @@ import { AngularFireDatabase } from "angularfire2/database";
 export class HomeComponent implements AfterViewInit {
   title = "plant-care";
   humidity = 0;
-  onHour = "";
-  offHour = "";
-  light=false;
+  hour = "";
   flow = 0;
   data: {};
   options: any;
@@ -59,6 +58,7 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(
     private updateService: UpdateService,
+    private firebaseService: FirebaseService,
     private elementRef: ElementRef,
   ) {}
 
@@ -67,37 +67,20 @@ export class HomeComponent implements AfterViewInit {
       "#323639";
   }
 
-  updateHour(type) {
-
-    if(type==1 && this.onHour !=""){
-      this.updateService.sendHour({isOn:true, hour: this.onHour})
-        .subscribe(result =>{
-          console.log(result);
-        })
-    }
-    else if(type==2 && this.offHour !=""){
-      this.updateService.sendHour({isOn:false, hour: this.offHour})
-        .subscribe(result =>{
-          console.log(result);
-        })
-    }
-  }
-
-  updateLights(){
-    this.updateService.led({LED: this.light })
-      .subscribe(result =>{
-        console.log(result);
-      })
-  }
-
-  updateHumidity() {
-    this.updateService.sendHumidity({humedad: this.humidity}).subscribe(result => {
+  updateHour() {
+    console.log(this.hour);
+    this.updateService.sendHour(this.hour.toString()).subscribe(result => {
       console.log(result);
     });
   }
 
+  updateHumidity() {
+    this.updateService.sendHumidity(this.humidity.toString()).subscribe(result => {
+      console.log(result);
+    });
+  }
   updateFlow() {
-    this.updateService.sendFlow({flujo: this.flow}).subscribe(result => {
+    this.updateService.sendFlow(this.flow.toString()).subscribe(result => {
       console.log(result);
     });
   }

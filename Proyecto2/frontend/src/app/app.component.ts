@@ -1,5 +1,7 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { UpdateService } from './services/update.service';
+import { FirebaseService } from './services/firebase.service';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,9 @@ export class AppComponent implements AfterViewInit{
 
 
   constructor(private updateService: UpdateService,
+              private firebaseService: FirebaseService,
               private elementRef: ElementRef){
+    this.firebaseService.test();
     /*this.data = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June'],
         datasets: [{
@@ -112,5 +116,23 @@ export class AppComponent implements AfterViewInit{
 
   ngAfterViewInit(){
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#323639';
+  }
+
+  updateHour(){
+  	console.log(this.hour);
+    
+  }
+
+  updateHumidity(){
+    console.log("here");
+  	console.log(this.humidity);
+    this.updateService.led()
+     .subscribe((result)=>{
+         console.log(result);
+     })
+
+  }
+  updateFlow(){
+  	console.log(this.flow);
   }
 }

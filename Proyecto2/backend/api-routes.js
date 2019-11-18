@@ -12,12 +12,14 @@ router.get('/', function (req, res) {
 var humedad = require('./controller/humedad');
 var waterflow = require('./controller/waterflow');
 var luces = require('./controller/luces');
-router.route('/humedad')
-    .get(humedad.stream);
-router.route('/waterflow')
-    .get(waterflow.stream);
-router.route('/luz')
-    .post(luces.stream);
+router.route('/humidity')
+    .get(humedad.stream)
+    .post(humedad.new);
+router.route('/flow')
+    .get(waterflow.stream)
+    .post(waterflow.new);
+router.route('/hour')
+    .post(luces.new);
 
 
 // Export API routes
