@@ -19,11 +19,17 @@
       <div class="card">
         <div class="card-body">
           <h4>LIGHTING HOURS</h4>
-          <label>Select time to light the plants: </label><input [(ngModel)]="hour" (change)="updateHour()"[ngxTimepicker]="picker">
-          <ngx-material-timepicker #picker></ngx-material-timepicker>
-
-          <mat-slide-toggle>Slide me!</mat-slide-toggle>
-
+          <div class="row">
+            <label>On Hour: </label>
+            <input [(ngModel)]="onHour" (click)="updateHour(1)" [ngxTimepicker]="picker1">
+            <ngx-material-timepicker #picker1></ngx-material-timepicker>
+          </div>
+          <div class="row">
+            <label>Off Hour: </label>
+            <input [(ngModel)]="offHour" (click)="updateHour(2)" [ngxTimepicker]="picker2">
+            <ngx-material-timepicker #picker2></ngx-material-timepicker>
+          </div>
+          <mat-slide-toggle [(ngModel)]="light">Turn On/Off Now</mat-slide-toggle>
         </div>
       </div>
     </div>
