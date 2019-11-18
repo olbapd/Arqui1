@@ -1,0 +1,91 @@
+import { Component, AfterViewInit, ElementRef } from "@angular/core";
+import { UpdateService } from "../services/update.service";
+import { FirebaseService } from "../services/firebase.service";
+import { AngularFireDatabase } from "angularfire2/database";
+
+@Component({
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"]
+})
+export class HomeComponent implements AfterViewInit {
+  title = "plant-care";
+  humidity = 0;
+  hour = "";
+  flow = 0;
+  data: {};
+  options: any;
+
+  single: any[];
+  series: any = []
+  multi: any = [];
+
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = true;
+  showXAxisLabel = true;
+  xAxisLabel = "Date";
+  showYAxisLabel = true;
+  yAxisLabel = "Values";
+
+  colorScheme = {
+    domain: ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
+  };
+
+  // line, area
+  autoScale = true;
+
+  constructor(
+    private updateService: UpdateService,
+    private firebaseService: FirebaseService,
+    private elementRef: ElementRef,
+  ) {}
+
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
+      "#323639";
+  }
+
+  updateHour() {
+    console.log(this.hour);
+    this.updateService.sendHour(this.hour.toString()).subscribe(result => {
+      console.log(result);
+    });
+  }
+
+  updateHumidity() {
+    this.updateService.sendHumidity(this.humidity.toString()).subscribe(result => {
+      console.log(result);
+    });
+  }
+  updateFlow() {
+    this.updateService.sendFlow(this.flow.toString()).subscribe(result => {
+      console.log(result);
+    });
+  }
+
+  addToGraph(dateCreated, value ){
+    console.log(this.series);
+    this.series.push({name: dateCreated, value: value});
+    this.multi[0] =  {
+        name: "Humidity",
+        series: this.series
+      }
+      console.log(this.multi);
+  }
+
+  //Funcion que llama el boton. Node debe devolver lo siguiente  { date: "XX/XX/XX", value: xxx}
+  //Los services estan en update.services si ocupa cambiar el endpoint
+  clicked(){
+    this.updateService.getHumidity()
+      .subscribe(result =>{
+        this.addToGraph(result.date.toString(), Number(result.value));
+        console.log(result.date);
+        console.log(result.value);
+      })
+  }
+}

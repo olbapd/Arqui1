@@ -1,0 +1,63 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <img width="300" alt="Angular Logo" src="../assets/logo.png">
+</div>
+<div class="container">
+  <div class="row">
+    <!-- Humedad -->
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <h4>HUMIDITY LEVELS</h4>
+          <p>  Current Humidity:</p>
+          <input (change)="updateHumidity()" [(ngModel)]="humidity" type="number" >
+        </div>
+      </div>
+    </div>
+    <!-- Horario -->
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <h4>LIGHTING HOURS</h4>
+          <label>Select time to light the plants: </label>
+          <input [(ngModel)]="hour" [ngxTimepicker]="picker">
+          <ngx-material-timepicker #picker></ngx-material-timepicker>
+        </div>
+        <button type="button" (click)="updateHour()" class="btn-primary" style= "margin-right: 330px; margin-bottom: 590px">Send</button>
+        
+      </div>
+    </div>
+  </div> 
+  <br>
+  <!-- Flujo de agua -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4>WATERFLOW LEVEL</h4>
+          <p>  Current Waterflow Amount:</p>
+          <input (change)="updateFlow()" [(ngModel)]="flow" type="number" >
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class="row">
+    <div>
+      <ngx-charts-line-chart class="chart"
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="multi"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [autoScale]="autoScale">
+      </ngx-charts-line-chart>
+    </div>
+  <button type="button" (click)="clicked()" class="btn btn-raised btn-primary">Refresh</button>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "restful",
+    "json"
+  ],
+  "author": "Jose Andres Rivera",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/animations": "^7.2.13",
+    "@angular/material": "^7.3.7",
+    "angular-material": "^1.1.18",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mqtt": "^2.13.0"
+  }
+}

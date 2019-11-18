@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class UpdateService {
 	headers : {headers : HttpHeaders}
-	baseUrl = 'http://192.168.1.124/';
+	baseUrl = 'http://localhost:3000/api/';
 
 	constructor(private http: HttpClient){}
 
@@ -14,8 +14,11 @@ export class UpdateService {
 		return this.http.get<any>(url,this.headers);
 	}
 
-	public sendHumidity(body) : Observable<any>{
+	public sendHumidity(msj) : Observable<any>{
 		const url= this.baseUrl+'humidity';
+		const body = {
+			"value":msj
+		};
 		return this.http.post<any>(url,body, this.headers);
 	}
 
@@ -24,8 +27,11 @@ export class UpdateService {
 		return this.http.get<any>(url, this.headers);
 	}
 
-	public sendFlow(body) : Observable<any>{
+	public sendFlow(msj) : Observable<any>{
 		const url= this.baseUrl+'flow';
+		const body = {
+			"value":msj
+		};
 		return this.http.post<any>(url,body, this.headers);
 	}
 
@@ -34,8 +40,11 @@ export class UpdateService {
 		return this.http.get<any>(url, this.headers);
 	}
 
-	public sendHour(body) : Observable<any>{
+	public sendHour(msj) : Observable<any>{
 		const url= this.baseUrl+'hour';
+		const body = {
+			"value":msj
+		};
 		return this.http.post<any>(url,body, this.headers);
 	}
 
