@@ -29,7 +29,7 @@
             <input [(ngModel)]="offHour" (click)="updateHour(2)" [ngxTimepicker]="picker2">
             <ngx-material-timepicker #picker2></ngx-material-timepicker>
           </div>
-          <mat-slide-toggle [(ngModel)]="light">Turn On/Off Now</mat-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="light" (change)="updateLights()">Turn On/Off Now</mat-slide-toggle>
         </div>
       </div>
     </div>

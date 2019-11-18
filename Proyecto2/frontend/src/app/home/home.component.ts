@@ -81,11 +81,10 @@ export class HomeComponent implements AfterViewInit {
           console.log(result);
         })
     }
-
   }
 
   updateLights(){
-    this.updateService.led()
+    this.updateService.led({LED: this.light })
       .subscribe(result =>{
         console.log(result);
       })
