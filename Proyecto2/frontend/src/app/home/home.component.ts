@@ -17,25 +17,8 @@ export class HomeComponent implements AfterViewInit {
   options: any;
 
   single: any[];
-  multi: any = [
-    {
-      name: "Humidity",
-      series: [
-        {
-          name: "2009",
-          value: 7870000
-        },
-        {
-          name: "2010",
-          value: 7300000
-        },
-        {
-          name: "2011",
-          value: 8270000
-        }
-      ]
-    }
-  ];
+  series: any = []
+  multi: any = [];
 
   view: any[] = [700, 400];
 
@@ -86,7 +69,13 @@ export class HomeComponent implements AfterViewInit {
   }
 
   addToGraph(dateCreated, value ){
-    this.multi.series.push({name: dateCreated, value: value});
+    console.log(this.series);
+    this.series.push({name: dateCreated, value: value});
+    this.multi[0] =  {
+        name: "Humidity",
+        series: this.series
+      }
+      console.log(this.multi);
   }
 
   //Funcion que llama el boton. Node debe devolver lo siguiente  { date: "XX/XX/XX", value: xxx}
@@ -94,7 +83,9 @@ export class HomeComponent implements AfterViewInit {
   clicked(){
     this.updateService.getHumidity()
       .subscribe(result =>{
-        this.addToGraph(result.date, result.vallue);
+        this.addToGraph(result.date.toString(), Number(result.value));
+        console.log(result.date);
+        console.log(result.value);
       })
   }
 }
