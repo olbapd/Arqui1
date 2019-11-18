@@ -10,13 +10,13 @@ router.get('/', function (req, res) {
 });
 
 var humedad = require('./controller/humedad');
-var temperatura = require('./controller/temperatura');
+var waterflow = require('./controller/waterflow');
 var luces = require('./controller/luces');
 router.route('/humedad')
     .get(humedad.stream);
-router.route('/temperatura')
-    .get(temperatura.stream);
-router.route('/temperatura')
+router.route('/waterflow')
+    .get(waterflow.stream);
+router.route('/luz')
     .post(luces.stream);
 
 
