@@ -16,6 +16,8 @@ export class HomeComponent implements AfterViewInit {
   flow = 0;
   light=false;
   options: any;
+  onHour = "";
+  offHour = "";
 
   single: any[];
   multi: any =  [
@@ -55,13 +57,13 @@ export class HomeComponent implements AfterViewInit {
   }
 
   updateHour(num) {
-    if(num==1){
+    if(num==1 && this.onHour !=""){
       console.log(this.hour);
       this.updateService.sendHour("E"+this.hour.toString()).subscribe(result => {
         console.log(result);
       });
     }
-    else if(num==2){
+    else if(num==2 && this.offHour !=""){
       console.log(this.hour);
       this.updateService.sendHour("A"+this.hour.toString()).subscribe(result => {
         console.log(result);
