@@ -46,7 +46,7 @@ String device_id = "Dispositivo1";
 String lightsRTpc = "handleLights";
 String waterRTpc = "handleWater";
 String humidityRTpc = "handleHumidity";
-String topic = "Send";
+String topic = "humidity";
 
 //Logic variables 
 bool lightOn;
@@ -84,6 +84,7 @@ bool isValve_open;
 void _lightsOn();
 void _lightsOff(); 
 void flow();
+int getHumidity();
 
 DailyTimer lightsTimer(
   true,                                 // AutoSync true or false, will run the startTimeCallback() if restarts within the active range or after range changes and you are in the range
@@ -182,8 +183,7 @@ void loop() {
 
   //Add data needed  
   jsonInit(&json_msg);
-  addToJson(&json_msg, "adc", analogRead(A0));
-  addToJson(&json_msg, "millis", int(millis())); 
+  addToJson(&json_msg, "humidity",getHumidity());
   jsonClose(&json_msg);
 
   //An HTTP POST request is executed and the response code is stored
