@@ -13,8 +13,6 @@
  * @author José Andrés Rivera Tencio
  */
 
-
-
 //ESP8266 Independent Library 
 #include "ESP_XYZ_StandAlone.h"
 
@@ -53,54 +51,49 @@ String topic = "Send";
 //Logic variables 
 bool lightOn;
 bool lightAuto;
+bool autoWater;
+
+//Time 
 int i = 0;
 uint8_t hourOn = 2;
 uint8_t minuteOn = 00;
 uint8_t hourOff = 23;
 uint8_t minuteOff = 59;
-bool autoWater;
+int timezone = -6;
+
+//Humidity 
 int minimumHumidity = 50;
+
+//Flow 
 volatile int flow_frequency; // Measures flow sensor pulses
 float l_hour; // Calculated litres/hour
 float flowMilliLitres;
 float totalMilliLitres;
 float mlToPour;
+void ICACHE_RAM_ATTR flow();
+
+//Cloop 
 unsigned long currentTime;
 unsigned long cloopTime;
 unsigned long lastWateringTime;
+
+//Valve
 bool isValve_open;
 
-void ICACHE_RAM_ATTR flow();
 
-int timezone = -6;
-
-
-void _lightsOn(){
-  lightOn = true;
-  digitalWrite(LIGHTS_PIN, HIGH);
-  Serial.println("Lights On");
-  }
-void _lightsOff(){
-  lightOn = false;
-  digitalWrite(LIGHTS_PIN, LOW);
-  Serial.println("Lights Off");
-  }
-void flow () // Interrupt function
-{
-   //Serial.println(" FLOW FUNCTION");
-   flow_frequency++;
-}
+void _lightsOn();
+void _lightsOff(); 
+void flow();
 
 DailyTimer lightsTimer(
-  true,                             // AutoSync true or false, will run the startTimeCallback() if restarts within the active range or after range changes and you are in the range
+  true,                                 // AutoSync true or false, will run the startTimeCallback() if restarts within the active range or after range changes and you are in the range
   hourOn,                               // Start Hour
-  minuteOn,                               // Start Minute
-  hourOff,                                // End Hour 
-  minuteOff,                                // End Minute
-  EVERY_DAY,                         // SUNDAYS, MONDAYS, TUESDAYS, WEDNESDAYS, THURSDAYS, FRIDAYS, SATURDAYS, WEEKENDS, WEEKDAYS, or EVERY_DAY
-  FIXED,                            // OPTIONAL - FIXED, RANDOM, RANDOM_START, or RANDOM_END
+  minuteOn,                             // Start Minute
+  hourOff,                              // End Hour 
+  minuteOff,                            // End Minute
+  EVERY_DAY,                            // SUNDAYS, MONDAYS, TUESDAYS, WEDNESDAYS, THURSDAYS, FRIDAYS, SATURDAYS, WEEKENDS, WEEKDAYS, or EVERY_DAY
+  FIXED,                                // OPTIONAL - FIXED, RANDOM, RANDOM_START, or RANDOM_END
   _lightsOn,                            // pointer to function to execute at Start time, or a Lambda as in this example:
-  //[]{digitalWrite(ledPin, HIGH);},  // Lambda equivalent example rather than creating a new function -> no callback function prototypes needed :)
   _lightsOff                            // pointer to function to execute at End time
 );
 
@@ -147,6 +140,7 @@ void setup() {
   isValve_open = false;
   lastWateringTime = 0;
 
+  
   pinMode(FLOW_PIN, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(FLOW_PIN), flow, RISING); 
   sei(); // Enable interrupts
@@ -214,10 +208,14 @@ void mqtt_callback(char* topic, byte* payload, unsigned int len) {
   Serial.println(topic);
   Serial.print("Prossesing request...");
 
+  //Recv message and "cast" to String
   for (int i = 0; i < len; i++) {
     recvMessage = (char)payload[i];
   }
+  
   Serial.println(recvMessage);
+
+  //Handle request
   if((String)topic == "handleLights"){
     handleLights(recvMessage);
     }
@@ -232,14 +230,32 @@ void mqtt_callback(char* topic, byte* payload, unsigned int len) {
     }
 }
 
-void handleHumidity(String request){
+// Interrupt function
+void flow () 
+{
+   flow_frequency++;
+}
+//Turn on lights
+void _lightsOn(){
+  lightOn = true;
+  digitalWrite(LIGHTS_PIN, HIGH);
+  Serial.println("Lights On");
+  }
+//Turn off lights
+void _lightsOff(){
+  lightOn = false;
+  digitalWrite(LIGHTS_PIN, LOW);
+  Serial.println("Lights Off");
+  }
+//Handle humidity
+void handleHumidity(String request){ 
   int humidity = getJsonInt(request,"humidity");
   if(humidity !=0){
     minimumHumidity = humidity;
-    //Add Error if needed 
   }
   Serial.println("Humidity Handled");
 }
+//Open water flow 
 void waterNow(){
   lastWateringTime = millis();
   isValve_open = true;
@@ -247,6 +263,7 @@ void waterNow(){
   digitalWrite(VALVE_PIN, HIGH);
   Serial.println("Now Watering");
   }
+//Loop to handle flow data  
 void flow_loop(){
   currentTime = millis();
   // Every second, calculate and print litres/hour
@@ -268,15 +285,17 @@ void flow_loop(){
     Serial.println(" mL");
    }
 }
+//Get humidity data 
 int getHumidity(){
   int value = analogRead(HUMIDITY_PIN);   //Read analog value 
   value = constrain(value,400,1023);  //Keep the ranges!
   value = map(value,400,1023,100,0);  //Map value : 400 will be 100 and 1023 will be 0
   return value;
 }
+//Water handle function 
 void handleWater(String request){
   String option = getJsonStr(request,"option");
-  if (request =="amount"){
+  if (option =="amount"){
     mlToPour = 0; // Poner aqui
     totalMilliLitres = getJsonInt(request,"value");;
     }
@@ -293,6 +312,7 @@ void handleWater(String request){
     }
     Serial.println("Handled Water");
 }
+//Lights handle function 
 void handleLights(String request) {
   String option = getJsonStr(request,"option");
   if (option =="manual"){
