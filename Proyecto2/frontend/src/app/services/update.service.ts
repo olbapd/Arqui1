@@ -9,9 +9,9 @@ export class UpdateService {
 
 	constructor(private http: HttpClient){}
 
-	public led():Observable<any>{
-		const url = this.baseUrl+'led';
-		return this.http.get<any>(url,this.headers);
+	public led(body):Observable<any>{
+		const url = this.baseUrl+'hour';
+		return this.http.post<any>(url,body,this.headers);
 	}
 
 	public sendHumidity(msj) : Observable<any>{

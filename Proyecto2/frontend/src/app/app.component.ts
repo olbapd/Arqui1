@@ -118,21 +118,5 @@ export class AppComponent implements AfterViewInit{
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#323639';
   }
 
-  updateHour(){
-  	console.log(this.hour);
-    
-  }
-
-  updateHumidity(){
-    console.log("here");
-  	console.log(this.humidity);
-    this.updateService.led()
-     .subscribe((result)=>{
-         console.log(result);
-     })
-
-  }
-  updateFlow(){
-  	console.log(this.flow);
-  }
+  
 }
