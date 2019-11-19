@@ -58,14 +58,16 @@ export class HomeComponent implements AfterViewInit {
 
   updateHour(num) {
     if(num==1 && this.onHour !=""){
-      console.log(this.hour);
-      this.updateService.sendHour("E"+this.hour.toString()).subscribe(result => {
+      console.log(this.onHour);
+      let temp =  "E"+this.onHour.toString();
+      this.updateService.sendHour(temp).subscribe(result => {
         console.log(result);
       });
     }
     else if(num==2 && this.offHour !=""){
-      console.log(this.hour);
-      this.updateService.sendHour("A"+this.hour.toString()).subscribe(result => {
+      console.log(this.offHour);
+      let temp =  "A"+this.offHour.toString();
+      this.updateService.sendHour(temp).subscribe(result => {
         console.log(result);
       });
     }
