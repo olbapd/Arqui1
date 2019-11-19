@@ -14,6 +14,7 @@ export class HomeComponent implements AfterViewInit {
   humidity = 0;
   hour = "";
   flow = 0;
+  light=false;
   options: any;
 
   single: any[];
@@ -53,11 +54,19 @@ export class HomeComponent implements AfterViewInit {
       "#323639";
   }
 
-  updateHour() {
-    console.log(this.hour);
-    this.updateService.sendHour(this.hour.toString()).subscribe(result => {
-      console.log(result);
-    });
+  updateHour(num) {
+    if(num==1){
+      console.log(this.hour);
+      this.updateService.sendHour("E"+this.hour.toString()).subscribe(result => {
+        console.log(result);
+      });
+    }
+    else if(num==2){
+      console.log(this.hour);
+      this.updateService.sendHour("A"+this.hour.toString()).subscribe(result => {
+        console.log(result);
+      });
+    }
   }
 
   updateHumidity() {
@@ -69,6 +78,12 @@ export class HomeComponent implements AfterViewInit {
     this.updateService.sendFlow(this.flow.toString()).subscribe(result => {
       console.log(result);
     });
+  }
+  updateLights(){
+    this.updateService.led({"vallue": this.light })
+      .subscribe(result =>{
+        console.log(result);
+      })
   }
 
   // addToGraph(dateCreated, value ){
