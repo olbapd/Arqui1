@@ -57,20 +57,22 @@ export class HomeComponent implements AfterViewInit {
   }
 
   updateHour(num) {
-    if(num==1 && this.onHour !=""){
-      console.log(this.onHour);
-      let temp =  "E"+this.onHour.toString();
-      this.updateService.sendHour(temp).subscribe(result => {
+    console.log(this.onHour);
+    console.log(this.offHour);
+    let e =  this.onHour.toString().split(":");
+    let e2= e[1].split(" ");
+    console.log(e[0]+":"+e2[0]);
+    let a =  this.offHour.toString().split(":");
+    let a2= a[1].split(" ");
+    
+      const body = {"option":"auto", "hourOn":e[0], "hourOff":a[0],"minuteOn":e2[0],"minuteOff":a2[0]};
+      console.log(body);
+      this.updateService.sendHour(body).subscribe(result => {
         console.log(result);
       });
-    }
-    else if(num==2 && this.offHour !=""){
-      console.log(this.offHour);
-      let temp =  "A"+this.offHour.toString();
-      this.updateService.sendHour(temp).subscribe(result => {
-        console.log(result);
-      });
-    }
+    
+   
+    
   }
 
   updateHumidity() {
@@ -79,12 +81,15 @@ export class HomeComponent implements AfterViewInit {
     });
   }
   updateFlow() {
-    this.updateService.sendFlow(this.flow.toString()).subscribe(result => {
+    var body = {"option":"amout","value":this.flow.toString()};
+    this.updateService.sendFlow(body).subscribe(result => {
       console.log(result);
     });
   }
   updateLights(){
-    this.updateService.led({"vallue": this.light })
+    const body ={"option":"manual" , "action":this.light.toString()}
+    console.log(this.light.toString());
+    this.updateService.led(body)
       .subscribe(result =>{
         console.log(result);
       })

@@ -27,11 +27,8 @@ export class UpdateService {
 		return this.http.get<any>(url, this.headers);
 	}
 
-	public sendFlow(msj) : Observable<any>{
+	public sendFlow(body) : Observable<any>{
 		const url= this.baseUrl+'flow';
-		const body = {
-			"value":msj
-		};
 		return this.http.post<any>(url,body, this.headers);
 	}
 
@@ -40,11 +37,8 @@ export class UpdateService {
 		return this.http.get<any>(url, this.headers);
 	}
 
-	public sendHour(msj) : Observable<any>{
+	public sendHour(body) : Observable<any>{
 		const url= this.baseUrl+'hour';
-		const body = {
-			"value":msj
-		};
 		return this.http.post<any>(url,body, this.headers);
 	}
 

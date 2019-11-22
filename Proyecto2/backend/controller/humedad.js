@@ -1,17 +1,17 @@
 var mqtt = require('mqtt');
 var options = {
-     port: 16604,
-     host: 'tailor.cloudmqtt.com',
-     clientId: 'guest',
-     username: 'device',
-     password: 'admin',
-     keepalive: 60,
-     reconnectPeriod: 1000,
-     protocolId: 'MQIsdp',
-     protocolVersion: 3,
-     clean: true,
-     encoding: 'utf8'
-     };
+    port: 16515,
+    host: 'm12.cloudmqtt.com',
+    clientId: 'guest',
+    username: 'kvacnttu',
+    password: 'HErp-sdloW_B',
+    keepalive: 60,
+    reconnectPeriod: 1000,
+    protocolId: 'MQIsdp',
+    protocolVersion: 3,
+    clean: true,
+    encoding: 'utf8'
+    };
      
 exports.stream = function (req, res) {
     var client= mqtt.connect(options);
