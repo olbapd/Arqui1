@@ -21,17 +21,22 @@
           <h4>LIGHTING HOURS</h4>
           <div class="row">
             <label>On Hour: </label>
-            <input [(ngModel)]="onHour"  [ngxTimepicker]="picker1">
+            <input [(ngModel)]="onHour"  [ngxTimepicker]="picker1" [format]=24>
             <ngx-material-timepicker #picker1></ngx-material-timepicker>
           </div>
           <div class="row">
             <label>Off Hour: </label>
-            <input [(ngModel)]="offHour"  [ngxTimepicker]="picker2">
+            <input [(ngModel)]="offHour"  [ngxTimepicker]="picker2" [format]=24>
             <ngx-material-timepicker #picker2></ngx-material-timepicker>
           </div>
-          <button type="button" (click)="updateHour()" class="btn btn-raised btn-primary" style="margin-bottom: 500px; margin-right: 450px;">Send</button>
-          <mat-slide-toggle [(ngModel)]="light" (change)="updateLights()">Turn On/Off Now</mat-slide-toggle>
-          
+          <div class="row">
+            <div class="col">
+                <mat-slide-toggle [(ngModel)]="light" (change)="updateLights()">Turn On/Off Now</mat-slide-toggle>
+            </div>
+            <div class="col">
+                <button type="button" (click)="updateHour()" class="btn btn-raised btn-primary" >Send</button>
+            </div>
+          </div>
         </div>
         
       </div>
@@ -67,6 +72,6 @@
         [autoScale]="autoScale">
       </ngx-charts-line-chart>
     </div>
-  <button type="button" (click)="clicked()" class="btn btn-raised btn-primary">Refresh</button>
+  <button type="button" (click)="clicked()" class="btn btn-raised btn-primary" style="  bottom: 40px; right: 40px; position: fixed; border-radius: 50px; text-align: center;box-shadow: 2px 2px 2px #999;">Refresh</button>
   </div>
 </div>

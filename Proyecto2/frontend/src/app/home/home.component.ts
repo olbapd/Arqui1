@@ -34,7 +34,7 @@ export class HomeComponent implements AfterViewInit {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = "Date";
+  xAxisLabel = "Minute";
   showYAxisLabel = true;
   yAxisLabel = "Values";
 
